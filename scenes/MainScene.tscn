@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bja7sn3m4mbn8"]
 
-[ext_resource type="Texture2D" uid="uid://bigbhlofen44h" path="res://assets/MapofWesterosDetails.webp" id="1_acqox"]
-[ext_resource type="PackedScene" uid="uid://b00od7skqbdmy" path="res://scenes/InitialWesteros.tscn" id="1_or0ix"]
+[ext_resource type="PackedScene" uid="uid://b00od7skqbdmy" path="res://scenes/InitialWesteros.tscn" id="1_ibiss"]
+[ext_resource type="Texture2D" uid="uid://bigbhlofen44h" path="res://assets/MapofWesterosDetails.webp" id="2_c6dvc"]
 
-[node name="BaseScene" type="Node2D" unique_id=1878596069]
+[node name="MainScene" type="Node2D" unique_id=1878596069]
 
-[node name="InitialWesteros" parent="." unique_id=1315045424 instance=ExtResource("1_or0ix")]
+[node name="InitialWesteros" parent="." unique_id=1315045424 instance=ExtResource("1_ibiss")]
 z_index = 4096
 
 [node name="Camera2D" type="Camera2D" parent="InitialWesteros" unique_id=832807546]
@@ -20,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_acqox")
+texture = ExtResource("2_c6dvc")
 
 [node name="FiltroPreto" type="ColorRect" parent="CanvasLayer" unique_id=2047741002]
 anchors_preset = 15
