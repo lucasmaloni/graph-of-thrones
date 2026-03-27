@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "graph-of-thrones", "graph-of-thrones.csproj", "{CE4BD421-1F8E-4F0B-8B59-58358F4FFCAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE4BD421-1F8E-4F0B-8B59-58358F4FFCAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE4BD421-1F8E-4F0B-8B59-58358F4FFCAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE4BD421-1F8E-4F0B-8B59-58358F4FFCAA}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{CE4BD421-1F8E-4F0B-8B59-58358F4FFCAA}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{CE4BD421-1F8E-4F0B-8B59-58358F4FFCAA}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{CE4BD421-1F8E-4F0B-8B59-58358F4FFCAA}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
