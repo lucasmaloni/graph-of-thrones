@@ -4,8 +4,100 @@
 
 [node name="InitialWesteros" type="Node2D" unique_id=1315045424]
 
-[node name="Stark" type="Sprite2D" parent="." unique_id=2052235902]
+[node name="Houses" type="Node2D" parent="." unique_id=1452641668]
+
+[node name="Stark" type="Sprite2D" parent="Houses" unique_id=2052235902]
 texture_filter = 2
-position = Vector2(188, 85)
+position = Vector2(538, 496)
 script = ExtResource("1_57nuw")
 HouseName = "Stark"
+
+[node name="Ryswell" type="Sprite2D" parent="Houses" unique_id=2393790]
+texture_filter = 2
+position = Vector2(174, 431)
+script = ExtResource("1_57nuw")
+HouseName = "Ryswell"
+
+[node name="Tully" type="Sprite2D" parent="Houses" unique_id=1949828179]
+texture_filter = 2
+position = Vector2(419, 831)
+script = ExtResource("1_57nuw")
+HouseName = "Tully"
+
+[node name="Greyjoy" type="Sprite2D" parent="Houses" unique_id=1849670957]
+texture_filter = 2
+position = Vector2(65, 683)
+script = ExtResource("1_57nuw")
+HouseName = "Greyjoy"
+
+[node name="Frey" type="Sprite2D" parent="Houses" unique_id=1757969216]
+texture_filter = 2
+position = Vector2(722, 872)
+script = ExtResource("1_57nuw")
+HouseName = "Frey"
+
+[node name="Arryn" type="Sprite2D" parent="Houses" unique_id=1684381239]
+texture_filter = 2
+position = Vector2(935, 891)
+script = ExtResource("1_57nuw")
+HouseName = "Arryn"
+
+[node name="Bolton" type="Sprite2D" parent="Houses" unique_id=24179028]
+texture_filter = 2
+position = Vector2(759, 578)
+script = ExtResource("1_57nuw")
+HouseName = "Bolton"
+
+[node name="Umber" type="Sprite2D" parent="Houses" unique_id=1422767570]
+texture_filter = 2
+position = Vector2(734, 300)
+script = ExtResource("1_57nuw")
+HouseName = "Umber"
+
+[node name="Karstark" type="Sprite2D" parent="Houses" unique_id=1767178795]
+texture_filter = 2
+position = Vector2(954, 341)
+script = ExtResource("1_57nuw")
+HouseName = "Karstark"
+
+[node name="Mormont" type="Sprite2D" parent="Houses" unique_id=899304098]
+texture_filter = 2
+position = Vector2(415, 121)
+script = ExtResource("1_57nuw")
+HouseName = "Mormont"
+
+[node name="Glover" type="Sprite2D" parent="Houses" unique_id=1151320833]
+texture_filter = 2
+position = Vector2(264, 268)
+script = ExtResource("1_57nuw")
+HouseName = "Glover"
+
+[node name="Baratheon (Robert)" type="Sprite2D" parent="Houses" unique_id=1475024434]
+texture_filter = 2
+position = Vector2(546, 1118)
+script = ExtResource("1_57nuw")
+HouseName = "Baratheon (Robert)"
+
+[node name="Lanninster" type="Sprite2D" parent="Houses" unique_id=2106644302]
+texture_filter = 2
+position = Vector2(370, 1205)
+script = ExtResource("1_57nuw")
+HouseName = "Lannister"
+
+[node name="Baratheon (Renly)" type="Sprite2D" parent="Houses" unique_id=1769181430]
+texture_filter = 2
+position = Vector2(543, 1615)
+script = ExtResource("1_57nuw")
+HouseName = "Baratheon (Renly)"
+
+[node name="Baratheon (Stanis)" type="Sprite2D" parent="Houses" unique_id=1865602992]
+texture_filter = 2
+position = Vector2(822, 1507)
+script = ExtResource("1_57nuw")
+HouseName = "Baratheon (Stanis)"
+
+[node name="Tyrell" type="Sprite2D" parent="Houses" unique_id=30633374]
+texture_filter = 2
+position = Vector2(266, 1483)
+script = ExtResource("1_57nuw")
+HouseName = "Tyrell"

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bja7sn3m4mbn8"]
+
+[ext_resource type="Texture2D" uid="uid://bigbhlofen44h" path="res://assets/MapofWesterosDetails.webp" id="1_acqox"]
+[ext_resource type="PackedScene" uid="uid://b00od7skqbdmy" path="res://scenes/InitialWesteros.tscn" id="1_or0ix"]
+
+[node name="BaseScene" type="Node2D" unique_id=1878596069]
+
+[node name="InitialWesteros" parent="." unique_id=1315045424 instance=ExtResource("1_or0ix")]
+z_index = 4096
+
+[node name="Camera2D" type="Camera2D" parent="InitialWesteros" unique_id=832807546]
+anchor_mode = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=81515733]
+layer = -4096
+
+[node name="MapaBackground" type="TextureRect" parent="CanvasLayer" unique_id=1793882734]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_acqox")
+
+[node name="FiltroPreto" type="ColorRect" parent="CanvasLayer" unique_id=2047741002]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6039216)
