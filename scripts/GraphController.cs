@@ -27,16 +27,22 @@ public partial class GraphController : Node2D
 
 	private void SetupInitialHouses()
 	{
-		GreatHouse stark = new GreatHouse("Stark", "to be defined");
-		GreatHouse lanninster = new GreatHouse("Lanninster", "to be defined");
-		GreatHouse baratheonRenly = new GreatHouse("Baratheon (Renly)", "to be defined");
-		GreatHouse baratheonStanis = new GreatHouse("Baratheon (Stanis)", "to be defined");
-		GreatHouse baratheonRobert = new GreatHouse("Baratheon (Stanis)", "to be defined");
-		GreatHouse frey = new GreatHouse("Frey", "to be defined");
-		GreatHouse bolton = new GreatHouse("Bolton", "to be defined");
-		GreatHouse tully = new GreatHouse("Tully", "to be defined");
-		GreatHouse karstark = new GreatHouse("Karstark", "to be defined");
-		GreatHouse tyrell = new GreatHouse("Tyrell", "to be defined");
+		GreatHouse stark = new GreatHouse("Stark");
+		GreatHouse lanninster = new GreatHouse("Lanninster");
+		GreatHouse baratheonRenly = new GreatHouse("Baratheon (Renly)");
+		GreatHouse baratheonStanis = new GreatHouse("Baratheon (Stanis)");
+		GreatHouse baratheonRobert = new GreatHouse("Baratheon (Stanis)");
+		GreatHouse frey = new GreatHouse("Frey");
+		GreatHouse bolton = new GreatHouse("Bolton");
+		GreatHouse tully = new GreatHouse("Tully");
+		GreatHouse karstark = new GreatHouse("Karstark");
+		GreatHouse tyrell = new GreatHouse("Tyrell");
+		GreatHouse mormont = new GreatHouse("Mormont");
+		GreatHouse glover = new GreatHouse("Glover");
+		GreatHouse umber = new GreatHouse("Umber");
+		GreatHouse ryswell = new GreatHouse("Ryswell");
+		GreatHouse arryn = new GreatHouse("Arryn");
+		GreatHouse greyjoy = new GreatHouse("Greyjoy");
 
 		Graph.Add(stark, new List<Edge>());
 		Graph.Add(lanninster, new List<Edge>());
@@ -48,6 +54,12 @@ public partial class GraphController : Node2D
 		Graph.Add(tully, new List<Edge>());
 		Graph.Add(karstark, new List<Edge>());
 		Graph.Add(tyrell, new List<Edge>());
+		Graph.Add(mormont, new List<Edge>());
+		Graph.Add(glover, new List<Edge>());
+		Graph.Add(umber, new List<Edge>());
+		Graph.Add(ryswell, new List<Edge>());
+		Graph.Add(arryn, new List<Edge>());
+		Graph.Add(greyjoy, new List<Edge>());
 	}
 
 }
