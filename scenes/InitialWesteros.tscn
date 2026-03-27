@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b00od7skqbdmy"]
+
+[ext_resource type="Script" uid="uid://b41cl355olg14" path="res://scripts/GreatHouse.cs" id="1_57nuw"]
+
+[node name="InitialWesteros" type="Node2D" unique_id=1315045424]
+
+[node name="Stark" type="Sprite2D" parent="." unique_id=2052235902]
+texture_filter = 2
+position = Vector2(188, 85)
+script = ExtResource("1_57nuw")
+HouseName = "Stark"

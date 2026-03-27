@@ -8,7 +8,6 @@ public partial class GraphController : Node2D
 
 	public override void _Ready()
 	{
-		SetupInitialHouses();
 	}
 
 	private void AddConnection(GreatHouse from, GreatHouse to, double intensity)
@@ -25,7 +24,7 @@ public partial class GraphController : Node2D
 		Graph[to].Add(new Edge(from, intensity));
 	}
 
-	private void SetupInitialHouses()
+	/*private void SetupInitialHouses()
 	{
 		GreatHouse stark = new GreatHouse("Stark");
 		GreatHouse lanninster = new GreatHouse("Lanninster");
@@ -60,6 +59,6 @@ public partial class GraphController : Node2D
 		Graph.Add(ryswell, new List<Edge>());
 		Graph.Add(arryn, new List<Edge>());
 		Graph.Add(greyjoy, new List<Edge>());
-	}
+	}*/
 
 }
