@@ -67,4 +67,8 @@ public partial class GraphController : Node2D
 		GD.Print("Sucesso em adicionar nós ao grafo, segue o jogo");
 	}
 
+	private void SetupInitialRelations()
+	{
+		
+	}
 }

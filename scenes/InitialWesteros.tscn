@@ -1,105 +1,73 @@
 [gd_scene format=3 uid="uid://b00od7skqbdmy"]
 
-[ext_resource type="Script" uid="uid://b41cl355olg14" path="res://scripts/GreatHouse.cs" id="1_57nuw"]
 [ext_resource type="Script" uid="uid://dgkmvl32bywtx" path="res://scripts/GraphController.cs" id="1_fkpsj"]
+[ext_resource type="PackedScene" uid="uid://1ud1xqemeeos" path="res://scenes/GreatHouse.tscn" id="2_c5yk2"]
 
 [node name="InitialWesteros" type="Node2D" unique_id=1315045424]
 
 [node name="Houses" type="Node2D" parent="." unique_id=1452641668]
 script = ExtResource("1_fkpsj")
 
-[node name="Stark" type="Sprite2D" parent="Houses" unique_id=2052235902]
-texture_filter = 2
-position = Vector2(538, 496)
-script = ExtResource("1_57nuw")
+[node name="Stark" parent="Houses" unique_id=1421553946 instance=ExtResource("2_c5yk2")]
+position = Vector2(558, 287)
 HouseName = "Stark"
 
-[node name="Ryswell" type="Sprite2D" parent="Houses" unique_id=2393790]
-texture_filter = 2
-position = Vector2(174, 431)
-script = ExtResource("1_57nuw")
-HouseName = "Ryswell"
-
-[node name="Tully" type="Sprite2D" parent="Houses" unique_id=1949828179]
-texture_filter = 2
-position = Vector2(419, 831)
-script = ExtResource("1_57nuw")
-HouseName = "Tully"
-
-[node name="Greyjoy" type="Sprite2D" parent="Houses" unique_id=1849670957]
-texture_filter = 2
-position = Vector2(65, 683)
-script = ExtResource("1_57nuw")
-HouseName = "Greyjoy"
-
-[node name="Frey" type="Sprite2D" parent="Houses" unique_id=1757969216]
-texture_filter = 2
-position = Vector2(722, 872)
-script = ExtResource("1_57nuw")
-HouseName = "Frey"
-
-[node name="Arryn" type="Sprite2D" parent="Houses" unique_id=1684381239]
-texture_filter = 2
-position = Vector2(935, 891)
-script = ExtResource("1_57nuw")
-HouseName = "Arryn"
-
-[node name="Bolton" type="Sprite2D" parent="Houses" unique_id=24179028]
-texture_filter = 2
-position = Vector2(759, 578)
-script = ExtResource("1_57nuw")
-HouseName = "Bolton"
-
-[node name="Umber" type="Sprite2D" parent="Houses" unique_id=1422767570]
-texture_filter = 2
-position = Vector2(734, 300)
-script = ExtResource("1_57nuw")
-HouseName = "Umber"
-
-[node name="Karstark" type="Sprite2D" parent="Houses" unique_id=1767178795]
-texture_filter = 2
-position = Vector2(954, 341)
-script = ExtResource("1_57nuw")
-HouseName = "Karstark"
-
-[node name="Mormont" type="Sprite2D" parent="Houses" unique_id=899304098]
-texture_filter = 2
-position = Vector2(415, 121)
-script = ExtResource("1_57nuw")
-HouseName = "Mormont"
-
-[node name="Glover" type="Sprite2D" parent="Houses" unique_id=1151320833]
-texture_filter = 2
-position = Vector2(264, 268)
-script = ExtResource("1_57nuw")
-HouseName = "Glover"
-
-[node name="Baratheon (Robert)" type="Sprite2D" parent="Houses" unique_id=1475024434]
-texture_filter = 2
-position = Vector2(546, 1118)
-script = ExtResource("1_57nuw")
-HouseName = "Baratheon (Robert)"
-
-[node name="Lanninster" type="Sprite2D" parent="Houses" unique_id=2106644302]
-texture_filter = 2
-position = Vector2(370, 1205)
-script = ExtResource("1_57nuw")
+[node name="Lannister" parent="Houses" unique_id=1765368564 instance=ExtResource("2_c5yk2")]
+position = Vector2(531, 713)
 HouseName = "Lannister"
 
-[node name="Baratheon (Renly)" type="Sprite2D" parent="Houses" unique_id=1769181430]
-texture_filter = 2
-position = Vector2(543, 1615)
-script = ExtResource("1_57nuw")
-HouseName = "Baratheon (Renly)"
+[node name="Bolton" parent="Houses" unique_id=207447263 instance=ExtResource("2_c5yk2")]
+position = Vector2(531, 713)
+HouseName = "Bolton"
 
-[node name="Baratheon (Stanis)" type="Sprite2D" parent="Houses" unique_id=1865602992]
-texture_filter = 2
-position = Vector2(822, 1507)
-script = ExtResource("1_57nuw")
+[node name="Arryn" parent="Houses" unique_id=568523910 instance=ExtResource("2_c5yk2")]
+position = Vector2(531, 713)
+HouseName = "Arryn"
+
+[node name="Karstark" parent="Houses" unique_id=1345552832 instance=ExtResource("2_c5yk2")]
+position = Vector2(531, 713)
+HouseName = "Karstark"
+
+[node name="Umber" parent="Houses" unique_id=2146702295 instance=ExtResource("2_c5yk2")]
+position = Vector2(531, 713)
+HouseName = "Umber"
+
+[node name="Mormont" parent="Houses" unique_id=660186164 instance=ExtResource("2_c5yk2")]
+position = Vector2(531, 713)
+HouseName = "Mormont"
+
+[node name="Glover" parent="Houses" unique_id=2093759645 instance=ExtResource("2_c5yk2")]
+position = Vector2(531, 713)
+HouseName = "Glover"
+
+[node name="Ryswell" parent="Houses" unique_id=660944853 instance=ExtResource("2_c5yk2")]
+position = Vector2(531, 713)
+HouseName = "Ryswell"
+
+[node name="Tully" parent="Houses" unique_id=1061746715 instance=ExtResource("2_c5yk2")]
+position = Vector2(531, 713)
+HouseName = "Tully"
+
+[node name="Frey" parent="Houses" unique_id=274243001 instance=ExtResource("2_c5yk2")]
+position = Vector2(531, 713)
+HouseName = "Frey"
+
+[node name="Greyjoy" parent="Houses" unique_id=221054856 instance=ExtResource("2_c5yk2")]
+position = Vector2(531, 713)
+HouseName = "Greyjoy"
+
+[node name="Tyrell" parent="Houses" unique_id=112041017 instance=ExtResource("2_c5yk2")]
+position = Vector2(531, 713)
+HouseName = "Tyrell"
+
+[node name="Baratheon (Robert)" parent="Houses" unique_id=733497175 instance=ExtResource("2_c5yk2")]
+position = Vector2(531, 713)
+HouseName = "Baratheon (Robert)"
+
+[node name="Baratheon (Stanis)" parent="Houses" unique_id=1793092399 instance=ExtResource("2_c5yk2")]
+position = Vector2(531, 713)
 HouseName = "Baratheon (Stanis)"
 
-[node name="Tyrell" type="Sprite2D" parent="Houses" unique_id=30633374]
-texture_filter = 2
-position = Vector2(266, 1483)
-script = ExtResource("1_57nuw")
-HouseName = "Tyrell"
+[node name="Baratheon (Renly)" parent="Houses" unique_id=1924905621 instance=ExtResource("2_c5yk2")]
+position = Vector2(531, 713)
+HouseName = "Baratheon (Stanis)"

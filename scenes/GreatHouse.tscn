@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://1ud1xqemeeos"]
+
+[ext_resource type="Script" uid="uid://b41cl355olg14" path="res://scripts/GreatHouse.cs" id="1_33pc1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_33pc1"]
+radius = 18.0
+
+[node name="GreatHouse" type="RigidBody2D" unique_id=1421553946]
+script = ExtResource("1_33pc1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=507799811]
+shape = SubResource("CircleShape2D_33pc1")
+
+[node name="Sigil" type="Sprite2D" parent="." unique_id=1155103658]
