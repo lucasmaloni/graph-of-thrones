@@ -8,6 +8,7 @@ public partial class GraphController : Node2D
 
 	public override void _Ready()
 	{
+		SetupInitialHouses();
 	}
 
 	private void AddConnection(GreatHouse from, GreatHouse to, double intensity)
@@ -24,24 +25,27 @@ public partial class GraphController : Node2D
 		Graph[to].Add(new Edge(from, intensity));
 	}
 
-	/*private void SetupInitialHouses()
+	private void SetupInitialHouses()
 	{
-		GreatHouse stark = new GreatHouse("Stark");
-		GreatHouse lanninster = new GreatHouse("Lanninster");
-		GreatHouse baratheonRenly = new GreatHouse("Baratheon (Renly)");
-		GreatHouse baratheonStanis = new GreatHouse("Baratheon (Stanis)");
-		GreatHouse baratheonRobert = new GreatHouse("Baratheon (Stanis)");
-		GreatHouse frey = new GreatHouse("Frey");
-		GreatHouse bolton = new GreatHouse("Bolton");
-		GreatHouse tully = new GreatHouse("Tully");
-		GreatHouse karstark = new GreatHouse("Karstark");
-		GreatHouse tyrell = new GreatHouse("Tyrell");
-		GreatHouse mormont = new GreatHouse("Mormont");
-		GreatHouse glover = new GreatHouse("Glover");
-		GreatHouse umber = new GreatHouse("Umber");
-		GreatHouse ryswell = new GreatHouse("Ryswell");
-		GreatHouse arryn = new GreatHouse("Arryn");
-		GreatHouse greyjoy = new GreatHouse("Greyjoy");
+		// Aqui estamos pegando as referências de nós da cena, nesse caso, 
+		// cada nó desse tá como uma GreatHouse, por isso fazemose esse Get<GreatHouse>
+
+		GreatHouse stark = GetNode<GreatHouse>("Stark");
+		GreatHouse lanninster = GetNode<GreatHouse>("Lanninster");
+		GreatHouse baratheonRenly = GetNode<GreatHouse>("Baratheon (Renly)");
+		GreatHouse baratheonStanis = GetNode<GreatHouse>("Baratheon (Stanis)");
+		GreatHouse baratheonRobert = GetNode<GreatHouse>("Baratheon (Robert)");
+		GreatHouse frey = GetNode<GreatHouse>("Frey");
+		GreatHouse bolton = GetNode<GreatHouse>("Bolton");
+		GreatHouse tully = GetNode<GreatHouse>("Tully");
+		GreatHouse karstark = GetNode<GreatHouse>("Karstark");
+		GreatHouse tyrell = GetNode<GreatHouse>("Tyrell");
+		GreatHouse mormont = GetNode<GreatHouse>("Mormont");
+		GreatHouse glover = GetNode<GreatHouse>("Glover");
+		GreatHouse umber = GetNode<GreatHouse>("Umber");
+		GreatHouse ryswell = GetNode<GreatHouse>("Ryswell");
+		GreatHouse arryn = GetNode<GreatHouse>("Arryn");
+		GreatHouse greyjoy = GetNode<GreatHouse>("Greyjoy");
 
 		Graph.Add(stark, new List<Edge>());
 		Graph.Add(lanninster, new List<Edge>());
@@ -59,6 +63,8 @@ public partial class GraphController : Node2D
 		Graph.Add(ryswell, new List<Edge>());
 		Graph.Add(arryn, new List<Edge>());
 		Graph.Add(greyjoy, new List<Edge>());
-	}*/
+
+		GD.Print("Sucesso em adicionar nós ao grafo, segue o jogo");
+	}
 
 }
