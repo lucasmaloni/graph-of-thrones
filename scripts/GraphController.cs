@@ -1,14 +1,17 @@
 using Godot;
-using System;
+using GCollections = Godot.Collections;
 using System.Collections.Generic;
 
 public partial class GraphController : Node2D
 {
 	protected Dictionary<GreatHouse, List<Edge>> Graph { get; private set; } = new Dictionary<GreatHouse, List<Edge>>();
+	protected Dictionary<string, GreatHouse> HouseLookup { get; private set; } = new Dictionary<string, GreatHouse>();
+	protected DataManager dataManager = new DataManager();
 
 	public override void _Ready()
 	{
 		SetupInitialHouses();
+		SetupHousesLookup();
 	}
 
 	private void AddConnection(GreatHouse from, GreatHouse to, double intensity)
@@ -31,7 +34,7 @@ public partial class GraphController : Node2D
 		// cada nó desse tá como uma GreatHouse, por isso fazemose esse Get<GreatHouse>
 
 		GreatHouse stark = GetNode<GreatHouse>("Stark");
-		GreatHouse lanninster = GetNode<GreatHouse>("Lanninster");
+		GreatHouse lannister = GetNode<GreatHouse>("Lannister");
 		GreatHouse baratheonRenly = GetNode<GreatHouse>("Baratheon (Renly)");
 		GreatHouse baratheonStanis = GetNode<GreatHouse>("Baratheon (Stanis)");
 		GreatHouse baratheonRobert = GetNode<GreatHouse>("Baratheon (Robert)");
@@ -48,7 +51,7 @@ public partial class GraphController : Node2D
 		GreatHouse greyjoy = GetNode<GreatHouse>("Greyjoy");
 
 		Graph.Add(stark, new List<Edge>());
-		Graph.Add(lanninster, new List<Edge>());
+		Graph.Add(lannister, new List<Edge>());
 		Graph.Add(baratheonRenly, new List<Edge>());
 		Graph.Add(baratheonStanis, new List<Edge>());
 		Graph.Add(baratheonRobert, new List<Edge>());
@@ -67,8 +70,30 @@ public partial class GraphController : Node2D
 		GD.Print("Sucesso em adicionar nós ao grafo, segue o jogo");
 	}
 
-	private void SetupInitialRelations()
+
+	private void SetupHousesLookup()
 	{
-		
+		// Populamos o dicionário de lookup para termos a referência de cada casa a partir do nome.
+		// O objetivo é ter a referência do nó a partir do nome, necessário para criação de conexões em SetupInitialRelations() e outras mudanças futuras
+		foreach (var house in Graph.Keys)
+		{
+			HouseLookup[house.HouseName] = house;
+		}
+	}
+
+	private void SetupInitialConnections()
+	{
+		GCollections.Array<Variant> InitialConections = dataManager.GetDataFromJson("InitialConnections");
+
+		foreach (Variant Connection in InitialConections)
+		{
+			GCollections.Dictionary ConnectionAsDict = (GCollections.Dictionary)Connection;
+
+			string houseFrom = (string)ConnectionAsDict["from"];
+			string houseTo = (string)ConnectionAsDict["to"];
+			double intensity = (double)ConnectionAsDict["intensity"];
+
+			AddConnection(HouseLookup[houseFrom], HouseLookup[houseTo], intensity);
+		}
 	}
 }
