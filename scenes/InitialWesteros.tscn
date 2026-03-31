@@ -53,7 +53,7 @@ position = Vector2(683, 1028)
 HouseName = "Frey"
 
 [node name="Greyjoy" parent="Houses" unique_id=221054856 instance=ExtResource("2_c5yk2")]
-position = Vector2(72, 1176)
+position = Vector2(118, 1013)
 HouseName = "Greyjoy"
 
 [node name="Tyrell" parent="Houses" unique_id=112041017 instance=ExtResource("2_c5yk2")]
