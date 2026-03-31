@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public partial class GraphController : Node2D
 {
-	protected Dictionary<GreatHouse, List<Edge>> Graph { get; private set; } = new Dictionary<GreatHouse, List<Edge>>();
+	protected Dictionary<GreatHouse, Dictionary<GreatHouse, Edge>> Graph { get; private set; } = new Dictionary<GreatHouse, Dictionary<GreatHouse, Edge>>();
 	protected Dictionary<string, GreatHouse> HouseLookup { get; private set; } = new Dictionary<string, GreatHouse>();
 	protected DataManager dataManager = new DataManager();
 
@@ -25,8 +25,8 @@ public partial class GraphController : Node2D
 
 		if (!Graph.ContainsKey(from) || !Graph.ContainsKey(to)) return;
 		
-		Graph[from].Add(new Edge(to, intensity));
-		Graph[to].Add(new Edge(from, intensity));
+		Graph[from].Add(to, new Edge(intensity));
+		Graph[to].Add(from, new Edge(intensity));
 	}
 
 	private void SetupInitialHouses()
@@ -51,22 +51,22 @@ public partial class GraphController : Node2D
 		GreatHouse arryn = GetNode<GreatHouse>("Arryn");
 		GreatHouse greyjoy = GetNode<GreatHouse>("Greyjoy");
 
-		Graph.Add(stark, new List<Edge>());
-		Graph.Add(lannister, new List<Edge>());
-		Graph.Add(baratheonRenly, new List<Edge>());
-		Graph.Add(baratheonStanis, new List<Edge>());
-		Graph.Add(baratheonRobert, new List<Edge>());
-		Graph.Add(frey, new List<Edge>());
-		Graph.Add(bolton, new List<Edge>());
-		Graph.Add(tully, new List<Edge>());
-		Graph.Add(karstark, new List<Edge>());
-		Graph.Add(tyrell, new List<Edge>());
-		Graph.Add(mormont, new List<Edge>());
-		Graph.Add(glover, new List<Edge>());
-		Graph.Add(umber, new List<Edge>());
-		Graph.Add(ryswell, new List<Edge>());
-		Graph.Add(arryn, new List<Edge>());
-		Graph.Add(greyjoy, new List<Edge>());
+		Graph.Add(stark, new Dictionary<GreatHouse, Edge>());
+		Graph.Add(lannister, new Dictionary<GreatHouse, Edge>());
+		Graph.Add(baratheonRenly, new Dictionary<GreatHouse, Edge>());
+		Graph.Add(baratheonStanis, new Dictionary<GreatHouse, Edge>());
+		Graph.Add(baratheonRobert, new Dictionary<GreatHouse, Edge>());
+		Graph.Add(frey, new Dictionary<GreatHouse, Edge>());
+		Graph.Add(bolton, new Dictionary<GreatHouse, Edge>());
+		Graph.Add(tully, new Dictionary<GreatHouse, Edge>());
+		Graph.Add(karstark, new Dictionary<GreatHouse, Edge>());
+		Graph.Add(tyrell, new Dictionary<GreatHouse, Edge>());
+		Graph.Add(mormont, new Dictionary<GreatHouse, Edge>());
+		Graph.Add(glover, new Dictionary<GreatHouse, Edge>());
+		Graph.Add(umber, new Dictionary<GreatHouse, Edge>());
+		Graph.Add(ryswell, new Dictionary<GreatHouse, Edge>());
+		Graph.Add(arryn, new Dictionary<GreatHouse, Edge>());
+		Graph.Add(greyjoy, new Dictionary<GreatHouse, Edge>());
 
 		GD.Print("Sucesso em adicionar nós ao grafo, segue o jogo");
 	}
