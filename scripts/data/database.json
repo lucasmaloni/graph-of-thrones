@@ -1,18 +1,18 @@
 {
-    "InitialConnections":
-    [
-        {"from": "Stark", "to": "Tully", "intensity": 1.0},
-        {"from": "Stark", "to": "Ryswell", "intensity": 0.5},
-        {"from": "Stark", "to": "Karstark", "intensity": 0.5},
-        {"from": "Stark", "to": "Bolton", "intensity": 0.5},
-        {"from": "Stark", "to": "Glover", "intensity": 0.5},
-        {"from": "Stark", "to": "Mormont", "intensity": 0.5},
-        {"from": "Stark", "to": "Umber", "intensity": 0.5},
-        {"from": "Stark", "to": "Arryn", "intensity": 0.75},
-        {"from": "Stark", "to": "Baratheon (Robert)", "intensity": 1.0},
-        {"from": "Baratheon (Robert)", "to": "Lannister", "intensity": 1.0},
-        {"from": "Baratheon (Robert)", "to": "Baratheon (Renly)", "intensity": 0.75},
-        {"from": "Baratheon (Robert)", "to": "Baratheon (Stanis)", "intensity": 0.75},
-        {"from": "Baratheon (Robert)", "to": "Tyrell", "intensity": 0.5}
-    ]
+	"InitialConnections":
+	[
+		{"from": "Stark", "to": "Tully", "intensity": 1.0},
+		{"from": "Stark", "to": "Ryswell", "intensity": 0.5},
+		{"from": "Stark", "to": "Karstark", "intensity": 0.5},
+		{"from": "Stark", "to": "Bolton", "intensity": 0.5},
+		{"from": "Stark", "to": "Glover", "intensity": 0.5},
+		{"from": "Stark", "to": "Mormont", "intensity": 0.5},
+		{"from": "Stark", "to": "Umber", "intensity": 0.5},
+		{"from": "Stark", "to": "Arryn", "intensity": 0.75},
+		{"from": "Stark", "to": "Baratheon (Robert)", "intensity": 1.0},
+		{"from": "Baratheon (Robert)", "to": "Lannister", "intensity": 1.0},
+		{"from": "Baratheon (Robert)", "to": "Baratheon (Renly)", "intensity": 0.75},
+		{"from": "Baratheon (Robert)", "to": "Baratheon (Stanis)", "intensity": 0.75},
+		{"from": "Baratheon (Robert)", "to": "Tyrell", "intensity": 0.5}
+	]
 }

@@ -12,6 +12,7 @@ public partial class GraphController : Node2D
 	{
 		SetupInitialHouses();
 		SetupHousesLookup();
+		SetupInitialConnections();
 	}
 
 	private void AddConnection(GreatHouse from, GreatHouse to, double intensity)
@@ -95,5 +96,6 @@ public partial class GraphController : Node2D
 
 			AddConnection(HouseLookup[houseFrom], HouseLookup[houseTo], intensity);
 		}
+		GD.Print("Sucesso em criar todas as conexões");
 	}
 }
