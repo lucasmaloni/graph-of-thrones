@@ -4,11 +4,7 @@ using Godot.Collections;
 public partial class DataManager : Node
 {
 	public string DataFilePath {get; private set;} = "res://scripts/data/database.json";
-	public override void _Ready()
-	{
-		
-	}
-
+	
 	public Array<Variant> GetDataFromJson(string keyFromJson)
 	{
 		if (!FileAccess.FileExists(DataFilePath))

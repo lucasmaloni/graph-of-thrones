@@ -63,40 +63,13 @@ public partial class GraphController : Node2D
 	{
 		// Aqui estamos pegando as referências de nós da cena, nesse caso, 
 		// cada nó desse tá como uma GreatHouse, por isso fazemose esse Get<GreatHouse>
+		var GreatHousesList = dataManager.GetDataFromJson("GreatHouses");
 
-		GreatHouse stark = GetNode<GreatHouse>("Stark");
-		GreatHouse lannister = GetNode<GreatHouse>("Lannister");
-		GreatHouse baratheonRenly = GetNode<GreatHouse>("Baratheon (Renly)");
-		GreatHouse baratheonStanis = GetNode<GreatHouse>("Baratheon (Stanis)");
-		GreatHouse baratheonRobert = GetNode<GreatHouse>("Baratheon (Robert)");
-		GreatHouse frey = GetNode<GreatHouse>("Frey");
-		GreatHouse bolton = GetNode<GreatHouse>("Bolton");
-		GreatHouse tully = GetNode<GreatHouse>("Tully");
-		GreatHouse karstark = GetNode<GreatHouse>("Karstark");
-		GreatHouse tyrell = GetNode<GreatHouse>("Tyrell");
-		GreatHouse mormont = GetNode<GreatHouse>("Mormont");
-		GreatHouse glover = GetNode<GreatHouse>("Glover");
-		GreatHouse umber = GetNode<GreatHouse>("Umber");
-		GreatHouse ryswell = GetNode<GreatHouse>("Ryswell");
-		GreatHouse arryn = GetNode<GreatHouse>("Arryn");
-		GreatHouse greyjoy = GetNode<GreatHouse>("Greyjoy");
-
-		Graph.Add(stark, new Dictionary<GreatHouse, Edge>());
-		Graph.Add(lannister, new Dictionary<GreatHouse, Edge>());
-		Graph.Add(baratheonRenly, new Dictionary<GreatHouse, Edge>());
-		Graph.Add(baratheonStanis, new Dictionary<GreatHouse, Edge>());
-		Graph.Add(baratheonRobert, new Dictionary<GreatHouse, Edge>());
-		Graph.Add(frey, new Dictionary<GreatHouse, Edge>());
-		Graph.Add(bolton, new Dictionary<GreatHouse, Edge>());
-		Graph.Add(tully, new Dictionary<GreatHouse, Edge>());
-		Graph.Add(karstark, new Dictionary<GreatHouse, Edge>());
-		Graph.Add(tyrell, new Dictionary<GreatHouse, Edge>());
-		Graph.Add(mormont, new Dictionary<GreatHouse, Edge>());
-		Graph.Add(glover, new Dictionary<GreatHouse, Edge>());
-		Graph.Add(umber, new Dictionary<GreatHouse, Edge>());
-		Graph.Add(ryswell, new Dictionary<GreatHouse, Edge>());
-		Graph.Add(arryn, new Dictionary<GreatHouse, Edge>());
-		Graph.Add(greyjoy, new Dictionary<GreatHouse, Edge>());
+		foreach (var greatHouse in GreatHousesList)
+		{
+			GreatHouse greatHouseNode = GetNode<GreatHouse>((string)greatHouse);
+			Graph.Add(greatHouseNode, new Dictionary<GreatHouse, Edge>());
+		}
 
 		GD.Print("Sucesso em adicionar nós ao grafo, segue o jogo");
 	}

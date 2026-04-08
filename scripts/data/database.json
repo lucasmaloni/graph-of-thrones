@@ -1,4 +1,10 @@
 {
+	"GreatHouses":
+	[
+		"Stark", "Tully", "Ryswell", "Karstark", "Bolton", "Glover", 
+		"Mormont", "Umber", "Arryn", "Baratheon (Robert)", "Lannister", 
+		"Baratheon (Renly)", "Baratheon (Stanis)", "Tyrell", "Greyjoy", "Frey"
+	],
 	"InitialConnections":
 	[
 		{"from": "Stark", "to": "Tully", "intensity": 1.0},
