@@ -9,6 +9,7 @@ public partial class GraphController : Node2D
 	protected Dictionary<string, GreatHouse> HouseLookup { get; private set; } = new Dictionary<string, GreatHouse>();
 	protected DataManager dataManager = new DataManager();
 	protected HashSet<Tuple<GreatHouse, GreatHouse>> drawnConnections = new HashSet<Tuple<GreatHouse, GreatHouse>>();
+	protected const float BASE_CONECTION_WIDTH = 12;
 
 	public override void _Ready()
 	{
@@ -39,7 +40,9 @@ public partial class GraphController : Node2D
 				// Retorna caso ja tenhamos desenhado a relação casa A casa B, para evitar desenhar casa B com casa A
 				if (drawnConnections.Contains(connectionTuple)) continue; 
 				
-				DrawLine(from.GlobalPosition, to.Key.GlobalPosition, new Color(1, (float)0.84313726, 0, 1), (float)to.Value.Intensity * 5);
+				Color connectionColor = GetConnectionColor(to.Value.Intensity);
+
+				DrawLine(from.GlobalPosition, to.Key.GlobalPosition, connectionColor, BASE_CONECTION_WIDTH * (float)to.Value.Intensity, true);
 				drawnConnections.Add(connectionTuple);
 			}
 		}
@@ -100,5 +103,29 @@ public partial class GraphController : Node2D
 			AddConnection(HouseLookup[houseFrom], HouseLookup[houseTo], intensity);
 		}
 		GD.Print("Sucesso em criar todas as conexões");
+	}
+
+	private Color GetConnectionColor(double intensity)
+	{	
+		float clampedIntensity = Mathf.Clamp((float)intensity, 0.1f, 1.0f);
+
+		if (clampedIntensity == 0.5) return Colors.White;
+
+		if (clampedIntensity < 0.5)
+		{
+			float red = 1.0f;
+			float green = 0.5f - clampedIntensity;
+			float blue = 0.1f;
+			return new Color(red, green, blue, 1.0f);
+		}
+		else
+		{
+			float red = 0.1f;
+			float green = 1.0f - clampedIntensity;
+			float blue = 1.0f;
+			return new Color(red, green, blue, 1.0f);
+		}
+		
+
 	}
 }
