@@ -107,25 +107,21 @@ public partial class GraphController : Node2D
 
 	private Color GetConnectionColor(double intensity)
 	{	
-		float clampedIntensity = Mathf.Clamp((float)intensity, 0.1f, 1.0f);
+		float t = Mathf.Clamp((float)intensity, 0.0f, 1.0f);
+    
+		Color lowIntensityColor = new Color(1.0f, 0.1f, 0.1f, 1.0f);    // Vermelho suave
+		Color midIntensityColor = new Color(0.1f, 1.0f, 0.1f, 1.0f);    // Verde
+		Color highIntensityColor = new Color(0.1f, 0.1f, 1.0f, 1.0f);   // Azul suave
 
-		if (clampedIntensity == 0.5) return Colors.White;
-
-		if (clampedIntensity < 0.5)
+		if (t < 0.5f)
 		{
-			float red = 1.0f;
-			float green = 0.5f - clampedIntensity;
-			float blue = 0.1f;
-			return new Color(red, green, blue, 1.0f);
+			// Interpolação de Vermelho para Amarelo (0.0 a 0.5)
+			return lowIntensityColor.Lerp(midIntensityColor, t * 2.0f);
 		}
 		else
 		{
-			float red = 0.1f;
-			float green = 1.0f - clampedIntensity;
-			float blue = 1.0f;
-			return new Color(red, green, blue, 1.0f);
+			// Interpolação de Verde para Azul (0.5 a 1.0)
+			return midIntensityColor.Lerp(highIntensityColor, (t - 0.5f) * 2.0f);
 		}
-		
-
 	}
 }

@@ -30,5 +30,6 @@ project/assembly_name="graph-of-thrones"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 environment/defaults/default_clear_color=Color(0.88235295, 0.8235294, 0.6784314, 1)
