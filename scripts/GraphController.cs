@@ -35,7 +35,8 @@ public partial class GraphController : Node2D
     public override void _PhysicsProcess(double delta)
     {
         base._PhysicsProcess(delta);
-		ApplyForces();
+		ApplyAtractionForces();
+		ApplyRepulsionForces();
     }
     public override void _Draw()
     {
@@ -135,8 +136,11 @@ public partial class GraphController : Node2D
 		}
 	}
 
-	private void ApplyForces()
+	private void ApplyAtractionForces()
 	{
+		// Forças de atração apenas acontecem entre casas conectadas. 
+		// Casas não conectadas não se atraem e todas as casas se repelem por uma questão de repulsão natural.
+
 		appliedForces.Clear();
 		foreach(GreatHouse from in Graph.Keys)
 		{
@@ -151,7 +155,8 @@ public partial class GraphController : Node2D
 
 				if (distance <= RestDistance) continue; // Evita divisão por zero
 
-				float Strength = RepulsionConstant / distance * distance;
+				float displacement = distance - RestDistance;
+				float Strength = SpringConstant * displacement * (float)to.Value.Intensity;
 				Vector2 force = direction.Normalized() * Strength;
 
 				from.ApplyCentralForce(force);
@@ -159,5 +164,30 @@ public partial class GraphController : Node2D
 				appliedForces.Add(forceTuple);
 			}
 		}
+	}
+
+	private void ApplyRepulsionForces()
+	{
+		var greatHouses = HouseLookup.Values; // Me dá nós da cena (casas) <string, Casas>
+
+		foreach (GreatHouse houseA in greatHouses)
+		{
+			foreach (GreatHouse houseB in greatHouses)
+			{
+				if (houseA == houseB) continue; // Evita aplicar força em si mesmo
+
+				Vector2 direction = houseA.GlobalPosition - houseB.GlobalPosition;
+				float distance = direction.Length();
+
+				if (distance <= RestDistance) continue;
+
+				float Strength = RepulsionConstant / (distance * distance);
+				Vector2 repulsionVector = direction.Normalized() * Strength;
+
+				houseA.ApplyCentralForce(repulsionVector);
+            	houseB.ApplyCentralForce(-repulsionVector);
+			}
+		}
+		
 	}
 }
