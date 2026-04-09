@@ -2,6 +2,7 @@ using Godot;
 using GCollections = Godot.Collections;
 using System.Collections.Generic;
 using System;
+using System.ComponentModel;
 
 public partial class GraphController : Node2D
 {
@@ -9,7 +10,12 @@ public partial class GraphController : Node2D
 	protected Dictionary<string, GreatHouse> HouseLookup { get; private set; } = new Dictionary<string, GreatHouse>();
 	protected DataManager dataManager = new DataManager();
 	protected HashSet<Tuple<GreatHouse, GreatHouse>> drawnConnections = new HashSet<Tuple<GreatHouse, GreatHouse>>();
+	protected HashSet<Tuple<GreatHouse, GreatHouse>> appliedForces = new HashSet<Tuple<GreatHouse, GreatHouse>>();
 	protected const float BASE_CONECTION_WIDTH = 12;
+
+	[Export] public float RepulsionConstant = 8000f;
+	[Export] public float SpringConstant = 2f;
+	[Export] public float RestDistance = 300f; //Distância em que as casas repousam/param de se atrair
 
 	public override void _Ready()
 	{
@@ -26,6 +32,11 @@ public partial class GraphController : Node2D
 		QueueRedraw();
     }
 
+    public override void _PhysicsProcess(double delta)
+    {
+        base._PhysicsProcess(delta);
+		ApplyForces();
+    }
     public override void _Draw()
     {
         base._Draw();
@@ -77,7 +88,6 @@ public partial class GraphController : Node2D
 		GD.Print("Sucesso em adicionar nós ao grafo, segue o jogo");
 	}
 
-
 	private void SetupHousesLookup()
 	{
 		// Populamos o dicionário de lookup para termos a referência de cada casa a partir do nome.
@@ -122,6 +132,32 @@ public partial class GraphController : Node2D
 		{
 			// Interpolação de Verde para Azul (0.5 a 1.0)
 			return midIntensityColor.Lerp(highIntensityColor, (t - 0.5f) * 2.0f);
+		}
+	}
+
+	private void ApplyForces()
+	{
+		appliedForces.Clear();
+		foreach(GreatHouse from in Graph.Keys)
+		{
+			foreach (var to in Graph[from])
+			{
+				Tuple<GreatHouse, GreatHouse> forceTuple = new Tuple<GreatHouse, GreatHouse>(from, to.Key);
+
+				if (appliedForces.Contains(forceTuple)) continue; // Evita aplicar força mais de uma vez para a mesma conexão
+				
+				Vector2 direction = to.Key.GlobalPosition - from.GlobalPosition;
+				float distance = direction.Length();
+
+				if (distance <= RestDistance) continue; // Evita divisão por zero
+
+				float Strength = RepulsionConstant / distance * distance;
+				Vector2 force = direction.Normalized() * Strength;
+
+				from.ApplyCentralForce(force);
+
+				appliedForces.Add(forceTuple);
+			}
 		}
 	}
 }

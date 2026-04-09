@@ -7,7 +7,7 @@ public partial class GreatHouse : RigidBody2D
 	public string HouseName { get; set; }
 	[Export]
 	public float HouseSize { get; set; }
-	public Sprite2D SigilSprite { get; private set; }
+	public Sprite2D SigilSprite { get; private set; } 
 	public Vector2 targetDimensions { get; set; } = new Vector2(128, 141);
 	// As dimensões do icone são 600x660 - de forma que as dimensões que queremos devem ser (x, 1.1x)
 	// Tem forma melhor de fazer isso ao invés de só declarar cada uma, mas agora não vou priorizar essa otimização mínima
@@ -16,7 +16,9 @@ public partial class GreatHouse : RigidBody2D
 	{
 		SigilSprite = GetNode<Sprite2D>("Sigil");
 		GravityScale = 0; // Desativa a gravidade para que as casas não caiam
-		
+		LinearDamp = 10.0f; //Responsável pelo amortecimento - valores mais altos -> mais amortecimento
+		LockRotation = true;
+
 		if (!string.IsNullOrEmpty(HouseName))
 		{
 			string path = $"res://assets/icons/{HouseName}.svg";

@@ -10,7 +10,7 @@ script = ExtResource("1_fkpsj")
 
 [node name="Stark" parent="Houses" unique_id=1421553946 instance=ExtResource("2_c5yk2")]
 texture_filter = 1
-position = Vector2(471, 519)
+position = Vector2(519, 864)
 HouseName = "Stark"
 HouseSize = 1.0
 
@@ -75,7 +75,7 @@ HouseName = "Tyrell"
 HouseSize = 1.0
 
 [node name="Baratheon (Robert)" parent="Houses" unique_id=733497175 instance=ExtResource("2_c5yk2")]
-position = Vector2(531, 1324)
+position = Vector2(510, 1082)
 HouseName = "Baratheon (Robert)"
 HouseSize = 1.0
 
