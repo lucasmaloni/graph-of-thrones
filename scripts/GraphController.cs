@@ -2,7 +2,6 @@ using Godot;
 using GCollections = Godot.Collections;
 using System.Collections.Generic;
 using System;
-using System.ComponentModel;
 
 public partial class GraphController : Node2D
 {
@@ -78,15 +77,25 @@ public partial class GraphController : Node2D
 	{
 		// Aqui estamos pegando as referências de nós da cena, nesse caso, 
 		// cada nó desse tá como uma GreatHouse, por isso fazemose esse Get<GreatHouse>
-		var GreatHousesList = dataManager.GetDataFromJson("GreatHouses");
+		var AllHousesData = (GCollections.Dictionary)dataManager.GetDataFromJson("GreatHouses");
 
-		foreach (var greatHouse in GreatHousesList)
+		foreach (var greatHouse in AllHousesData)
 		{
-			GreatHouse greatHouseNode = GetNode<GreatHouse>((string)greatHouse);
+			string houseName = (string)greatHouse.Key;
+			GreatHouse greatHouseNode = GetNode<GreatHouse>(houseName);
+
+			GCollections.Dictionary houseData = (GCollections.Dictionary)greatHouse.Value;
+
+			float houseSize = 1.0f;
+			if (houseData.ContainsKey("houseSize"))
+			{
+				houseSize = (float)houseData["houseSize"];
+			}			
+
+			greatHouseNode.HouseSize = houseSize;
+			greatHouseNode.UpdateScale();
 			Graph.Add(greatHouseNode, new Dictionary<GreatHouse, Edge>());
 		}
-
-		GD.Print("Sucesso em adicionar nós ao grafo, segue o jogo");
 	}
 
 	private void SetupHousesLookup()
@@ -101,7 +110,7 @@ public partial class GraphController : Node2D
 
 	private void SetupInitialConnections()
 	{
-		GCollections.Array<Variant> InitialConections = dataManager.GetDataFromJson("InitialConnections");
+		GCollections.Array<Variant> InitialConections = (GCollections.Array<Variant>)dataManager.GetDataFromJson("InitialConnections");
 
 		foreach (Variant Connection in InitialConections)
 		{
@@ -113,7 +122,6 @@ public partial class GraphController : Node2D
 
 			AddConnection(HouseLookup[houseFrom], HouseLookup[houseTo], intensity);
 		}
-		GD.Print("Sucesso em criar todas as conexões");
 	}
 
 	private Color GetConnectionColor(double intensity)

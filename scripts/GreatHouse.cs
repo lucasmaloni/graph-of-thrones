@@ -5,7 +5,6 @@ public partial class GreatHouse : RigidBody2D
 {
 	[Export] 
 	public string HouseName { get; set; }
-	[Export]
 	public float HouseSize { get; set; }
 	public Sprite2D SigilSprite { get; private set; } 
 	public Vector2 targetDimensions { get; set; } = new Vector2(128, 141);
@@ -26,15 +25,21 @@ public partial class GreatHouse : RigidBody2D
 			if (ResourceLoader.Exists(path))
 			{
 				SigilSprite.Texture = GD.Load<Texture2D>(path);
-				Vector2 textureDimension = SigilSprite.Texture.GetSize();
-				
-				SigilSprite.Scale = targetDimensions / textureDimension * HouseSize;
-
+				UpdateScale();
 			}
 			else
 			{
 				GD.PrintErr($"FALHA: O arquivo de icone {HouseName}.svg não existe");
 			}
+		}
+	}
+
+	public void UpdateScale()
+	{
+		if (SigilSprite.Texture != null)
+		{
+			Vector2 textureDimension = SigilSprite.Texture.GetSize();
+			SigilSprite.Scale = targetDimensions / textureDimension * HouseSize;
 		}
 	}
 

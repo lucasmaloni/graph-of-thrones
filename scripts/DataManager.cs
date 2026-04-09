@@ -5,7 +5,7 @@ public partial class DataManager : Node
 {
 	public string DataFilePath {get; private set;} = "res://scripts/data/database.json";
 	
-	public Array<Variant> GetDataFromJson(string keyFromJson)
+	public Variant GetDataFromJson(string keyFromJson)
 	{
 		if (!FileAccess.FileExists(DataFilePath))
     	{
@@ -20,8 +20,7 @@ public partial class DataManager : Node
 
 		if (fullData.ContainsKey(keyFromJson))
 		{
-			// Fazemos casting de Array<Variant> para garantir o retorno correto
-			return (Array<Variant>)fullData[keyFromJson];
+			return fullData[keyFromJson];
 		}
 		else
 		{
