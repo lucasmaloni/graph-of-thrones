@@ -10,81 +10,65 @@ script = ExtResource("1_fkpsj")
 
 [node name="Stark" parent="Houses" unique_id=1421553946 instance=ExtResource("2_c5yk2")]
 texture_filter = 1
-position = Vector2(526, 740)
+position = Vector2(549, 903)
 HouseName = "Stark"
-HouseSize = 1.0
 
 [node name="Lannister" parent="Houses" unique_id=1765368564 instance=ExtResource("2_c5yk2")]
-position = Vector2(166, 1442)
+position = Vector2(299, 1290)
 HouseName = "Lannister"
-HouseSize = 1.0
 
 [node name="Bolton" parent="Houses" unique_id=207447263 instance=ExtResource("2_c5yk2")]
 position = Vector2(916, 547)
 HouseName = "Bolton"
-HouseSize = 1.0
 
 [node name="Arryn" parent="Houses" unique_id=568523910 instance=ExtResource("2_c5yk2")]
-position = Vector2(920, 705)
+position = Vector2(833, 1028)
 HouseName = "Arryn"
-HouseSize = 1.0
 
 [node name="Karstark" parent="Houses" unique_id=1345552832 instance=ExtResource("2_c5yk2")]
 position = Vector2(915, 405)
 HouseName = "Karstark"
-HouseSize = 1.0
 
 [node name="Umber" parent="Houses" unique_id=2146702295 instance=ExtResource("2_c5yk2")]
 position = Vector2(672, 257)
 HouseName = "Umber"
-HouseSize = 1.0
 
 [node name="Mormont" parent="Houses" unique_id=660186164 instance=ExtResource("2_c5yk2")]
-position = Vector2(337, 109)
+position = Vector2(440, 276)
 HouseName = "Mormont"
-HouseSize = 1.0
 
 [node name="Glover" parent="Houses" unique_id=2093759645 instance=ExtResource("2_c5yk2")]
-position = Vector2(197, 296)
+position = Vector2(265, 482)
 HouseName = "Glover"
-HouseSize = 1.0
 
 [node name="Ryswell" parent="Houses" unique_id=660944853 instance=ExtResource("2_c5yk2")]
-position = Vector2(83, 618)
+position = Vector2(273, 656)
 HouseName = "Ryswell"
-HouseSize = 1.0
 
 [node name="Tully" parent="Houses" unique_id=1061746715 instance=ExtResource("2_c5yk2")]
-position = Vector2(785, 844)
+position = Vector2(899, 745)
 HouseName = "Tully"
-HouseSize = 1.0
 
 [node name="Frey" parent="Houses" unique_id=274243001 instance=ExtResource("2_c5yk2")]
-position = Vector2(872, 1289)
+position = Vector2(1050, 800)
 HouseName = "Frey"
-HouseSize = 1.0
 
 [node name="Greyjoy" parent="Houses" unique_id=221054856 instance=ExtResource("2_c5yk2")]
 position = Vector2(118, 1013)
 HouseName = "Greyjoy"
-HouseSize = 1.0
 
 [node name="Tyrell" parent="Houses" unique_id=112041017 instance=ExtResource("2_c5yk2")]
-position = Vector2(368, 1700)
+position = Vector2(380, 1685)
 HouseName = "Tyrell"
-HouseSize = 1.0
 
 [node name="Baratheon (Robert)" parent="Houses" unique_id=733497175 instance=ExtResource("2_c5yk2")]
-position = Vector2(510, 1082)
+position = Vector2(548, 1143)
 HouseName = "Baratheon (Robert)"
-HouseSize = 1.0
 
 [node name="Baratheon (Stanis)" parent="Houses" unique_id=1793092399 instance=ExtResource("2_c5yk2")]
-position = Vector2(846, 1605)
+position = Vector2(846, 1502)
 HouseName = "Baratheon (Stanis)"
-HouseSize = 1.0
 
 [node name="Baratheon (Renly)" parent="Houses" unique_id=1924905621 instance=ExtResource("2_c5yk2")]
-position = Vector2(616, 1839)
+position = Vector2(639, 1725)
 HouseName = "Baratheon (Renly)"
-HouseSize = 1.0

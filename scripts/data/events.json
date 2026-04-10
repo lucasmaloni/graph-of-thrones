@@ -1,0 +1,49 @@
+{
+    "TimeLine": 
+    [
+        {
+            "title": "Ned Stark é preso e então executado",
+            "description": "Ned Stark é executado fazendo com que a relação principal do reino entre em colapso",
+            "aditionalInfo": [
+                "- É descoberto que Joffrey não é um herdeiro legítimo.",
+                "- Os irmãos de Robert decidem separadamente reinvindicar o trono baseado na ilegitmidade de Joffrey."
+            ],
+            "connectionsDecay":
+            [
+                {"from": "Stark", "to": "Baratheon (Robert)", "newIntensity": 0.0, "duration": 2.0 },
+                {"from": "Baratheon (Stanis)", "to": "Baratheon (Robert)", "newIntensity": 0.0, "duration": 2.0 },
+                {"from": "Baratheon (Renly)", "to": "Baratheon (Robert)", "newIntensity": 0.0, "duration": 2.0 },
+                {"from": "Tully", "to": "Baratheon (Robert)", "newIntensity": 0.0, "duration": 2.0 },
+                {"from": "Arryn", "to": "Baratheon (Robert)", "newIntensity": 0.0, "duration": 2.0 },
+                {"from": "Tyrell", "to": "Baratheon (Robert)", "newIntensity": 0.0, "duration": 2.0 },
+                {"from": "Greyjoy", "to": "Baratheon (Robert)", "newIntensity": 0.0, "duration": 2.0 }
+            ],
+            "connectionsIncrease": []
+        },
+        {
+            "title": "Inicio da Guerra dos Cinco Reis",
+            "description": "Após a execução e revelação da ilegitimidade de Joffrey, inicia-se a guerra dos cinco reis, onde os irmãos de Robert e outros senhores do reino se rebelam contra o trono",
+            "aditionalInfo": 
+            [
+                "- O Norte se une contra o Sul, liderados por Robb Stark, filho de Ned, que também é apoiado pelos Tully e as casas de Riverrun.",
+                "- Os Greyjoy, fazem uma rebelião própria.",
+                "- Os Tyrell se unem a Renly Baratheon",
+                "- Os Arryn decidem ficar neutros",
+                "- Os Lannister ficam isolados, sem aliados, mas com o controle do trono e da capital, Porto Real e Casterly Rock."
+            ],
+            "connectionsDecay": [],
+            "connectionsIncrease":
+            [
+                {"from": "Stark", "to": "Tully", "newIntensity": 1.0, "duration": 1.0 },
+                {"from": "Stark", "to": "Ryswell", "newIntensity": 1.0, "duration": 1.0 },
+                {"from": "Stark", "to": "Karstark", "newIntensity": 1.0, "duration": 1.0 },
+                {"from": "Stark", "to": "Bolton", "newIntensity": 1.0, "duration": 1.0 },
+                {"from": "Stark", "to": "Glover", "newIntensity": 1.0, "duration": 1.0 },
+                {"from": "Stark", "to": "Mormont", "newIntensity": 1.0, "duration": 1.0 },
+                {"from": "Stark", "to": "Umber", "newIntensity": 1.0, "duration": 1.0 },
+
+                {"from": "Baratheon (Renly)", "to": "Tyrell", "newIntensity": 1.0, "duration": 1.0 }
+            ]
+        }
+    ]
+}

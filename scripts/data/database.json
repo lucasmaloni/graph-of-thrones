@@ -1,22 +1,22 @@
 {
 	"GreatHouses":
 	{
-		"Stark": {"houseSize": 1},
-		"Tully": {"houseSize": 1},
-		"Ryswell": {"houseSize": 0.5},
-		"Karstark": {"houseSize": 0.5},
-		"Bolton": {"houseSize": 0.5},
-		"Glover": {"houseSize": 0.5},
-		"Mormont": {"houseSize": 0.5},
-		"Umber": {"houseSize": 0.5},
-		"Arryn": {"houseSize": 1},
-		"Baratheon (Robert)": {"houseSize": 1},
-		"Lannister": {"houseSize": 1},
-		"Baratheon (Renly)": {"houseSize": 1},
-		"Baratheon (Stanis)": {"houseSize": 1},
-		"Tyrell": {"houseSize": 1},
-		"Greyjoy": {"houseSize": 1},
-		"Frey": {"houseSize": 0.5}
+		"Stark": {"houseSize": 1, "faction": "North"},
+		"Ryswell": {"houseSize": 0.5, "faction": "North"},
+		"Karstark": {"houseSize": 0.5, "faction": "North"},
+		"Bolton": {"houseSize": 0.5, "faction": "North"},
+		"Glover": {"houseSize": 0.5, "faction": "North"},
+		"Mormont": {"houseSize": 0.5, "faction": "North"},
+		"Umber": {"houseSize": 0.5, "faction": "North"},
+		"Arryn": {"houseSize": 1, "faction": "Vale"},
+		"Baratheon (Robert)": {"houseSize": 1, "faction": "Crownlands"},
+		"Baratheon (Renly)": {"houseSize": 1, "faction": "Stormlands"},
+		"Baratheon (Stanis)": {"houseSize": 1, "faction": "Stormlands"},
+		"Lannister": {"houseSize": 1, "faction": "Westerlands"},
+		"Tyrell": {"houseSize": 1, "faction": "Reach"},
+		"Greyjoy": {"houseSize": 1, "faction": "Iron Islands"},
+		"Tully": {"houseSize": 1, "faction": "Riverlands"},
+		"Frey": {"houseSize": 0.5, "faction": "Riverlands"}
 	},
 	"InitialConnections":
 	[
@@ -27,12 +27,15 @@
 		{"from": "Stark", "to": "Glover", "intensity": 0.6},
 		{"from": "Stark", "to": "Mormont", "intensity": 0.6},
 		{"from": "Stark", "to": "Umber", "intensity": 0.6},
-		{"from": "Stark", "to": "Arryn", "intensity": 0.75},
 		{"from": "Stark", "to": "Baratheon (Robert)", "intensity": 1.0},
 		{"from": "Tully", "to": "Frey", "intensity": 0.5},
 		{"from": "Baratheon (Robert)", "to": "Lannister", "intensity": 1.0},
 		{"from": "Baratheon (Robert)", "to": "Baratheon (Renly)", "intensity": 0.75},
 		{"from": "Baratheon (Robert)", "to": "Baratheon (Stanis)", "intensity": 0.75},
-		{"from": "Baratheon (Robert)", "to": "Tyrell", "intensity": 0.4}
+		{"from": "Baratheon (Robert)", "to": "Tyrell", "intensity": 0.4},
+		{"from": "Baratheon (Robert)", "to": "Greyjoy", "intensity": 0.5},
+		{"from": "Baratheon (Robert)", "to": "Tully", "intensity": 0.5},
+		{"from": "Baratheon (Robert)", "to": "Arryn", "intensity": 1.0}
+		
 	]
 }
