@@ -6,6 +6,7 @@ public partial class GreatHouse : RigidBody2D
 	[Export] 
 	public string HouseName { get; set; }
 	public float HouseSize { get; set; }
+	public string Faction { get; set; }
 	public Sprite2D SigilSprite { get; private set; } 
 	public Vector2 targetDimensions { get; set; } = new Vector2(128, 141);
 	// As dimensões do icone são 600x660 - de forma que as dimensões que queremos devem ser (x, 1.1x)

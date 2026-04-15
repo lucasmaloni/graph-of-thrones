@@ -37,6 +37,7 @@ public partial class GraphController : Node2D
 		ApplyAtractionForces();
 		ApplyRepulsionForces();
     }
+
     public override void _Draw()
     {
         base._Draw();
@@ -85,15 +86,14 @@ public partial class GraphController : Node2D
 			GreatHouse greatHouseNode = GetNode<GreatHouse>(houseName);
 
 			GCollections.Dictionary houseData = (GCollections.Dictionary)greatHouse.Value;
-
-			float houseSize = 1.0f;
-			if (houseData.ContainsKey("houseSize"))
-			{
-				houseSize = (float)houseData["houseSize"];
-			}			
+			float houseSize = (float) houseData["houseSize"];
+			string houseFaction = (string) houseData["faction"];
 
 			greatHouseNode.HouseSize = houseSize;
+			greatHouseNode.Faction = houseFaction;
 			greatHouseNode.UpdateScale();
+
+			GD.Print($"Adicionando {greatHouseNode.HouseName} ao grafo com tamanho {greatHouseNode.HouseSize} e facção {greatHouseNode.Faction}");
 			Graph.Add(greatHouseNode, new Dictionary<GreatHouse, Edge>());
 		}
 	}
