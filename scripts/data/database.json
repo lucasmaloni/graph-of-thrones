@@ -1,22 +1,22 @@
 {
 	"GreatHouses":
 	{
-		"Stark": {"houseSize": 1, "faction": "North"},
-		"Ryswell": {"houseSize": 0.5, "faction": "North"},
-		"Karstark": {"houseSize": 0.5, "faction": "North"},
-		"Bolton": {"houseSize": 0.5, "faction": "North"},
-		"Glover": {"houseSize": 0.5, "faction": "North"},
-		"Mormont": {"houseSize": 0.5, "faction": "North"},
-		"Umber": {"houseSize": 0.5, "faction": "North"},
-		"Arryn": {"houseSize": 1, "faction": "Vale"},
-		"Baratheon (Robert)": {"houseSize": 1, "faction": "Crownlands"},
-		"Baratheon (Renly)": {"houseSize": 1, "faction": "Stormlands"},
-		"Baratheon (Stanis)": {"houseSize": 1, "faction": "Stormlands"},
-		"Lannister": {"houseSize": 1, "faction": "Westerlands"},
-		"Tyrell": {"houseSize": 1, "faction": "Reach"},
-		"Greyjoy": {"houseSize": 1, "faction": "Iron Islands"},
-		"Tully": {"houseSize": 1, "faction": "Riverlands"},
-		"Frey": {"houseSize": 0.5, "faction": "Riverlands"}
+		"Stark": {"Size": 1, "faction": "North"},
+		"Ryswell": {"Size": 0.5, "faction": "North"},
+		"Karstark": {"Size": 0.5, "faction": "North"},
+		"Bolton": {"Size": 0.5, "faction": "North"},
+		"Glover": {"Size": 0.5, "faction": "North"},
+		"Mormont": {"Size": 0.5, "faction": "North"},
+		"Umber": {"Size": 0.5, "faction": "North"},
+		"Arryn": {"Size": 1, "faction": "Vale"},
+		"Baratheon (Robert)": {"Size": 1, "faction": "Crownlands"},
+		"Baratheon (Renly)": {"Size": 1, "faction": "Stormlands"},
+		"Baratheon (Stanis)": {"Size": 1, "faction": "Stormlands"},
+		"Lannister": {"Size": 1, "faction": "Westerlands"},
+		"Tyrell": {"Size": 1, "faction": "Reach"},
+		"Greyjoy": {"Size": 1, "faction": "Iron Islands"},
+		"Tully": {"Size": 1, "faction": "Riverlands"},
+		"Frey": {"Size": 0.5, "faction": "Riverlands"}
 	},
 	"InitialConnections":
 	[

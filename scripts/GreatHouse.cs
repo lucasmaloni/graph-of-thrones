@@ -5,7 +5,7 @@ public partial class GreatHouse : RigidBody2D
 {
 	[Export] 
 	public string HouseName { get; set; }
-	public float HouseSize { get; set; }
+	public float Size { get; set; }
 	public string Faction { get; set; }
 	public Sprite2D SigilSprite { get; private set; } 
 	public Vector2 targetDimensions { get; set; } = new Vector2(128, 141);
@@ -40,7 +40,7 @@ public partial class GreatHouse : RigidBody2D
 		if (SigilSprite.Texture != null)
 		{
 			Vector2 textureDimension = SigilSprite.Texture.GetSize();
-			SigilSprite.Scale = targetDimensions / textureDimension * HouseSize;
+			SigilSprite.Scale = targetDimensions / textureDimension * Size;
 		}
 	}
 
