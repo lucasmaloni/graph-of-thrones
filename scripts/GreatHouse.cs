@@ -4,7 +4,7 @@ using Godot;
 public partial class GreatHouse : RigidBody2D
 {
 	[Export] 
-	public string HouseName { get; set; }
+	public new string Name { get; set; }
 	public float Size { get; set; }
 	public string Faction { get; set; }
 	public Sprite2D SigilSprite { get; private set; } 
@@ -19,9 +19,9 @@ public partial class GreatHouse : RigidBody2D
 		LinearDamp = 10.0f; //Responsável pelo amortecimento - valores mais altos -> mais amortecimento
 		LockRotation = true;
 
-		if (!string.IsNullOrEmpty(HouseName))
+		if (!string.IsNullOrEmpty(Name))
 		{
-			string path = $"res://assets/icons/{HouseName}.svg";
+			string path = $"res://assets/icons/{Name}.svg";
  
 			if (ResourceLoader.Exists(path))
 			{
@@ -30,7 +30,7 @@ public partial class GreatHouse : RigidBody2D
 			}
 			else
 			{
-				GD.PrintErr($"FALHA: O arquivo de icone {HouseName}.svg não existe");
+				GD.PrintErr($"FALHA: O arquivo de icone {Name}.svg não existe");
 			}
 		}
 	}

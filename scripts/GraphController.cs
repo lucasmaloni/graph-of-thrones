@@ -82,8 +82,8 @@ public partial class GraphController : Node2D
 
 		foreach (var greatHouse in AllHousesData)
 		{
-			string houseName = (string)greatHouse.Key;
-			GreatHouse greatHouseNode = GetNode<GreatHouse>(houseName);
+			string Name = (string)greatHouse.Key;
+			GreatHouse greatHouseNode = GetNode<GreatHouse>(Name);
 
 			GCollections.Dictionary houseData = (GCollections.Dictionary)greatHouse.Value;
 			float Size = (float) houseData["Size"];
@@ -93,7 +93,7 @@ public partial class GraphController : Node2D
 			greatHouseNode.Faction = houseFaction;
 			greatHouseNode.UpdateScale();
 
-			GD.Print($"Adicionando {greatHouseNode.HouseName} ao grafo com tamanho {greatHouseNode.Size} e facção {greatHouseNode.Faction}");
+			GD.Print($"Adicionando {greatHouseNode.Name} ao grafo com tamanho {greatHouseNode.Size} e facção {greatHouseNode.Faction}");
 			Graph.Add(greatHouseNode, new Dictionary<GreatHouse, Edge>());
 		}
 	}
@@ -104,7 +104,7 @@ public partial class GraphController : Node2D
 		// O objetivo é ter a referência do nó a partir do nome, necessário para criação de conexões em SetupInitialRelations() e outras mudanças futuras
 		foreach (var house in Graph.Keys)
 		{
-			HouseLookup[house.HouseName] = house;
+			HouseLookup[house.Name] = house;
 		}
 	}
 
