@@ -1,0 +1,101 @@
+{
+    "DeclarativeData":
+    {
+        "GreatHouses": 
+        [
+            "Stark", "Tully", "Arryn", "Baratheon (Robert)",
+            "Baratheon (Renly)", "Baratheon (Stanis)", "Lannister",
+            "Tyrell", "Greyjoy", "Martell"
+        ],
+        "Kingdoms":
+        [
+            "North", "Riverlands", "Vale", "Crownlands",
+            "Stormlands", "Westerlands", "Reach", "Iron Islands",
+            "Dorne"
+        ]
+    },
+    "GreatHousesData":
+    {
+        "Size": 1,
+        "Stark": { 
+            "rules": "North",
+            "isLoyalToTheCrown": true
+        },
+        "Tully": {
+            "rules": "Riverlands",
+            "isLoyalToTheCrown": true
+        },
+        "Arryn": {
+            "rules": "Vale",
+            "isLoyalToTheCrown": true
+        },
+        "Baratheon (Robert)": {
+            "rules": "Crownlands",
+            "isLoyalToTheCrown": true
+        },
+        "Baratheon (Renly)": {
+            "rules": "Stormlands",
+            "isLoyalToTheCrown": true
+        },
+        "Baratheon (Stanis)": {
+            "rules": "Stormlands",
+            "isLoyalToTheCrown": true
+        },
+        "Lannister": {
+            "rules": "Westerlands",
+            "isLoyalToTheCrown": true
+        },
+        "Tyrell": {
+            "rules": "Reach",
+            "isLoyalToTheCrown": true
+        },
+        "Greyjoy": {
+            "rules": "Iron Islands",
+            "isLoyalToTheCrown": true
+        },
+        "Martell": {
+            "rules": "Dorne",
+            "isLoyalToTheCrown": true
+        }
+    },
+    "LordlyHousesData":
+    {
+        "Size": 0.5,
+        "North": {
+            "IsVassalOf": "Stark",
+            "Names": ["Ryswell", "Karstark", "Bolton", "Glover", "Mormont", "Umber"]
+        },
+        "Riverlands": {
+            "IsVassalOf": "Tully",
+            "Names": ["Frey"]
+        },
+        "Vale": {
+            "IsVassalOf": "Arryn",
+            "Names": []
+        },
+        "Crownlands": {
+            "IsVassalOf": "Baratheon (Robert)",
+            "Names": []
+        },
+        "Stormlands": {
+            "IsVassalOf": "Baratheon (Renly)",
+            "Names": []
+        },
+        "Westerlands": {
+            "IsVassalOf": "Lannister",
+            "Names": []
+        },
+        "Reach": {
+            "IsVassalOf": "Tyrell",
+            "Names": []
+        },
+        "Iron Islands": {
+            "IsVassalOf": "Greyjoy",
+            "Names": []
+        },
+        "Dorne": {
+            "IsVassalOf": "Martell",
+            "Names": []
+        }
+    }
+}
