@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://1ud1xqemeeos"]
 
-[ext_resource type="Script" uid="uid://b41cl355olg14" path="res://scripts/GreatHouse.cs" id="1_33pc1"]
+[ext_resource type="Script" uid="uid://b41cl355olg14" path="res://scripts/HousesObj/GreatHouse.cs" id="1_33pc1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_33pc1"]
 radius = 30.0
