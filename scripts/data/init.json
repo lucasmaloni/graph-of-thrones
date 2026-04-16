@@ -1,100 +1,97 @@
 {
-    "DeclarativeData":
-    {
-        "GreatHouses": 
-        [
-            "Stark", "Tully", "Arryn", "Baratheon (Robert)",
-            "Baratheon (Renly)", "Baratheon (Stanis)", "Lannister",
-            "Tyrell", "Greyjoy", "Martell"
-        ],
-        "Kingdoms":
-        [
-            "North", "Riverlands", "Vale", "Crownlands",
-            "Stormlands", "Westerlands", "Reach", "Iron Islands",
-            "Dorne"
-        ]
-    },
+    "GreatHouses": 
+    [
+        "Stark", "Tully", "Arryn", "Baratheon (Robert)",
+        "Baratheon (Renly)", "Baratheon (Stanis)", "Lannister",
+        "Tyrell", "Greyjoy", "Martell"
+    ],
+    "Kingdoms":
+    [
+        "North", "Riverlands", "Vale", "Crownlands",
+        "Stormlands", "Westerlands", "Reach", "Iron Islands",
+        "Dorne"
+    ],
     "GreatHousesData":
     {
         "Size": 1,
         "Stark": { 
-            "rules": "North",
-            "isLoyalToTheCrown": true
+            "Rules": "North",
+            "IsLoyalToTheCrown": true
         },
         "Tully": {
-            "rules": "Riverlands",
-            "isLoyalToTheCrown": true
+            "Rules": "Riverlands",
+            "IsLoyalToTheCrown": true
         },
         "Arryn": {
-            "rules": "Vale",
-            "isLoyalToTheCrown": true
+            "Rules": "Vale",
+            "IsLoyalToTheCrown": true
         },
         "Baratheon (Robert)": {
-            "rules": "Crownlands",
-            "isLoyalToTheCrown": true
+            "Rules": "Crownlands",
+            "IsLoyalToTheCrown": true
         },
         "Baratheon (Renly)": {
-            "rules": "Stormlands",
-            "isLoyalToTheCrown": true
+            "Rules": "Stormlands",
+            "IsLoyalToTheCrown": true
         },
         "Baratheon (Stanis)": {
-            "rules": "Stormlands",
-            "isLoyalToTheCrown": true
+            "Rules": "Stormlands",
+            "IsLoyalToTheCrown": true
         },
         "Lannister": {
-            "rules": "Westerlands",
-            "isLoyalToTheCrown": true
+            "Rules": "Westerlands",
+            "IsLoyalToTheCrown": true
         },
         "Tyrell": {
-            "rules": "Reach",
-            "isLoyalToTheCrown": true
+            "Rules": "Reach",
+            "IsLoyalToTheCrown": true
         },
         "Greyjoy": {
-            "rules": "Iron Islands",
-            "isLoyalToTheCrown": true
+            "Rules": "Iron Islands",
+            "IsLoyalToTheCrown": true
         },
         "Martell": {
-            "rules": "Dorne",
-            "isLoyalToTheCrown": true
+            "Rules": "Dorne",
+            "IsLoyalToTheCrown": true
         }
     },
     "LordlyHousesData":
     {
         "Size": 0.5,
         "North": {
-            "IsVassalOf": "Stark",
+            "VassalOf": "Stark",
             "Names": ["Ryswell", "Karstark", "Bolton", "Glover", "Mormont", "Umber"]
         },
         "Riverlands": {
-            "IsVassalOf": "Tully",
+            "VassalOf": "Tully",
             "Names": ["Frey"]
         },
         "Vale": {
-            "IsVassalOf": "Arryn",
+            "VassalOf": "Arryn",
             "Names": []
         },
         "Crownlands": {
-            "IsVassalOf": "Baratheon (Robert)",
+            "VassalOf": "Baratheon (Robert)",
             "Names": []
         },
         "Stormlands": {
-            "IsVassalOf": "Baratheon (Renly)",
+            "VassalOf": "Baratheon (Renly)",
             "Names": []
         },
         "Westerlands": {
-            "IsVassalOf": "Lannister",
+            "VassalOf": "Lannister",
             "Names": []
         },
         "Reach": {
-            "IsVassalOf": "Tyrell",
+            "VassalOf": "Tyrell",
             "Names": []
         },
         "Iron Islands": {
-            "IsVassalOf": "Greyjoy",
+            "VassalOf": "Greyjoy",
             "Names": []
         },
         "Dorne": {
-            "IsVassalOf": "Martell",
+            "VassalOf": "Martell",
             "Names": []
         }
     }

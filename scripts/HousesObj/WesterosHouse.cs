@@ -4,7 +4,6 @@ public partial class WesterosHouse : RigidBody2D
 {
     [Export] public string HouseName { get; set; } = string.Empty;
     [Export] public float Size { get; set; } = 1.0f;
-    [Export] public string Faction { get; set; } = string.Empty;
     
     // Dimensões padrão para manter a proporção (x, 1.1x)
     public Vector2 TargetDimensions { get; set; } = new Vector2(128, 141);

@@ -5,11 +5,11 @@ using System;
 
 public partial class GraphController : Node2D
 {
-	protected Dictionary<GreatHouse, Dictionary<GreatHouse, Edge>> Graph { get; private set; } = new Dictionary<GreatHouse, Dictionary<GreatHouse, Edge>>();
-	protected Dictionary<string, GreatHouse> HouseLookup { get; private set; } = new Dictionary<string, GreatHouse>();
+	protected Dictionary<WesterosHouse, Dictionary<WesterosHouse, Edge>> Graph { get; private set; } = new Dictionary<WesterosHouse, Dictionary<WesterosHouse, Edge>>();
+	protected Dictionary<string, WesterosHouse> HouseLookup { get; private set; } = new Dictionary<string, WesterosHouse>();
 	protected DataManager dataManager = new DataManager();
-	protected HashSet<Tuple<GreatHouse, GreatHouse>> drawnConnections = new HashSet<Tuple<GreatHouse, GreatHouse>>();
-	protected HashSet<Tuple<GreatHouse, GreatHouse>> appliedForces = new HashSet<Tuple<GreatHouse, GreatHouse>>();
+	protected HashSet<Tuple<WesterosHouse, WesterosHouse>> drawnConnections = new HashSet<Tuple<WesterosHouse, WesterosHouse>>();
+	protected HashSet<Tuple<WesterosHouse, WesterosHouse>> appliedForces = new HashSet<Tuple<WesterosHouse, WesterosHouse>>();
 	protected const float BASE_CONECTION_WIDTH = 12;
 
 	[Export] public float RepulsionConstant = 8000f;
@@ -18,7 +18,8 @@ public partial class GraphController : Node2D
 
 	public override void _Ready()
 	{
-		SetupInitialHouses();
+		SetupInitialGreatHouses();
+		SetupInitialLordlyHouses();
 		SetupHousesLookup();
 		SetupInitialConnections();
 	}
@@ -43,11 +44,11 @@ public partial class GraphController : Node2D
         base._Draw();
 
 		drawnConnections.Clear();
-		foreach (GreatHouse from in Graph.Keys)
+		foreach (WesterosHouse from in Graph.Keys)
 		{
 			foreach (var to in Graph[from])
 			{
-				Tuple<GreatHouse, GreatHouse> connectionTuple = new Tuple<GreatHouse, GreatHouse>(from, to.Key);
+				Tuple<WesterosHouse, WesterosHouse> connectionTuple = new Tuple<WesterosHouse, WesterosHouse>(from, to.Key);
 				
 				// Retorna caso ja tenhamos desenhado a relação casa A casa B, para evitar desenhar casa B com casa A
 				if (drawnConnections.Contains(connectionTuple)) continue; 
@@ -60,11 +61,11 @@ public partial class GraphController : Node2D
 		}
     }
 
-	private void AddConnection(GreatHouse from, GreatHouse to, double intensity)
+	private void AddConnection(WesterosHouse from, WesterosHouse to, double intensity)
 	{
 		/*
 			Considerar melhorar essa adição de conexões:
-			1. Ao invés de usar uma lista, usar um Dicionario<GreatHouse, Edge>
+			1. Ao invés de usar uma lista, usar um Dicionario<WesterosHouse, Edge>
 			2. Validar se ambos os vértices existem e se as conexões também existem
 		*/
 
@@ -74,28 +75,61 @@ public partial class GraphController : Node2D
 		Graph[to].Add(from, new Edge(intensity));
 	}
 
-	private void SetupInitialHouses()
+	private void SetupInitialGreatHouses()
 	{
 		// Aqui estamos pegando as referências de nós da cena, nesse caso, 
 		// cada nó desse tá como uma GreatHouse, por isso fazemose esse Get<GreatHouse>
-		var AllHousesData = (GCollections.Dictionary)dataManager.GetDataFromJson("GreatHouses");
+		var GreatHousesNames = (GCollections.Array<string>)dataManager.GetDataFromJson("init", "GreatHouses");
+		var GreatHousesData = (GCollections.Dictionary)dataManager.GetDataFromJson("init", "GreatHousesData");
+		float defaultSize = (float)GreatHousesData["Size"];
 
-		foreach (var greatHouse in AllHousesData)
+		foreach (string greatHouse in GreatHousesNames)
 		{
-			string Name = (string)greatHouse.Key;
-			GreatHouse greatHouseNode = GetNode<GreatHouse>(Name);
-
-			GCollections.Dictionary houseData = (GCollections.Dictionary)greatHouse.Value;
-			float Size = (float) houseData["Size"];
-			string houseFaction = (string) houseData["faction"];
-
-			greatHouseNode.Size = Size;
-			greatHouseNode.Faction = houseFaction;
+			GreatHouse greatHouseNode = GetNode<GreatHouse>(greatHouse);
+			GCollections.Dictionary houseData = (GCollections.Dictionary)GreatHousesData[greatHouse];
+			
+			greatHouseNode.Size = defaultSize;
+			greatHouseNode.Rules = (string) houseData["Rules"];
+			greatHouseNode.IsLoyalToTheCrown = (bool) houseData["IsLoyalToTheCrown"];
+			
 			greatHouseNode.UpdateScale();
+			Graph.Add(greatHouseNode, new Dictionary<WesterosHouse, Edge>());
 
-			GD.Print($"Adicionando {greatHouseNode.Name} ao grafo com tamanho {greatHouseNode.Size} e facção {greatHouseNode.Faction}");
-			Graph.Add(greatHouseNode, new Dictionary<GreatHouse, Edge>());
+			//GD.Print($"Adicionando {greatHouseNode.Name} ao grafo com tamanho {greatHouseNode.Size} e facção {greatHouseNode.Rules} que é leal à coroa? {greatHouseNode.IsLoyalToTheCrown}");
 		}
+
+		GD.Print("Great Houses iniciadas com sucesso");
+	}
+
+	private void SetupInitialLordlyHouses()
+	{
+		var Kingdoms = (GCollections.Array<string>)dataManager.GetDataFromJson("init", "Kingdoms");
+		var LordlyHousesData = (GCollections.Dictionary)dataManager.GetDataFromJson("init", "LordlyHousesData");
+		float defaultSize = (float)LordlyHousesData["Size"];
+		
+		foreach (string kingdom in Kingdoms)
+		{
+			GCollections.Dictionary kingdomData = (GCollections.Dictionary) LordlyHousesData[kingdom];
+			GCollections.Array LordlyHouses = (GCollections.Array) kingdomData["Names"];
+			
+			string defaultVassalOf = (string) kingdomData["VassalOf"];
+			
+			foreach (string lordlyhouse in LordlyHouses)
+			{
+				LordlyHouse lordlyHouseNode = GetNode<LordlyHouse>(lordlyhouse);
+
+				lordlyHouseNode.Size = defaultSize;
+				lordlyHouseNode.VassalOf = defaultVassalOf;
+				lordlyHouseNode.Faction = kingdom;
+
+				lordlyHouseNode.UpdateScale();
+				Graph.Add(lordlyHouseNode, new Dictionary<WesterosHouse, Edge>());
+				
+				GD.Print($"Adicionando LordlyHouse {lordlyHouseNode.Name} ao grafo com tamanho {lordlyHouseNode.Size} facção {lordlyHouseNode.Faction} leal a {lordlyHouseNode.VassalOf}");
+			}
+		}
+
+		GD.Print("LordlyHouses adicionadas ao grafo");
 	}
 
 	private void SetupHousesLookup()
@@ -110,7 +144,7 @@ public partial class GraphController : Node2D
 
 	private void SetupInitialConnections()
 	{
-		GCollections.Array<Variant> InitialConections = (GCollections.Array<Variant>)dataManager.GetDataFromJson("InitialConnections");
+		GCollections.Array<Variant> InitialConections = (GCollections.Array<Variant>)dataManager.GetDataFromJson("database","InitialConnections");
 
 		foreach (Variant Connection in InitialConections)
 		{
@@ -150,11 +184,11 @@ public partial class GraphController : Node2D
 		// Casas não conectadas não se atraem e todas as casas se repelem por uma questão de repulsão natural.
 
 		appliedForces.Clear();
-		foreach(GreatHouse from in Graph.Keys)
+		foreach(WesterosHouse from in Graph.Keys)
 		{
 			foreach (var to in Graph[from])
 			{
-				Tuple<GreatHouse, GreatHouse> forceTuple = new Tuple<GreatHouse, GreatHouse>(from, to.Key);
+				Tuple<WesterosHouse, WesterosHouse> forceTuple = new Tuple<WesterosHouse, WesterosHouse>(from, to.Key);
 
 				if (appliedForces.Contains(forceTuple)) continue; // Evita aplicar força mais de uma vez para a mesma conexão
 				
@@ -178,9 +212,9 @@ public partial class GraphController : Node2D
 	{
 		var greatHouses = HouseLookup.Values; // Me dá nós da cena (casas) <string, Casas>
 
-		foreach (GreatHouse houseA in greatHouses)
+		foreach (WesterosHouse houseA in greatHouses)
 		{
-			foreach (GreatHouse houseB in greatHouses)
+			foreach (WesterosHouse houseB in greatHouses)
 			{
 				if (houseA == houseB) continue; // Evita aplicar força em si mesmo
 
