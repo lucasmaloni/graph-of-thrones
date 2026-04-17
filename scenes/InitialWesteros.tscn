@@ -187,3 +187,51 @@ position = Vector2(350, 1740)
 
 [node name="Martell" parent="Houses" unique_id=652849799 instance=ExtResource("2_c5yk2")]
 position = Vector2(899, 1827)
+
+[node name="Allyrion" parent="Houses" unique_id=1520880593 instance=ExtResource("2_c5yk2")]
+position = Vector2(835, 1979)
+script = ExtResource("3_c5yk2")
+
+[node name="Blackmont" parent="Houses" unique_id=703239183 instance=ExtResource("2_c5yk2")]
+position = Vector2(931, 1995)
+script = ExtResource("3_c5yk2")
+
+[node name="Dayne" parent="Houses" unique_id=157371834 instance=ExtResource("2_c5yk2")]
+position = Vector2(750, 1925)
+script = ExtResource("3_c5yk2")
+
+[node name="Fowler" parent="Houses" unique_id=488597658 instance=ExtResource("2_c5yk2")]
+position = Vector2(659, 1906)
+script = ExtResource("3_c5yk2")
+
+[node name="Gargalen" parent="Houses" unique_id=1719723911 instance=ExtResource("2_c5yk2")]
+position = Vector2(1091, 2022)
+script = ExtResource("3_c5yk2")
+
+[node name="Jordayne" parent="Houses" unique_id=627402386 instance=ExtResource("2_c5yk2")]
+position = Vector2(1028, 2048)
+script = ExtResource("3_c5yk2")
+
+[node name="Manwoody" parent="Houses" unique_id=1099366789 instance=ExtResource("2_c5yk2")]
+position = Vector2(883, 2064)
+script = ExtResource("3_c5yk2")
+
+[node name="Qorgyle" parent="Houses" unique_id=2118274017 instance=ExtResource("2_c5yk2")]
+position = Vector2(740, 2022)
+script = ExtResource("3_c5yk2")
+
+[node name="Toland" parent="Houses" unique_id=110220588 instance=ExtResource("2_c5yk2")]
+position = Vector2(807, 2064)
+script = ExtResource("3_c5yk2")
+
+[node name="Uller" parent="Houses" unique_id=503739435 instance=ExtResource("2_c5yk2")]
+position = Vector2(692, 1979)
+script = ExtResource("3_c5yk2")
+
+[node name="Vaith" parent="Houses" unique_id=2112180719 instance=ExtResource("2_c5yk2")]
+position = Vector2(969, 2064)
+script = ExtResource("3_c5yk2")
+
+[node name="Yronwood" parent="Houses" unique_id=253460704 instance=ExtResource("2_c5yk2")]
+position = Vector2(1021, 1979)
+script = ExtResource("3_c5yk2")

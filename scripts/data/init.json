@@ -104,7 +104,11 @@
         },
         "Dorne": {
             "VassalOf": "Martell",
-            "Names": []
+            "Names": [
+                "Allyrion", "Blackmont", "Dayne", "Fowler", 
+                "Gargalen", "Jordayne", "Manwoody", "Qorgyle", 
+                "Toland", "Uller", "Vaith", "Yronwood"
+            ]
         }
     },
     "GreatHousesConnections":
