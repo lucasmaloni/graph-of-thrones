@@ -121,7 +121,7 @@ public partial class GraphController : Node2D
 				lordlyHouseNode.UpdateScale();
 				Graph.Add(lordlyHouseNode, new Dictionary<WesterosHouse, Edge>());
 				
-				GD.Print($"Adicionando LordlyHouse {lordlyHouseNode.Name} ao grafo com tamanho {lordlyHouseNode.Size} facção {lordlyHouseNode.Faction} leal a {lordlyHouseNode.VassalOf}");
+				//GD.Print($"Adicionando LordlyHouse {lordlyHouseNode.Name} ao grafo com tamanho {lordlyHouseNode.Size} facção {lordlyHouseNode.Faction} leal a {lordlyHouseNode.VassalOf}");
 			}
 		}
 

@@ -11,7 +11,7 @@ script = ExtResource("1_fkpsj")
 
 [node name="Stark" parent="Houses" unique_id=1421553946 instance=ExtResource("2_c5yk2")]
 texture_filter = 1
-position = Vector2(586, 379)
+position = Vector2(552, 483)
 
 [node name="Bolton" parent="Houses" unique_id=207447263 instance=ExtResource("2_c5yk2")]
 position = Vector2(1001, 331)
@@ -22,48 +22,168 @@ position = Vector2(870, 193)
 script = ExtResource("3_c5yk2")
 
 [node name="Umber" parent="Houses" unique_id=2146702295 instance=ExtResource("2_c5yk2")]
-position = Vector2(551, 144)
+position = Vector2(709, 96)
 script = ExtResource("3_c5yk2")
 
 [node name="Mormont" parent="Houses" unique_id=660186164 instance=ExtResource("2_c5yk2")]
-position = Vector2(259, 201)
+position = Vector2(350, 106)
 script = ExtResource("3_c5yk2")
 
 [node name="Glover" parent="Houses" unique_id=2093759645 instance=ExtResource("2_c5yk2")]
-position = Vector2(186, 384)
+position = Vector2(216, 186)
 script = ExtResource("3_c5yk2")
 
 [node name="Ryswell" parent="Houses" unique_id=660944853 instance=ExtResource("2_c5yk2")]
-position = Vector2(160, 569)
+position = Vector2(128, 227)
+script = ExtResource("3_c5yk2")
+
+[node name="Burley" parent="Houses" unique_id=333840083 instance=ExtResource("2_c5yk2")]
+position = Vector2(482, 68)
+script = ExtResource("3_c5yk2")
+
+[node name="Cerwyn" parent="Houses" unique_id=524189108 instance=ExtResource("2_c5yk2")]
+position = Vector2(623, 60)
+script = ExtResource("3_c5yk2")
+
+[node name="Dustin" parent="Houses" unique_id=6270216 instance=ExtResource("2_c5yk2")]
+position = Vector2(969, 633)
+script = ExtResource("3_c5yk2")
+
+[node name="Harclay" parent="Houses" unique_id=692332443 instance=ExtResource("2_c5yk2")]
+position = Vector2(946, 248)
+script = ExtResource("3_c5yk2")
+
+[node name="Hornwood" parent="Houses" unique_id=895611096 instance=ExtResource("2_c5yk2")]
+position = Vector2(62, 278)
+script = ExtResource("3_c5yk2")
+
+[node name="Knott" parent="Houses" unique_id=1755734810 instance=ExtResource("2_c5yk2")]
+position = Vector2(1021, 535)
+script = ExtResource("3_c5yk2")
+
+[node name="Liddle" parent="Houses" unique_id=46886079 instance=ExtResource("2_c5yk2")]
+position = Vector2(147, 561)
+script = ExtResource("3_c5yk2")
+
+[node name="Locke" parent="Houses" unique_id=1837434784 instance=ExtResource("2_c5yk2")]
+position = Vector2(1028, 437)
+script = ExtResource("3_c5yk2")
+
+[node name="Manderly" parent="Houses" unique_id=36060783 instance=ExtResource("2_c5yk2")]
+position = Vector2(55, 370)
+script = ExtResource("3_c5yk2")
+
+[node name="Norrey" parent="Houses" unique_id=1372351159 instance=ExtResource("2_c5yk2")]
+position = Vector2(807, 144)
+script = ExtResource("3_c5yk2")
+
+[node name="Reed" parent="Houses" unique_id=967524657 instance=ExtResource("2_c5yk2")]
+position = Vector2(213, 628)
+script = ExtResource("3_c5yk2")
+
+[node name="Slate" parent="Houses" unique_id=448808785 instance=ExtResource("2_c5yk2")]
+position = Vector2(80, 497)
+script = ExtResource("3_c5yk2")
+
+[node name="Stout" parent="Houses" unique_id=123103385 instance=ExtResource("2_c5yk2")]
+position = Vector2(263, 152)
+script = ExtResource("3_c5yk2")
+
+[node name="Wull" parent="Houses" unique_id=18971194 instance=ExtResource("2_c5yk2")]
+position = Vector2(413, 81)
 script = ExtResource("3_c5yk2")
 
 [node name="Lannister" parent="Houses" unique_id=1765368564 instance=ExtResource("2_c5yk2")]
-position = Vector2(143, 1347)
+position = Vector2(128, 1319)
 
 [node name="Arryn" parent="Houses" unique_id=568523910 instance=ExtResource("2_c5yk2")]
-position = Vector2(833, 1028)
+position = Vector2(870, 1224)
+
+[node name="Baelish" parent="Houses" unique_id=1372568875 instance=ExtResource("2_c5yk2")]
+position = Vector2(1150, 1102)
+script = ExtResource("3_c5yk2")
+
+[node name="Belmore" parent="Houses" unique_id=1036337261 instance=ExtResource("2_c5yk2")]
+position = Vector2(1271, 1069)
+script = ExtResource("3_c5yk2")
+
+[node name="Borrell" parent="Houses" unique_id=1111169760 instance=ExtResource("2_c5yk2")]
+position = Vector2(1193, 1224)
+script = ExtResource("3_c5yk2")
+
+[node name="Coldwater" parent="Houses" unique_id=2135144116 instance=ExtResource("2_c5yk2")]
+position = Vector2(1271, 1375)
+script = ExtResource("3_c5yk2")
+
+[node name="Corbray" parent="Houses" unique_id=686172109 instance=ExtResource("2_c5yk2")]
+position = Vector2(1245, 1509)
+script = ExtResource("3_c5yk2")
+
+[node name="Elesham" parent="Houses" unique_id=588057364 instance=ExtResource("2_c5yk2")]
+position = Vector2(1271, 1304)
+script = ExtResource("3_c5yk2")
+
+[node name="Grafton" parent="Houses" unique_id=455627489 instance=ExtResource("2_c5yk2")]
+position = Vector2(1271, 1431)
+script = ExtResource("3_c5yk2")
+
+[node name="Hunter" parent="Houses" unique_id=1305933977 instance=ExtResource("2_c5yk2")]
+position = Vector2(1271, 1224)
+script = ExtResource("3_c5yk2")
+
+[node name="Lynderly" parent="Houses" unique_id=1357434643 instance=ExtResource("2_c5yk2")]
+position = Vector2(1150, 1431)
+script = ExtResource("3_c5yk2")
+
+[node name="Pryor" parent="Houses" unique_id=63697594 instance=ExtResource("2_c5yk2")]
+position = Vector2(1123, 900)
+script = ExtResource("3_c5yk2")
+
+[node name="Redfort" parent="Houses" unique_id=999373927 instance=ExtResource("2_c5yk2")]
+position = Vector2(1271, 1145)
+script = ExtResource("3_c5yk2")
+
+[node name="Royce" parent="Houses" unique_id=313394761 instance=ExtResource("2_c5yk2")]
+position = Vector2(1252, 1006)
+script = ExtResource("3_c5yk2")
+
+[node name="Ruthermont" parent="Houses" unique_id=1888015867 instance=ExtResource("2_c5yk2")]
+position = Vector2(1193, 953)
+script = ExtResource("3_c5yk2")
+
+[node name="Sunderland" parent="Houses" unique_id=1449986354 instance=ExtResource("2_c5yk2")]
+position = Vector2(1193, 1339)
+script = ExtResource("3_c5yk2")
+
+[node name="Tollett" parent="Houses" unique_id=834808654 instance=ExtResource("2_c5yk2")]
+position = Vector2(1193, 1546)
+script = ExtResource("3_c5yk2")
+
+[node name="Waynwood" parent="Houses" unique_id=2065202097 instance=ExtResource("2_c5yk2")]
+position = Vector2(1123, 1006)
+script = ExtResource("3_c5yk2")
 
 [node name="Tully" parent="Houses" unique_id=1061746715 instance=ExtResource("2_c5yk2")]
 position = Vector2(899, 745)
 
 [node name="Frey" parent="Houses" unique_id=274243001 instance=ExtResource("2_c5yk2")]
-position = Vector2(1050, 800)
+position = Vector2(969, 726)
 script = ExtResource("3_c5yk2")
 
 [node name="Greyjoy" parent="Houses" unique_id=221054856 instance=ExtResource("2_c5yk2")]
-position = Vector2(103, 926)
+position = Vector2(147, 709)
 
 [node name="Tyrell" parent="Houses" unique_id=112041017 instance=ExtResource("2_c5yk2")]
-position = Vector2(198, 1628)
+position = Vector2(213, 1677)
 
 [node name="Baratheon (Robert)" parent="Houses" unique_id=733497175 instance=ExtResource("2_c5yk2")]
-position = Vector2(495, 1253)
+position = Vector2(495, 1142)
 
 [node name="Baratheon (Stanis)" parent="Houses" unique_id=1793092399 instance=ExtResource("2_c5yk2")]
-position = Vector2(990, 1441)
+position = Vector2(623, 1740)
 
 [node name="Baratheon (Renly)" parent="Houses" unique_id=1924905621 instance=ExtResource("2_c5yk2")]
-position = Vector2(480, 1657)
+position = Vector2(350, 1740)
 
 [node name="Martell" parent="Houses" unique_id=652849799 instance=ExtResource("2_c5yk2")]
-position = Vector2(773, 1640)
+position = Vector2(899, 1827)

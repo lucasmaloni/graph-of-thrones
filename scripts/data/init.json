@@ -60,7 +60,13 @@
         "Size": 0.5,
         "North": {
             "VassalOf": "Stark",
-            "Names": ["Ryswell", "Karstark", "Bolton", "Glover", "Mormont", "Umber"]
+            "Names": 
+            [
+                "Ryswell", "Karstark", "Bolton", "Glover", "Mormont", "Umber",
+                "Burley", "Cerwyn", "Dustin", "Harclay", "Hornwood", "Knott", 
+                "Liddle", "Locke", "Manderly", "Norrey", "Reed", "Slate", 
+                "Stout", "Wull"
+            ]
         },
         "Riverlands": {
             "VassalOf": "Tully",
@@ -68,7 +74,13 @@
         },
         "Vale": {
             "VassalOf": "Arryn",
-            "Names": []
+            "Names": 
+            [
+                "Baelish", "Belmore", "Borrell", "Coldwater", "Corbray", 
+                "Elesham", "Grafton", "Hunter", "Lynderly", "Pryor", 
+                "Redfort", "Royce", "Ruthermont", "Sunderland", 
+                "Tollett", "Waynwood"
+            ]
         },
         "Crownlands": {
             "VassalOf": "Baratheon (Robert)",

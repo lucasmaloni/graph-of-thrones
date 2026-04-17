@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bja7sn3m4mbn8"]
 
 [ext_resource type="PackedScene" uid="uid://b00od7skqbdmy" path="res://scenes/InitialWesteros.tscn" id="1_ibiss"]
+[ext_resource type="Script" uid="uid://ccsqsids3vf2h" path="res://scenes/NavigationCamera.cs" id="2_611at"]
 [ext_resource type="Texture2D" uid="uid://bigbhlofen44h" path="res://assets/MapofWesterosDetails.webp" id="2_c6dvc"]
 
 [node name="MainScene" type="Node2D" unique_id=1878596069]
@@ -10,6 +11,7 @@ z_index = 4096
 
 [node name="Camera2D" type="Camera2D" parent="InitialWesteros" unique_id=832807546]
 anchor_mode = 0
+script = ExtResource("2_611at")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=81515733]
 layer = -4096
