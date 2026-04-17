@@ -28,7 +28,7 @@
         },
         "Baratheon (Robert)": {
             "Rules": "Crownlands",
-            "IsLoyalToTheCrown": true
+            "IsLoyalToTheCrown": false
         },
         "Baratheon (Renly)": {
             "Rules": "Stormlands",
@@ -94,5 +94,19 @@
             "VassalOf": "Martell",
             "Names": []
         }
-    }
+    },
+    "GreatHousesConnections":
+    [
+        { "from": "Stark", "to": "Tully", "ConnectionTypes": ["isMarriedTo"] },
+        { "from": "Stark", "to": "Baratheon (Robert)", "ConnectionTypes": ["isHistoricalFriendTo", "isVassalOf"] },
+        { "from": "Tully", "to": "Arryn", "ConnectionTypes": ["isMarriedTo"] },
+        { "from": "Baratheon (Robert)", "to": "Lannister", "ConnectionTypes": ["isMarriedTo"] },
+        { "from": "Baratheon (Robert)", "to": "Baratheon (Renly)", "ConnectionTypes": ["isFamilyOf"] },
+        { "from": "Baratheon (Robert)", "to": "Baratheon (Stanis)", "ConnectionTypes": ["isFamilyOf"] },
+        { "from": "Baratheon (Robert)", "to": "Arryn", "ConnectionTypes": ["isVassalOf"] },
+        { "from": "Baratheon (Robert)", "to": "Tyrell", "ConnectionTypes": ["isVassalOf"] },
+        { "from": "Baratheon (Robert)", "to": "Greyjoy", "ConnectionTypes": ["isVassalOf"] },
+        { "from": "Baratheon (Robert)", "to": "Martell", "ConnectionTypes": ["isVassalOf"] },
+        { "from": "Baratheon (Robert)", "to": "Tully", "ConnectionTypes": ["isVassalOf"] }
+    ]
 }

@@ -10,18 +10,20 @@ public partial class GraphController : Node2D
 	protected DataManager dataManager = new DataManager();
 	protected HashSet<Tuple<WesterosHouse, WesterosHouse>> drawnConnections = new HashSet<Tuple<WesterosHouse, WesterosHouse>>();
 	protected HashSet<Tuple<WesterosHouse, WesterosHouse>> appliedForces = new HashSet<Tuple<WesterosHouse, WesterosHouse>>();
+	protected Reasoner Reasoner { get; set;}
 	protected const float BASE_CONECTION_WIDTH = 12;
-
 	[Export] public float RepulsionConstant = 8000f;
 	[Export] public float SpringConstant = 2f;
-	[Export] public float RestDistance = 300f; //Distância em que as casas repousam/param de se atrair
+	[Export] public float RestDistance = 300f; //Dnew GCollections.Array<string>() {"isVassalOf"}istância em que as casas repousam/param de se atrair
 
 	public override void _Ready()
 	{
 		SetupInitialGreatHouses();
 		SetupInitialLordlyHouses();
 		SetupHousesLookup();
-		SetupInitialConnections();
+		Reasoner = new Reasoner(this);
+		SetupGreatHousesConnections();
+		SetupKingdomsConnections();
 	}
 
     public override void _Process(double delta)
@@ -63,12 +65,6 @@ public partial class GraphController : Node2D
 
 	private void AddConnection(WesterosHouse from, WesterosHouse to, double intensity)
 	{
-		/*
-			Considerar melhorar essa adição de conexões:
-			1. Ao invés de usar uma lista, usar um Dicionario<WesterosHouse, Edge>
-			2. Validar se ambos os vértices existem e se as conexões também existem
-		*/
-
 		if (!Graph.ContainsKey(from) || !Graph.ContainsKey(to)) return;
 		
 		Graph[from].Add(to, new Edge(intensity));
@@ -142,22 +138,34 @@ public partial class GraphController : Node2D
 		}
 	}
 
-	private void SetupInitialConnections()
+	private void SetupGreatHousesConnections()
 	{
-		GCollections.Array<Variant> InitialConections = (GCollections.Array<Variant>)dataManager.GetDataFromJson("database","InitialConnections");
-
+		GCollections.Array<Variant> InitialConections = (GCollections.Array<Variant>)dataManager.GetDataFromJson("init","GreatHousesConnections");
+		
 		foreach (Variant Connection in InitialConections)
 		{
 			GCollections.Dictionary ConnectionAsDict = (GCollections.Dictionary)Connection;
+			GCollections.Array<string> connectionTypes = (GCollections.Array<string>)ConnectionAsDict["ConnectionTypes"];
 
 			string houseFrom = (string)ConnectionAsDict["from"];
-			string houseTo = (string)ConnectionAsDict["to"];
-			double intensity = (double)ConnectionAsDict["intensity"];
-
+			string houseTo = (string)ConnectionAsDict["to"];			
+			float intensity = Reasoner.GetConnectionIntensity(connectionTypes);
+			
 			AddConnection(HouseLookup[houseFrom], HouseLookup[houseTo], intensity);
 		}
 	}
 
+	private void SetupKingdomsConnections()
+	{
+		// O Corpo pergunta ao Cérebro quais são as conexões lógicas
+		var implicitConnections = Reasoner.InferKingdomRules(Graph.Keys);
+
+		foreach (var connection in implicitConnections)
+		{
+            float intensity = Reasoner.GetConnectionIntensity(new GCollections.Array<string> { connection.Type });
+			AddConnection(HouseLookup[connection.From], HouseLookup[connection.To], intensity);
+		}
+	}
 	private Color GetConnectionColor(double intensity)
 	{	
 		float t = Mathf.Clamp((float)intensity, 0.0f, 1.0f);

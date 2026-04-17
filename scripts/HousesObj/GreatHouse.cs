@@ -7,5 +7,5 @@ public partial class GreatHouse : WesterosHouse
     public string Rules { get; set; }
     
     // Atributo semantico de estado
-    public bool IsLoyalToTheCrown { get; set; } = true;
+    public bool IsLoyalToTheCrown { get; set; }
 }
