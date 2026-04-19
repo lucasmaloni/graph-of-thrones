@@ -3,15 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://b00od7skqbdmy" path="res://scenes/InitialWesteros.tscn" id="1_ibiss"]
 [ext_resource type="Script" uid="uid://ccsqsids3vf2h" path="res://scenes/NavigationCamera.cs" id="2_611at"]
 [ext_resource type="Texture2D" uid="uid://bigbhlofen44h" path="res://assets/MapofWesterosDetails.webp" id="2_c6dvc"]
+[ext_resource type="Script" uid="uid://cw51l21ghus6d" path="res://scripts/Label.cs" id="3_611at"]
 
 [node name="MainScene" type="Node2D" unique_id=1878596069]
 
 [node name="InitialWesteros" parent="." unique_id=1315045424 instance=ExtResource("1_ibiss")]
 z_index = 4096
-
-[node name="Camera2D" type="Camera2D" parent="InitialWesteros" unique_id=832807546]
-anchor_mode = 0
-script = ExtResource("2_611at")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=81515733]
 layer = -4096
@@ -31,3 +28,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.6039216)
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=199999228]
+offset_right = 130.0
+offset_bottom = 70.0
+script = ExtResource("3_611at")
+
+[node name="Center" type="Node2D" parent="." unique_id=855238263]
+
+[node name="Camera2D" type="Camera2D" parent="Center" unique_id=832807546]
+visible = false
+anchor_mode = 0
+script = ExtResource("2_611at")

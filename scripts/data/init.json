@@ -70,7 +70,14 @@
         },
         "Riverlands": {
             "VassalOf": "Tully",
-            "Names": ["Frey"]
+            "Names": 
+            [
+                "Blackwood", "Bracken", "Butterwell", "Charlton",
+                "Darry", "Frey", "Goodbrook", 
+                "Lychester", "Mallister", "Mooton", 
+                "Piper", "Roote", "Shawney", "Smallwood", "Vance (Atranta)", 
+                "Vance (Wayfarer)", "Vypren", "Wayn", "Whent"
+            ]
         },
         "Vale": {
             "VassalOf": "Arryn",
@@ -104,7 +111,8 @@
         },
         "Dorne": {
             "VassalOf": "Martell",
-            "Names": [
+            "Names": 
+            [
                 "Allyrion", "Blackmont", "Dayne", "Fowler", 
                 "Gargalen", "Jordayne", "Manwoody", "Qorgyle", 
                 "Toland", "Uller", "Vaith", "Yronwood"
