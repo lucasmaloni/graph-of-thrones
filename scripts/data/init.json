@@ -91,7 +91,14 @@
         },
         "Crownlands": {
             "VassalOf": "Baratheon (Robert)",
-            "Names": []
+            "Names": 
+            [
+                "Emmon", 
+                "Buckwell", "Byrch", "Bywater", "Celtigar", "Chelsted", 
+                "Chyttering", "Cressey", "Follard", "Harte", "Hayford", 
+                "Mallery", "Massey", "Rollingford", "Rosby", "Rykker", 
+                "Staunton", "Stokeworth", "Sunglass", "Velaryon"
+            ]
         },
         "Stormlands": {
             "VassalOf": "Baratheon (Renly)",
@@ -126,7 +133,7 @@
         { "from": "Tully", "to": "Arryn", "ConnectionTypes": ["isMarriedTo"] },
         { "from": "Baratheon (Robert)", "to": "Lannister", "ConnectionTypes": ["isMarriedTo"] },
         { "from": "Baratheon (Robert)", "to": "Baratheon (Renly)", "ConnectionTypes": ["isFamilyOf"] },
-        { "from": "Baratheon (Robert)", "to": "Baratheon (Stanis)", "ConnectionTypes": ["isFamilyOf"] },
+        { "from": "Baratheon (Robert)", "to": "Baratheon (Stanis)", "ConnectionTypes": ["isFamilyOf", "isVassalOf"] },
         { "from": "Baratheon (Robert)", "to": "Arryn", "ConnectionTypes": ["isVassalOf"] },
         { "from": "Baratheon (Robert)", "to": "Tyrell", "ConnectionTypes": ["isVassalOf"] },
         { "from": "Baratheon (Robert)", "to": "Greyjoy", "ConnectionTypes": ["isVassalOf"] },
