@@ -11,86 +11,86 @@ script = ExtResource("1_fkpsj")
 
 [node name="Stark" parent="Houses" unique_id=1421553946 instance=ExtResource("2_c5yk2")]
 texture_filter = 1
-position = Vector2(608, 554)
+position = Vector2(580, 320)
 
 [node name="Bolton" parent="Houses" unique_id=207447263 instance=ExtResource("2_c5yk2")]
-position = Vector2(949, 175)
+position = Vector2(834, 308)
 script = ExtResource("3_c5yk2")
 
 [node name="Karstark" parent="Houses" unique_id=1345552832 instance=ExtResource("2_c5yk2")]
-position = Vector2(951, 59)
+position = Vector2(735, 436)
 script = ExtResource("3_c5yk2")
 
 [node name="Umber" parent="Houses" unique_id=2146702295 instance=ExtResource("2_c5yk2")]
-position = Vector2(790, -38)
+position = Vector2(758, 495)
 script = ExtResource("3_c5yk2")
 
 [node name="Mormont" parent="Houses" unique_id=660186164 instance=ExtResource("2_c5yk2")]
-position = Vector2(431, -28)
+position = Vector2(509, 46)
 script = ExtResource("3_c5yk2")
 
 [node name="Glover" parent="Houses" unique_id=2093759645 instance=ExtResource("2_c5yk2")]
-position = Vector2(297, 52)
+position = Vector2(642, 43)
 script = ExtResource("3_c5yk2")
 
 [node name="Ryswell" parent="Houses" unique_id=660944853 instance=ExtResource("2_c5yk2")]
-position = Vector2(209, 93)
+position = Vector2(756, 80)
 script = ExtResource("3_c5yk2")
 
 [node name="Burley" parent="Houses" unique_id=333840083 instance=ExtResource("2_c5yk2")]
-position = Vector2(563, -66)
+position = Vector2(319, 191)
 script = ExtResource("3_c5yk2")
 
 [node name="Cerwyn" parent="Houses" unique_id=524189108 instance=ExtResource("2_c5yk2")]
-position = Vector2(704, -74)
+position = Vector2(736, 170)
 script = ExtResource("3_c5yk2")
 
 [node name="Dustin" parent="Houses" unique_id=6270216 instance=ExtResource("2_c5yk2")]
-position = Vector2(756, 60)
+position = Vector2(669, 138)
 script = ExtResource("3_c5yk2")
 
 [node name="Harclay" parent="Houses" unique_id=692332443 instance=ExtResource("2_c5yk2")]
-position = Vector2(1027, 114)
+position = Vector2(820, 381)
 script = ExtResource("3_c5yk2")
 
 [node name="Hornwood" parent="Houses" unique_id=895611096 instance=ExtResource("2_c5yk2")]
-position = Vector2(143, 144)
+position = Vector2(855, 153)
 script = ExtResource("3_c5yk2")
 
 [node name="Knott" parent="Houses" unique_id=1755734810 instance=ExtResource("2_c5yk2")]
-position = Vector2(869, 106)
+position = Vector2(786, 221)
 script = ExtResource("3_c5yk2")
 
 [node name="Liddle" parent="Houses" unique_id=46886079 instance=ExtResource("2_c5yk2")]
-position = Vector2(400, 105)
+position = Vector2(336, 303)
 script = ExtResource("3_c5yk2")
 
 [node name="Locke" parent="Houses" unique_id=1837434784 instance=ExtResource("2_c5yk2")]
-position = Vector2(637, 25)
+position = Vector2(564, 116)
 script = ExtResource("3_c5yk2")
 
 [node name="Manderly" parent="Houses" unique_id=36060783 instance=ExtResource("2_c5yk2")]
-position = Vector2(214, 219)
+position = Vector2(242, 362)
 script = ExtResource("3_c5yk2")
 
 [node name="Norrey" parent="Houses" unique_id=1372351159 instance=ExtResource("2_c5yk2")]
-position = Vector2(888, 10)
+position = Vector2(682, 474)
 script = ExtResource("3_c5yk2")
 
 [node name="Reed" parent="Houses" unique_id=967524657 instance=ExtResource("2_c5yk2")]
-position = Vector2(516, 66)
+position = Vector2(415, 213)
 script = ExtResource("3_c5yk2")
 
 [node name="Slate" parent="Houses" unique_id=448808785 instance=ExtResource("2_c5yk2")]
-position = Vector2(306, 146)
+position = Vector2(334, 403)
 script = ExtResource("3_c5yk2")
 
 [node name="Stout" parent="Houses" unique_id=123103385 instance=ExtResource("2_c5yk2")]
-position = Vector2(344, 18)
+position = Vector2(390, 87)
 script = ExtResource("3_c5yk2")
 
 [node name="Wull" parent="Houses" unique_id=18971194 instance=ExtResource("2_c5yk2")]
-position = Vector2(494, -53)
+position = Vector2(471, 145)
 script = ExtResource("3_c5yk2")
 
 [node name="Lannister" parent="Houses" unique_id=1765368564 instance=ExtResource("2_c5yk2")]
@@ -169,7 +169,7 @@ position = Vector2(-280, 1679)
 script = ExtResource("3_c5yk2")
 
 [node name="Arryn" parent="Houses" unique_id=568523910 instance=ExtResource("2_c5yk2")]
-position = Vector2(926, 1295)
+position = Vector2(905, 1245)
 
 [node name="Baelish" parent="Houses" unique_id=1372568875 instance=ExtResource("2_c5yk2")]
 position = Vector2(1206, 1173)
@@ -236,99 +236,99 @@ position = Vector2(1179, 1077)
 script = ExtResource("3_c5yk2")
 
 [node name="Tully" parent="Houses" unique_id=1061746715 instance=ExtResource("2_c5yk2")]
-position = Vector2(895, 738)
+position = Vector2(1106, 692)
 
 [node name="Frey" parent="Houses" unique_id=274243001 instance=ExtResource("2_c5yk2")]
-position = Vector2(862, 589)
+position = Vector2(1032, 584)
 script = ExtResource("3_c5yk2")
 
 [node name="Blackwood" parent="Houses" unique_id=1938954152 instance=ExtResource("2_c5yk2")]
-position = Vector2(1287, 411)
+position = Vector2(956, 585.00006)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Bracken" parent="Houses" unique_id=210996303 instance=ExtResource("2_c5yk2")]
-position = Vector2(1288, 642)
+position = Vector2(1247, 647.00006)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Butterwell" parent="Houses" unique_id=1843774939 instance=ExtResource("2_c5yk2")]
-position = Vector2(1310, 748)
+position = Vector2(1236, 739)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Charlton" parent="Houses" unique_id=1296775603 instance=ExtResource("2_c5yk2")]
-position = Vector2(1353, 543)
+position = Vector2(1137, 492)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Darry" parent="Houses" unique_id=1767387250 instance=ExtResource("2_c5yk2")]
-position = Vector2(1265, 480)
+position = Vector2(1155.0001, 563)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Goodbrook" parent="Houses" unique_id=980842592 instance=ExtResource("2_c5yk2")]
-position = Vector2(1359, 615)
+position = Vector2(1193, 491)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Lychester" parent="Houses" unique_id=1624870207 instance=ExtResource("2_c5yk2")]
-position = Vector2(1340, 486)
+position = Vector2(1252.0001, 555)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Mallister" parent="Houses" unique_id=1293299952 instance=ExtResource("2_c5yk2")]
-position = Vector2(1356, 686)
+position = Vector2(1214, 833)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Mooton" parent="Houses" unique_id=1884652180 instance=ExtResource("2_c5yk2")]
-position = Vector2(1331, 362)
+position = Vector2(1317, 596)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Piper" parent="Houses" unique_id=606858761 instance=ExtResource("2_c5yk2")]
-position = Vector2(1420, 517)
+position = Vector2(1356.0001, 669)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Roote" parent="Houses" unique_id=1048469850 instance=ExtResource("2_c5yk2")]
-position = Vector2(1427, 592)
+position = Vector2(958, 670)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Shawney" parent="Houses" unique_id=1144525924 instance=ExtResource("2_c5yk2")]
-position = Vector2(1433, 680)
+position = Vector2(1077, 893.00006)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Smallwood" parent="Houses" unique_id=1762413120 instance=ExtResource("2_c5yk2")]
-position = Vector2(1410, 761)
+position = Vector2(1121.0001, 843.99994)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Vance (Atranta)" parent="Houses" unique_id=1394516876 instance=ExtResource("2_c5yk2")]
-position = Vector2(1492, 628)
+position = Vector2(1295, 701.00006)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Vance (Wayfarer)" parent="Houses" unique_id=330848385 instance=ExtResource("2_c5yk2")]
-position = Vector2(1489, 537)
+position = Vector2(1296.0001, 849)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Vypren" parent="Houses" unique_id=709921668 instance=ExtResource("2_c5yk2")]
-position = Vector2(1464, 451)
+position = Vector2(1161, 901)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Wayn" parent="Houses" unique_id=1276465027 instance=ExtResource("2_c5yk2")]
-position = Vector2(1388, 425)
+position = Vector2(1288, 779)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Whent" parent="Houses" unique_id=94404155 instance=ExtResource("2_c5yk2")]
-position = Vector2(1419, 338)
+position = Vector2(1063, 520)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
@@ -336,7 +336,7 @@ script = ExtResource("3_c5yk2")
 position = Vector2(-94, 639)
 
 [node name="Tyrell" parent="Houses" unique_id=112041017 instance=ExtResource("2_c5yk2")]
-position = Vector2(87, 1679)
+position = Vector2(162, 1800)
 
 [node name="Baratheon (Robert)" parent="Houses" unique_id=733497175 instance=ExtResource("2_c5yk2")]
 position = Vector2(198, 1060)
@@ -422,10 +422,10 @@ position = Vector2(-347, 1117)
 script = ExtResource("3_c5yk2")
 
 [node name="Baratheon (Stanis)" parent="Houses" unique_id=1793092399 instance=ExtResource("2_c5yk2")]
-position = Vector2(660, 1688)
+position = Vector2(526, 1776)
 
 [node name="Baratheon (Renly)" parent="Houses" unique_id=1924905621 instance=ExtResource("2_c5yk2")]
-position = Vector2(388, 1811)
+position = Vector2(450, 1364)
 
 [node name="Martell" parent="Houses" unique_id=652849799 instance=ExtResource("2_c5yk2")]
 position = Vector2(986, 1867)

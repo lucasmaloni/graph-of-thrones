@@ -12,9 +12,13 @@ public partial class GraphController : Node2D
 	protected HashSet<Tuple<WesterosHouse, WesterosHouse>> appliedForces = new HashSet<Tuple<WesterosHouse, WesterosHouse>>();
 	protected Reasoner Reasoner { get; set;}
 	protected const float BASE_CONECTION_WIDTH = 12;
+	private const double CONNECTION_DECAY_AMOUNT = 0.1;
+	private const double CONNECTION_DECAY_STEP_SECONDS = 0.01;
 	[Export] public float RepulsionConstant = 8000f;
-	[Export] public float SpringConstant = 2f;
+	[Export] public float SpringConstant = 200f;
 	[Export] public float RestDistance = 300f; //Dnew GCollections.Array<string>() {"isVassalOf"}istância em que as casas repousam/param de se atrair
+	[Export] public double ConnectionDecayStartDelaySeconds = 5.0;
+	private Timer ConnectionDecayTimer;
 
 	public override void _Ready()
 	{
@@ -24,6 +28,7 @@ public partial class GraphController : Node2D
 		Reasoner = new Reasoner(this);
 		SetupGreatHousesConnections();
 		SetupKingdomsConnections();
+		SetupConnectionDecayTimer();
 	}
 
     public override void _Process(double delta)
@@ -166,6 +171,64 @@ public partial class GraphController : Node2D
 			AddConnection(HouseLookup[connection.From], HouseLookup[connection.To], intensity);
 		}
 	}
+
+	private void SetupConnectionDecayTimer()
+	{
+		ConnectionDecayTimer = new Timer();
+		ConnectionDecayTimer.WaitTime = ConnectionDecayStartDelaySeconds;
+		ConnectionDecayTimer.OneShot = true;
+		ConnectionDecayTimer.Timeout += StartConnectionDecay;
+
+		AddChild(ConnectionDecayTimer);
+		ConnectionDecayTimer.Start();
+	}
+
+	private void StartConnectionDecay()
+	{
+		DecayConnections();
+		ConnectionDecayTimer.Timeout -= StartConnectionDecay;
+		ConnectionDecayTimer.Timeout += DecayConnections;
+		ConnectionDecayTimer.WaitTime = CONNECTION_DECAY_STEP_SECONDS;
+		ConnectionDecayTimer.OneShot = false;
+		ConnectionDecayTimer.Start();
+	}
+
+	private void DecayConnections()
+	{
+		var processedPairs = new HashSet<Tuple<WesterosHouse, WesterosHouse>>();
+		var pairsToRemove = new List<Tuple<WesterosHouse, WesterosHouse>>();
+
+		foreach (WesterosHouse from in Graph.Keys)
+		{
+			foreach (var to in Graph[from])
+			{
+				Tuple<WesterosHouse, WesterosHouse> pair = new Tuple<WesterosHouse, WesterosHouse>(from, to.Key);
+				Tuple<WesterosHouse, WesterosHouse> reversePair = new Tuple<WesterosHouse, WesterosHouse>(to.Key, from);
+
+				if (processedPairs.Contains(pair) || processedPairs.Contains(reversePair)) continue;
+				if (!Graph[to.Key].TryGetValue(from, out Edge reverseEdge)) continue;
+
+				double updatedIntensity = Math.Max(0.0, to.Value.Intensity - CONNECTION_DECAY_AMOUNT);
+				to.Value.Intensity = updatedIntensity;
+				reverseEdge.Intensity = updatedIntensity;
+
+				if (updatedIntensity <= 0.0)
+				{
+					pairsToRemove.Add(pair);
+				}
+
+				processedPairs.Add(pair);
+				processedPairs.Add(reversePair);
+			}
+		}
+
+		foreach (var pair in pairsToRemove)
+		{
+			if (Graph.ContainsKey(pair.Item1)) Graph[pair.Item1].Remove(pair.Item2);
+			if (Graph.ContainsKey(pair.Item2)) Graph[pair.Item2].Remove(pair.Item1);
+		}
+	}
+
 	private Color GetConnectionColor(double intensity)
 	{	
 		float t = Mathf.Clamp((float)intensity, 0.0f, 1.0f);
@@ -197,8 +260,9 @@ public partial class GraphController : Node2D
 			foreach (var to in Graph[from])
 			{
 				Tuple<WesterosHouse, WesterosHouse> forceTuple = new Tuple<WesterosHouse, WesterosHouse>(from, to.Key);
+				Tuple<WesterosHouse, WesterosHouse> reverseForceTuple = new Tuple<WesterosHouse, WesterosHouse>(to.Key, from);
 
-				if (appliedForces.Contains(forceTuple)) continue; // Evita aplicar força mais de uma vez para a mesma conexão
+				if (appliedForces.Contains(forceTuple) || appliedForces.Contains(reverseForceTuple)) continue; // Evita aplicar força mais de uma vez para a mesma conexão
 				
 				Vector2 direction = to.Key.GlobalPosition - from.GlobalPosition;
 				float distance = direction.Length();
