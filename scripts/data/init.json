@@ -106,7 +106,13 @@
         },
         "Westerlands": {
             "VassalOf": "Lannister",
-            "Names": []
+            "Names": 
+            [
+                "Banefort", "Brax", "Crakehall", "Estren", "Falwell", 
+                "Farman", "Jast", "Kenning", "Lefford", "Lydden", 
+                "Marbrand", "Moreland", "Plumm", "Prester", "Serrett", 
+                "Spicer", "Stackspear", "Westerling"
+            ]
         },
         "Reach": {
             "VassalOf": "Tyrell",
