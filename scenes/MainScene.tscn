@@ -37,6 +37,5 @@ script = ExtResource("3_611at")
 [node name="Center" type="Node2D" parent="." unique_id=855238263]
 
 [node name="Camera2D" type="Camera2D" parent="Center" unique_id=832807546]
-visible = false
 anchor_mode = 0
 script = ExtResource("2_611at")
