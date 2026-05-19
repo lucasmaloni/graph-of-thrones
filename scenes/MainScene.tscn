@@ -21,9 +21,14 @@ layer = -4096
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1080.0
+offset_right = -840.0
+offset_bottom = 1920.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = -1.5707964
 texture = ExtResource("2_c6dvc")
+expand_mode = 4
 
 [node name="FiltroPreto" type="ColorRect" parent="CanvasLayer" unique_id=2047741002]
 anchors_preset = 15
