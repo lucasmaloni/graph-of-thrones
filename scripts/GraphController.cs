@@ -12,8 +12,6 @@ public partial class GraphController : Node2D
 	protected HashSet<Tuple<WesterosHouse, WesterosHouse>> appliedForces = new HashSet<Tuple<WesterosHouse, WesterosHouse>>();
 	protected Reasoner Reasoner { get; set;}
 	protected const float BASE_CONECTION_WIDTH = 12;
-	private const double CONNECTION_DECAY_AMOUNT = 0.1;
-	private const double CONNECTION_DECAY_STEP_SECONDS = 0.01;
 	[Export] public float RepulsionConstant = 8000f;
 	[Export] public float SpringConstant = 200f;
 	[Export] public float RestDistance = 300f; //Dnew GCollections.Array<string>() {"isVassalOf"}istância em que as casas repousam/param de se atrair
@@ -28,7 +26,7 @@ public partial class GraphController : Node2D
 		Reasoner = new Reasoner(this);
 		SetupGreatHousesConnections();
 		SetupKingdomsConnections();
-		SetupConnectionDecayTimer();
+		//SetupConnectionDecayTimer();
 	}
 
     public override void _Process(double delta)
@@ -154,7 +152,7 @@ public partial class GraphController : Node2D
 
 			string houseFrom = (string)ConnectionAsDict["from"];
 			string houseTo = (string)ConnectionAsDict["to"];			
-			float intensity = Reasoner.GetConnectionIntensity(connectionTypes);
+			double intensity = Reasoner.GetConnectionIntensity(connectionTypes);
 			
 			AddConnection(HouseLookup[houseFrom], HouseLookup[houseTo], intensity);
 		}
@@ -167,65 +165,8 @@ public partial class GraphController : Node2D
 
 		foreach (var connection in implicitConnections)
 		{
-            float intensity = Reasoner.GetConnectionIntensity(new GCollections.Array<string> { connection.Type });
+            double intensity = Reasoner.GetConnectionIntensity(new GCollections.Array<string> { connection.Type });
 			AddConnection(HouseLookup[connection.From], HouseLookup[connection.To], intensity);
-		}
-	}
-
-	private void SetupConnectionDecayTimer()
-	{
-		ConnectionDecayTimer = new Timer();
-		ConnectionDecayTimer.WaitTime = ConnectionDecayStartDelaySeconds;
-		ConnectionDecayTimer.OneShot = true;
-		ConnectionDecayTimer.Timeout += StartConnectionDecay;
-
-		AddChild(ConnectionDecayTimer);
-		ConnectionDecayTimer.Start();
-	}
-
-	private void StartConnectionDecay()
-	{
-		DecayConnections();
-		ConnectionDecayTimer.Timeout -= StartConnectionDecay;
-		ConnectionDecayTimer.Timeout += DecayConnections;
-		ConnectionDecayTimer.WaitTime = CONNECTION_DECAY_STEP_SECONDS;
-		ConnectionDecayTimer.OneShot = false;
-		ConnectionDecayTimer.Start();
-	}
-
-	private void DecayConnections()
-	{
-		var processedPairs = new HashSet<Tuple<WesterosHouse, WesterosHouse>>();
-		var pairsToRemove = new List<Tuple<WesterosHouse, WesterosHouse>>();
-
-		foreach (WesterosHouse from in Graph.Keys)
-		{
-			foreach (var to in Graph[from])
-			{
-				Tuple<WesterosHouse, WesterosHouse> pair = new Tuple<WesterosHouse, WesterosHouse>(from, to.Key);
-				Tuple<WesterosHouse, WesterosHouse> reversePair = new Tuple<WesterosHouse, WesterosHouse>(to.Key, from);
-
-				if (processedPairs.Contains(pair) || processedPairs.Contains(reversePair)) continue;
-				if (!Graph[to.Key].TryGetValue(from, out Edge reverseEdge)) continue;
-
-				double updatedIntensity = Math.Max(0.0, to.Value.Intensity - CONNECTION_DECAY_AMOUNT);
-				to.Value.Intensity = updatedIntensity;
-				reverseEdge.Intensity = updatedIntensity;
-
-				if (updatedIntensity <= 0.0)
-				{
-					pairsToRemove.Add(pair);
-				}
-
-				processedPairs.Add(pair);
-				processedPairs.Add(reversePair);
-			}
-		}
-
-		foreach (var pair in pairsToRemove)
-		{
-			if (Graph.ContainsKey(pair.Item1)) Graph[pair.Item1].Remove(pair.Item2);
-			if (Graph.ContainsKey(pair.Item2)) Graph[pair.Item2].Remove(pair.Item1);
 		}
 	}
 
@@ -249,6 +190,31 @@ public partial class GraphController : Node2D
 		}
 	}
 
+	public void UpdateConnection(string fromHouseName, string toHouseName, double intensityChange)
+	{
+		if (!HouseLookup.ContainsKey(fromHouseName) || !HouseLookup.ContainsKey(toHouseName)) return;
+
+		WesterosHouse fromHouse = HouseLookup[fromHouseName];
+		WesterosHouse toHouse = HouseLookup[toHouseName];
+
+		if (intensityChange < 0)
+		{
+			double currentIntensity = Graph[fromHouse][toHouse].Intensity;
+			double newIntensity = Math.Max(0, currentIntensity + intensityChange); // Garante
+
+			if (newIntensity == 0)
+			{
+				Graph[fromHouse].Remove(toHouse);
+				Graph[toHouse].Remove(fromHouse);
+			}
+			else
+			{
+				Graph[fromHouse][toHouse].Intensity = newIntensity;
+				Graph[toHouse][fromHouse].Intensity = newIntensity;
+			}
+		}
+	}
+
 	private void ApplyAtractionForces()
 	{
 		// Forças de atração apenas acontecem entre casas conectadas. 
@@ -267,7 +233,7 @@ public partial class GraphController : Node2D
 				Vector2 direction = to.Key.GlobalPosition - from.GlobalPosition;
 				float distance = direction.Length();
 
-				if (distance <= RestDistance) continue; // Evita divisão por zero
+				if (distance <= 0) continue; // Evita divisão por zero
 
 				float displacement = distance - RestDistance;
 				float Strength = SpringConstant * displacement * (float)to.Value.Intensity;
@@ -293,7 +259,7 @@ public partial class GraphController : Node2D
 				Vector2 direction = houseA.GlobalPosition - houseB.GlobalPosition;
 				float distance = direction.Length();
 
-				if (distance <= RestDistance) continue;
+				if (distance <= 0) continue;
 
 				float Strength = RepulsionConstant / (distance * distance);
 				Vector2 repulsionVector = direction.Normalized() * Strength;
@@ -302,6 +268,5 @@ public partial class GraphController : Node2D
             	houseB.ApplyCentralForce(-repulsionVector);
 			}
 		}
-		
 	}
 }
