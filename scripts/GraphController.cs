@@ -14,7 +14,7 @@ public partial class GraphController : Node2D
 	protected const float BASE_CONECTION_WIDTH = 12;
 	[Export] public float RepulsionConstant = 8000f;
 	[Export] public float SpringConstant = 200f;
-	[Export] public float RestDistance = 300f; //Dnew GCollections.Array<string>() {"isVassalOf"}istância em que as casas repousam/param de se atrair
+	[Export] public float RestDistance = 300f; //Dnew GCollections.Array<string>() {"eVassaloDe"}istância em que as casas repousam/param de se atrair
 
 	public override void _Ready()
 	{
@@ -22,8 +22,13 @@ public partial class GraphController : Node2D
 		SetupInitialLordlyHouses();
 		SetupHousesLookup();
 		Reasoner = new Reasoner(this);
-		SetupGreatHousesConnections();
-		SetupKingdomsConnections();
+		CreateRawConnections();
+		SetupKingdomsRawConnections();
+		
+		// O Cérebro é criado e recebe a referência do Corpo 
+		// para poder acessar os dados do grafo e inferir infomações relevantes sobre as conexões
+		//SetupGreatHousesConnections();
+		//SetupKingdomsConnections();
 	}
 
     public override void _Process(double delta)
@@ -57,7 +62,7 @@ public partial class GraphController : Node2D
 				
 				Color connectionColor = GetConnectionColor(to.Value.Intensity);
 
-				DrawLine(from.GlobalPosition, to.Key.GlobalPosition, connectionColor, BASE_CONECTION_WIDTH * (float)to.Value.Intensity, true);
+				DrawLine(from.GlobalPosition, to.Key.GlobalPosition, connectionColor, BASE_CONECTION_WIDTH, true);
 				drawnConnections.Add(connectionTuple);
 			}
 		}
@@ -91,7 +96,6 @@ public partial class GraphController : Node2D
 			greatHouseNode.UpdateScale();
 			Graph.Add(greatHouseNode, new Dictionary<WesterosHouse, Edge>());
 
-			//GD.Print($"Adicionando {greatHouseNode.Name} ao grafo com tamanho {greatHouseNode.Size} e facção {greatHouseNode.Rules} que é leal à coroa? {greatHouseNode.IsLoyalToTheCrown}");
 		}
 
 		GD.Print("Great Houses iniciadas com sucesso");
@@ -114,11 +118,11 @@ public partial class GraphController : Node2D
 			{
 				LordlyHouse lordlyHouseNode = GetNode<LordlyHouse>(lordlyhouse);
 
-				lordlyHouseNode.Size = defaultSize;
+				// lordlyHouseNode.Size = defaultSize;
 				lordlyHouseNode.VassalOf = defaultVassalOf;
 				lordlyHouseNode.Faction = kingdom;
 
-				lordlyHouseNode.UpdateScale();
+				// lordlyHouseNode.UpdateScale();
 				Graph.Add(lordlyHouseNode, new Dictionary<WesterosHouse, Edge>());
 				
 				//GD.Print($"Adicionando LordlyHouse {lordlyHouseNode.Name} ao grafo com tamanho {lordlyHouseNode.Size} facção {lordlyHouseNode.Faction} leal a {lordlyHouseNode.VassalOf}");
@@ -166,9 +170,24 @@ public partial class GraphController : Node2D
 			AddConnection(HouseLookup[connection.From], HouseLookup[connection.To], intensity);
 		}
 	}
+
+	private void SetupKingdomsRawConnections()
+	{
+		if (Reasoner == null) return;
+
+		var implicitConnections = Reasoner.InferKingdomRules(Graph.Keys);
+
+		foreach (var connection in implicitConnections)
+		{
+			AddConnection(HouseLookup[connection.From], HouseLookup[connection.To], 0.0);
+		}
+	}
+	
 	private Color GetConnectionColor(double intensity)
 	{	
 		float t = Mathf.Clamp((float)intensity, 0.0f, 1.0f);
+
+		if (intensity == 0.0) return new Color(1, 1, 1, 1); // branco para conexões cruas
     
 		Color lowIntensityColor = new Color(1.0f, 0.1f, 0.1f, 1.0f);    // Vermelho suave
 		Color midIntensityColor = new Color(0.1f, 1.0f, 0.1f, 1.0f);    // Verde
@@ -263,6 +282,24 @@ public partial class GraphController : Node2D
 				houseA.ApplyCentralForce(repulsionVector);
             	houseB.ApplyCentralForce(-repulsionVector);
 			}
+		}
+	}
+
+	private void CreateRawConnections()
+	{
+		var rawConnections = (GCollections.Array<Variant>)dataManager.GetDataFromJson("raw_data", "RawConnections");
+
+		foreach (Variant connection in rawConnections)
+		{
+			GCollections.Dictionary connectionAsDict = (GCollections.Dictionary)connection;
+			string from = (string)connectionAsDict["from"];
+			string to = (string)connectionAsDict["to"];
+			double intensity = (double)connectionAsDict["intensity"];
+
+			if (!HouseLookup.ContainsKey(from) || !HouseLookup.ContainsKey(to)) continue;
+			if (Graph[HouseLookup[from]].ContainsKey(HouseLookup[to])) continue;
+
+			AddConnection(HouseLookup[from], HouseLookup[to], intensity);
 		}
 	}
 }

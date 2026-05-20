@@ -134,16 +134,16 @@
     },
     "GreatHousesConnections":
     [
-        { "from": "Stark", "to": "Tully", "ConnectionTypes": ["isMarriedTo"] },
-        { "from": "Stark", "to": "Baratheon (Robert)", "ConnectionTypes": ["isHistoricalFriendTo", "isVassalOf"] },
-        { "from": "Tully", "to": "Arryn", "ConnectionTypes": ["isMarriedTo"] },
-        { "from": "Baratheon (Robert)", "to": "Lannister", "ConnectionTypes": ["isMarriedTo"] },
-        { "from": "Baratheon (Robert)", "to": "Baratheon (Renly)", "ConnectionTypes": ["isFamilyOf"] },
-        { "from": "Baratheon (Robert)", "to": "Baratheon (Stanis)", "ConnectionTypes": ["isFamilyOf", "isVassalOf"] },
-        { "from": "Baratheon (Robert)", "to": "Arryn", "ConnectionTypes": ["isVassalOf"] },
-        { "from": "Baratheon (Robert)", "to": "Tyrell", "ConnectionTypes": ["isVassalOf"] },
-        { "from": "Baratheon (Robert)", "to": "Greyjoy", "ConnectionTypes": ["isVassalOf"] },
-        { "from": "Baratheon (Robert)", "to": "Martell", "ConnectionTypes": ["isVassalOf"] },
-        { "from": "Baratheon (Robert)", "to": "Tully", "ConnectionTypes": ["isVassalOf"] }
+        { "from": "Stark", "to": "Tully", "ConnectionTypes": ["eCasadoCom"] },
+        { "from": "Stark", "to": "Baratheon (Robert)", "ConnectionTypes": ["aliadoHistoricoDe", "eVassaloDe"] },
+        { "from": "Tully", "to": "Arryn", "ConnectionTypes": ["eCasadoCom"] },
+        { "from": "Baratheon (Robert)", "to": "Lannister", "ConnectionTypes": ["eCasadoCom"] },
+        { "from": "Baratheon (Robert)", "to": "Baratheon (Renly)", "ConnectionTypes": ["eFamiliaDe"] },
+        { "from": "Baratheon (Robert)", "to": "Baratheon (Stanis)", "ConnectionTypes": ["eFamiliaDe", "eVassaloDe"] },
+        { "from": "Baratheon (Robert)", "to": "Arryn", "ConnectionTypes": ["eVassaloDe"] },
+        { "from": "Baratheon (Robert)", "to": "Tyrell", "ConnectionTypes": ["eVassaloDe"] },
+        { "from": "Baratheon (Robert)", "to": "Greyjoy", "ConnectionTypes": ["eVassaloDe"] },
+        { "from": "Baratheon (Robert)", "to": "Martell", "ConnectionTypes": ["eVassaloDe"] },
+        { "from": "Baratheon (Robert)", "to": "Tully", "ConnectionTypes": ["eVassaloDe"] }
     ]
 }

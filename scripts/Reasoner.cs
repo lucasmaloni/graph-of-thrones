@@ -12,33 +12,17 @@ public partial class Reasoner
 	public Reasoner (GraphController graphController)
 	{
 		GraphController = graphController;
-		ConnectionLookup = SeupConnectionsLookup();
-		ActionLookup = SetupActionsLookup();
+		ConnectionLookup = SetupConnectionsLookup();
 	}
-	private  Dictionary<string, double> SeupConnectionsLookup()
+	private  Dictionary<string, double> SetupConnectionsLookup()
 	{
 		return new Dictionary<string, double>
 		{
-			{ "isVassalOf", 0.5 },
-			{ "isMarriedTo", 1.0 },
-			{ "isHistoricalFriendTo", 0.75 },
-			{ "isEstrategicalAllyTo", 0.25 },
-			{ "isFamilyOf", 0.5 }
-		};
-	}
-
-	private Dictionary<string, Tuple<double, bool>> SetupActionsLookup()
-	{
-		// Relação ação e decremento de intensidade associado e se é uma ação que afeta redes adjacentes
-		// Precisa de validação para garantir que as ações estão de acordo com o universo de Game of Thrones
-		return new Dictionary<string, Tuple< double, bool>>()
-		{
-			{ "Betrays", new Tuple<double, bool>(-1.0, false) },
-			{ "FormPoliticalAllianceWith", new Tuple<double, bool>(+0.5, false) },
-			{ "Marries", new Tuple<double, bool>(+1.0, false) },
-			{ "KillsLeaderOf", new Tuple<double, bool>(-1.0, true) },
-			{ "Supports", new Tuple<double, bool>(+0.75, false) },
-			{ "BreaksCustomsWith", new Tuple<double, bool>(-0.5, true) }
+			{ "eVassaloDe", 0.5 },
+			{ "eCasadoCom", 1.0 },
+			{ "aliadoHistoricoDe", 0.75 },
+			{ "eAliadoEstrategicoDe", 0.25 },
+			{ "eFamiliaDe", 0.5 }
 		};
 	}
 
@@ -68,22 +52,13 @@ public partial class Reasoner
 			if (house is LordlyHouse lordly && !string.IsNullOrEmpty(lordly.VassalOf))
 			{
 				inferred.Add(new Triplets (
-					lordly.HouseName,
-					"isVassalOf",
-					lordly.VassalOf
+					lordly.HouseName, // Casa que é vassala (Sujeito)
+					"eVassaloDe", // Tipo de conexão (Predicado)
+					lordly.VassalOf // Casa que é suserana (Objeto)
 				));
 			}
 		}
 		return inferred;
 	}
 
-	public void ProcessAction(Triplets actionTriplet)
-	{
-		if (ActionLookup.ContainsKey(actionTriplet.Type))
-		{
-			var (intensityChange, affectsAdjacent) = ActionLookup[actionTriplet.Type];
-			// Lógica de mudança de intensidade entre conexões no grafo
-
-		}
-	}
 }

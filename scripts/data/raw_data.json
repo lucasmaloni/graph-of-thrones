@@ -1,0 +1,16 @@
+{
+    "RawConnections":
+    [
+        { "from": "Stark", "to": "Tully", "intensity": 0.0 },
+        { "from": "Stark", "to": "Baratheon (Robert)", "intensity": 0.0 },
+        { "from": "Tully", "to": "Arryn", "intensity": 0.0 },
+        { "from": "Baratheon (Robert)", "to": "Lannister", "intensity": 0.0 },
+        { "from": "Baratheon (Robert)", "to": "Baratheon (Renly)", "intensity": 0.0 },
+        { "from": "Baratheon (Robert)", "to": "Baratheon (Stanis)", "intensity": 0.0 },
+        { "from": "Baratheon (Robert)", "to": "Arryn", "intensity": 0.0 },
+        { "from": "Baratheon (Robert)", "to": "Tyrell", "intensity": 0.0 },
+        { "from": "Baratheon (Robert)", "to": "Greyjoy", "intensity": 0.0 },
+        { "from": "Baratheon (Robert)", "to": "Martell", "intensity": 0.0 },
+        { "from": "Baratheon (Robert)", "to": "Tully", "intensity": 0.0 }
+    ]
+}
