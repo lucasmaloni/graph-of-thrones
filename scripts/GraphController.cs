@@ -149,7 +149,7 @@ public partial class GraphController : Node2D
 
 			string houseFrom = (string)ConnectionAsDict["from"];
 			string houseTo = (string)ConnectionAsDict["to"];			
-			float intensity = Reasoner.GetConnectionIntensity(connectionTypes);
+			double intensity = Reasoner.GetConnectionIntensity(connectionTypes);
 			
 			AddConnection(HouseLookup[houseFrom], HouseLookup[houseTo], intensity);
 		}
@@ -162,7 +162,7 @@ public partial class GraphController : Node2D
 
 		foreach (var connection in implicitConnections)
 		{
-            float intensity = Reasoner.GetConnectionIntensity(new GCollections.Array<string> { connection.Type });
+            double intensity = Reasoner.GetConnectionIntensity(new GCollections.Array<string> { connection.Type });
 			AddConnection(HouseLookup[connection.From], HouseLookup[connection.To], intensity);
 		}
 	}
@@ -186,6 +186,31 @@ public partial class GraphController : Node2D
 		}
 	}
 
+	public void UpdateConnection(string fromHouseName, string toHouseName, double intensityChange)
+	{
+		if (!HouseLookup.ContainsKey(fromHouseName) || !HouseLookup.ContainsKey(toHouseName)) return;
+
+		WesterosHouse fromHouse = HouseLookup[fromHouseName];
+		WesterosHouse toHouse = HouseLookup[toHouseName];
+
+		if (intensityChange < 0)
+		{
+			double currentIntensity = Graph[fromHouse][toHouse].Intensity;
+			double newIntensity = Math.Max(0, currentIntensity + intensityChange); // Garante
+
+			if (newIntensity == 0)
+			{
+				Graph[fromHouse].Remove(toHouse);
+				Graph[toHouse].Remove(fromHouse);
+			}
+			else
+			{
+				Graph[fromHouse][toHouse].Intensity = newIntensity;
+				Graph[toHouse][fromHouse].Intensity = newIntensity;
+			}
+		}
+	}
+
 	private void ApplyAtractionForces()
 	{
 		// Forças de atração apenas acontecem entre casas conectadas. 
@@ -204,7 +229,7 @@ public partial class GraphController : Node2D
 				Vector2 direction = to.Key.GlobalPosition - from.GlobalPosition;
 				float distance = direction.Length();
 
-				if (distance <= RestDistance) continue; // Evita divisão por zero
+				if (distance <= 0) continue; // Evita divisão por zero
 
 				float displacement = distance - RestDistance;
 				float Strength = SpringConstant * displacement * (float)to.Value.Intensity;
@@ -230,7 +255,7 @@ public partial class GraphController : Node2D
 				Vector2 direction = houseA.GlobalPosition - houseB.GlobalPosition;
 				float distance = direction.Length();
 
-				if (distance <= RestDistance) continue;
+				if (distance <= 0) continue;
 
 				float Strength = RepulsionConstant / (distance * distance);
 				Vector2 repulsionVector = direction.Normalized() * Strength;
@@ -239,6 +264,5 @@ public partial class GraphController : Node2D
             	houseB.ApplyCentralForce(-repulsionVector);
 			}
 		}
-		
 	}
 }

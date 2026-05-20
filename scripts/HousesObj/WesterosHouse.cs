@@ -6,7 +6,7 @@ public partial class WesterosHouse : RigidBody2D
     [Export] public float Size { get; set; } = 1.0f;
     
     // Dimensões padrão para manter a proporção (x, 1.1x)
-    public Vector2 TargetDimensions { get; set; } = new Vector2(128, 141);
+    public Vector2 TargetDimensions { get; set; } = new Vector2(100, 110);
     public Sprite2D SigilSprite { get; private set; }
 
     public override void _Ready()

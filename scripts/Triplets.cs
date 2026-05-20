@@ -1,13 +1,13 @@
 using Godot;
 using System;
 
-public class InferredConnection
+public class Triplets
 {
 	public string From { get; set; }
 	public string To { get; set; }
 	public string Type { get; set; }
 
-	public InferredConnection(string from, string type,  string to)
+	public Triplets(string from, string type,  string to)
 	{
 		From = from;
 		Type = type;
