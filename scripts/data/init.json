@@ -122,7 +122,16 @@
         },
         "Reach": {
             "VassalOf": "Tyrell",
-            "Names": []
+            "Names": 
+            [
+                "Ambrose", "Ashford", "Beesbury", "Blackbar", "Bulwer", 
+                "Caswell", "Chester", "Cockshaw", "Costayne", "Cuy", 
+                "Florent", "Footly", "Graceford", "Grimm", "Hewett", 
+                "Hightower", "Meadows", "Merryweather", "Mullendore", 
+                "Oakheart", "Peake", "Redwyne", "Risley", "Rowan", 
+                "Serry", "Tarly", "Varner", "Vyrwel", "Webber", 
+                "Willum"
+            ]
         },
         "Iron Islands": {
             "VassalOf": "Greyjoy",
