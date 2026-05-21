@@ -22,7 +22,9 @@ public partial class Reasoner
 			{ "eCasadoCom", 1.0 },
 			{ "aliadoHistoricoDe", 0.75 },
 			{ "eAliadoEstrategicoDe", 0.25 },
-			{ "eFamiliaDe", 0.5 }
+			{ "eFamiliaDe", 0.5 },
+			{ "naoConfiaem", -0.5 }, // Stark e Lannister
+			{ "guardaRancorDe", -0.75 } // Martell e Lannister
 		};
 	}
 

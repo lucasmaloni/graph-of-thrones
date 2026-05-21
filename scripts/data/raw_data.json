@@ -11,6 +11,8 @@
         { "from": "Baratheon (Robert)", "to": "Tyrell", "intensity": 0.0 },
         { "from": "Baratheon (Robert)", "to": "Greyjoy", "intensity": 0.0 },
         { "from": "Baratheon (Robert)", "to": "Martell", "intensity": 0.0 },
-        { "from": "Baratheon (Robert)", "to": "Tully", "intensity": 0.0 }
+        { "from": "Baratheon (Robert)", "to": "Tully", "intensity": 0.0 },
+        { "from": "Stark", "to": "Lannister", "intensity": 0.0 },
+        { "from": "Martell", "to": "Lannister", "intensity": 0.0 }
     ]
 }
