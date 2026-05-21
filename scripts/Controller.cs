@@ -15,5 +15,6 @@ public partial class Controller : Node2D
     {
         GraphController.InferGreatHousesConnections();
         GraphController.InferKingdomConnections();
+        GraphController.GetMostWellConnectedHouse();
     }
 }

@@ -30,6 +30,9 @@ public partial class GraphController : Node2D
 		Reasoner = new Reasoner(this);
 		CreateRawConnections();
 		SetupKingdomsRawConnections();
+		
+		// Debug: Verificar qual é a casa mais conectada após a criação do grafos
+		GetMostConnectedHouse();
 	}
 
     public override void _Process(double delta)
@@ -355,5 +358,82 @@ public partial class GraphController : Node2D
 				body.ApplyCentralForce(dampingForce);
 			}
 		}
+	}
+
+	public WesterosHouse GetMostConnectedHouse()
+	{
+		// Validação de integridade: previne erros se o método for chamado antes do grafo ser montado
+		if (Graph == null || Graph.Count == 0)
+		{
+			GD.PrintErr("Aviso: Tentativa de buscar a casa mais conectada em um grafo vazio.");
+			return null;
+		}
+
+		WesterosHouse mostConnectedHouse = null;
+		int maxDegree = -1;
+
+		foreach (var node in Graph)
+		{
+			// O grau do vértice é a quantidade de arestas (conexões) que ele possui
+			int currentDegree = node.Value.Count;
+
+			if (currentDegree > maxDegree)
+			{
+				maxDegree = currentDegree;
+				mostConnectedHouse = node.Key;
+			}
+		}
+
+		GD.Print($"A casa com maior grau é {mostConnectedHouse.Name} com {maxDegree} conexões.");
+		return mostConnectedHouse;
+	}
+
+	public WesterosHouse GetMostWellConnectedHouse()
+	{
+		// Validação de segurança básica
+		if (Graph == null || Graph.Count == 0)
+		{
+			GD.PrintErr("Aviso: Tentativa de buscar a casa mais bem conectada em um grafo vazio.");
+			return null;
+		}
+
+		WesterosHouse mostWellConnectedHouse = null;
+		
+		// Inicializamos com o menor valor possível, pois a soma das intensidades 
+		// pode ser negativa no escopo [-1, 1] caso a casa só tenha hostilidades.
+		double maxIntensitySum = double.MinValue; 
+
+		foreach (var node in Graph)
+		{
+			WesterosHouse currentHouse = node.Key;
+
+			// Otimização de Domínio: LordlyHouses são ignoradas conceitualmente
+			if (currentHouse is LordlyHouse)
+			{
+				continue;
+			}
+
+			double currentIntensitySum = 0;
+
+			// Soma as intensidades de todas as arestas conectadas a esta casa
+			foreach (var edge in node.Value.Values)
+			{
+				currentIntensitySum += edge.Intensity;
+			}
+
+			// Atualiza o recorde se a soma atual for estritamente maior
+			if (currentIntensitySum > maxIntensitySum)
+			{
+				maxIntensitySum = currentIntensitySum;
+				mostWellConnectedHouse = currentHouse;
+			}
+		}
+
+		if (mostWellConnectedHouse != null)
+		{
+			GD.Print($"A casa mais BEM conectada é {mostWellConnectedHouse.Name} com intensidade acumulada de {maxIntensitySum}.");
+		}
+
+		return mostWellConnectedHouse;
 	}
 }
