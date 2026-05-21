@@ -24,7 +24,8 @@ public partial class Reasoner
 			{ "eAliadoEstrategicoDe", 0.25 },
 			{ "eFamiliaDe", 0.5 },
 			{ "naoConfiaEm", -0.5 },
-			{ "guardaRancorDe", -0.75 }
+			{ "guardaRancorDe", -0.75 },
+			{ "eInimigoDe", -1.0 }
 		};
 	}
 

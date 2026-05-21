@@ -173,7 +173,7 @@ public partial class GraphController : Node2D
 			string houseTo = (string)ConnectionAsDict["to"];			
 			double intensity = Reasoner.GetConnectionIntensity(connectionTypes);
 
-			TryUpdateExistingConnection(houseFrom, houseTo, intensity, true);
+			CreateOrUpdateConnection(houseFrom, houseTo, intensity, true);
 		}
 	}
 
@@ -186,7 +186,7 @@ public partial class GraphController : Node2D
 		{
             double intensity = Reasoner.GetConnectionIntensity(new GCollections.Array<string> { connection.Type });
 
-			TryUpdateExistingConnection(connection.From, connection.To, intensity, true);
+			CreateOrUpdateConnection(connection.From, connection.To, intensity, true);
 		}
 	}
 
@@ -244,28 +244,32 @@ public partial class GraphController : Node2D
     }
 }
 
-	public void UpdateConnection(string fromHouseName, string toHouseName, double intensityChange)
+	private void CreateOrUpdateConnection(string fromHouseName, string toHouseName, double intensity, bool updateScale)
 	{
-		if (!HouseLookup.ContainsKey(fromHouseName) || !HouseLookup.ContainsKey(toHouseName)) return;
+		if (!HouseLookup.ContainsKey(fromHouseName) || !HouseLookup.ContainsKey(toHouseName)) 
+		{
+			// Debug
+			GD.PrintErr($"Aviso: Tentativa de conectar {fromHouseName} a {toHouseName}, mas uma das casas não existe no grafo.");
+			return;
+		}
 
 		WesterosHouse fromHouse = HouseLookup[fromHouseName];
 		WesterosHouse toHouse = HouseLookup[toHouseName];
 
-		if (intensityChange < 0)
+		if (updateScale)
 		{
-			double currentIntensity = Graph[fromHouse][toHouse].Intensity;
-			double newIntensity = Math.Max(0, currentIntensity + intensityChange); // Garante
+			fromHouse.UpdateScale();
+			toHouse.UpdateScale();
+		}
 
-			if (newIntensity == 0)
-			{
-				Graph[fromHouse].Remove(toHouse);
-				Graph[toHouse].Remove(fromHouse);
-			}
-			else
-			{
-				Graph[fromHouse][toHouse].Intensity = newIntensity;
-				Graph[toHouse][fromHouse].Intensity = newIntensity;
-			}
+		if (Graph[fromHouse].ContainsKey(toHouse))
+		{
+			Graph[fromHouse][toHouse].Intensity = intensity;
+			Graph[toHouse][fromHouse].Intensity = intensity;
+		}
+		else
+		{
+			AddConnection(fromHouse, toHouse, intensity);
 		}
 	}
 

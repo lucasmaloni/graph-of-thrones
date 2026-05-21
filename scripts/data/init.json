@@ -145,8 +145,11 @@
         { "from": "Baratheon (Robert)", "to": "Greyjoy", "ConnectionTypes": ["eVassaloDe"] },
         { "from": "Baratheon (Robert)", "to": "Martell", "ConnectionTypes": ["eVassaloDe"] },
         { "from": "Baratheon (Robert)", "to": "Tully", "ConnectionTypes": ["eVassaloDe"] },
-        { "from": "Stark", "to": "Lannister", "ConnectionTypes": ["naoConfiaem"] },
+        { "from": "Stark", "to": "Lannister", "ConnectionTypes": ["naoConfiaEm"] },
         { "from": "Martell", "to": "Lannister", "ConnectionTypes": ["guardaRancorDe"] },
-        { "from": "Stark", "to": "Greyjoy", "ConnectionTypes": ["eInimigoDe", "guardaRancorDe"] }
+        { "from": "Stark", "to": "Greyjoy", "ConnectionTypes": ["eInimigoDe", "guardaRancorDe"] },
+        { "from": "Stark", "to": "Frey", "ConnectionTypes": ["guardaRancorDe"] },
+        { "from": "Tully", "to": "Frey", "ConnectionTypes": ["guardaRancorDe"] },
+        { "from": "Lannister", "to": "Frey", "ConnectionTypes": ["guardaRancorDe"] }
     ]
 }
