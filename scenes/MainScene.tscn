@@ -50,3 +50,4 @@ script = ExtResource("3_611at")
 [node name="ControleGrafo" type="Button" parent="CanvasLayer" unique_id=370103987]
 offset_right = 8.0
 offset_bottom = 8.0
+text = "Integrar Ontologia"

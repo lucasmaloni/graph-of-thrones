@@ -12,9 +12,14 @@ public partial class GraphController : Node2D
 	protected HashSet<Tuple<WesterosHouse, WesterosHouse>> appliedForces = new HashSet<Tuple<WesterosHouse, WesterosHouse>>();
 	protected Reasoner Reasoner { get; set;}
 	protected const float BASE_CONECTION_WIDTH = 3f;
-	[Export] public float RepulsionConstant = 8000f;
-	[Export] public float SpringConstant = 200f;
-	[Export] public float RestDistance = 300f; //Dnew GCollections.Array<string>() {"eVassaloDe"}istância em que as casas repousam/param de se atrair
+	[Export] public float RepulsionConstant = 800f;
+	[Export] public float SpringConstant = 20f;
+	[Export] public float RestDistance = 300f;
+	[Export] public float Damping = 6f;
+	[Export] public float MaxForce = 1200f;
+	[Export] public float MinDistance = 80f;
+	[Export] public float NegativeDistanceFactor = 1f;
+	[Export] public float MaxAttractionDisplacement = 200f;
 
 	public override void _Ready()
 	{
@@ -270,25 +275,41 @@ public partial class GraphController : Node2D
 		// Casas não conectadas não se atraem e todas as casas se repelem por uma questão de repulsão natural.
 
 		appliedForces.Clear();
-		foreach(WesterosHouse from in Graph.Keys)
+		foreach (WesterosHouse from in Graph.Keys)
 		{
 			foreach (var to in Graph[from])
 			{
 				Tuple<WesterosHouse, WesterosHouse> forceTuple = new Tuple<WesterosHouse, WesterosHouse>(from, to.Key);
 				Tuple<WesterosHouse, WesterosHouse> reverseForceTuple = new Tuple<WesterosHouse, WesterosHouse>(to.Key, from);
 
-				if (appliedForces.Contains(forceTuple) || appliedForces.Contains(reverseForceTuple)) continue; // Evita aplicar força mais de uma vez para a mesma conexão
+				if (appliedForces.Contains(forceTuple) || appliedForces.Contains(reverseForceTuple)) continue;
 				
 				Vector2 direction = to.Key.GlobalPosition - from.GlobalPosition;
 				float distance = direction.Length();
 
-				if (distance <= 0) continue; // Evita divisão por zero
+				if (distance <= 0) continue;
 
-				float displacement = distance - RestDistance;
-				float Strength = SpringConstant * displacement * (float)to.Value.Intensity;
-				Vector2 force = direction.Normalized() * Strength;
+				float intensity = (float)to.Value.Intensity;
+				float weight = Mathf.Abs(intensity);
+				if (weight <= 0.0001f) continue;
+
+				float desiredDistance = RestDistance;
+				if (intensity < 0f)
+				{
+					desiredDistance = RestDistance * (1f + NegativeDistanceFactor * weight);
+				}
+
+				float displacement = distance - desiredDistance;
+				if (displacement > 0f)
+				{
+					displacement = Mathf.Min(displacement, MaxAttractionDisplacement);
+				}
+				float strength = SpringConstant * displacement * weight;
+				strength = Mathf.Clamp(strength, -MaxForce, MaxForce);
+				Vector2 force = direction.Normalized() * strength;
 
 				from.ApplyCentralForce(force);
+				to.Key.ApplyCentralForce(-force);
 
 				appliedForces.Add(forceTuple);
 			}
@@ -297,24 +318,37 @@ public partial class GraphController : Node2D
 
 	private void ApplyRepulsionForces()
 	{
-		var greatHouses = HouseLookup.Values; // Me dá nós da cena (casas) <string, Casas>
+		var houses = HouseLookup.Values; // Me dá nós da cena (casas) <string, Casas>
+		var houseList = new List<WesterosHouse>(houses);
 
-		foreach (WesterosHouse houseA in greatHouses)
+		for (int i = 0; i < houseList.Count; i++)
 		{
-			foreach (WesterosHouse houseB in greatHouses)
+			for (int j = i + 1; j < houseList.Count; j++)
 			{
-				if (houseA == houseB) continue; // Evita aplicar força em si mesmo
+				WesterosHouse houseA = houseList[i];
+				WesterosHouse houseB = houseList[j];
 
 				Vector2 direction = houseA.GlobalPosition - houseB.GlobalPosition;
 				float distance = direction.Length();
 
 				if (distance <= 0) continue;
 
-				float Strength = RepulsionConstant / (distance * distance);
-				Vector2 repulsionVector = direction.Normalized() * Strength;
+				float safeDistance = Mathf.Max(distance, MinDistance);
+				float strength = RepulsionConstant / (safeDistance * safeDistance);
+				strength = Mathf.Clamp(strength, 0f, MaxForce);
+				Vector2 repulsionVector = direction.Normalized() * strength;
 
 				houseA.ApplyCentralForce(repulsionVector);
-            	houseB.ApplyCentralForce(-repulsionVector);
+				houseB.ApplyCentralForce(-repulsionVector);
+			}
+		}
+
+		foreach (WesterosHouse house in houseList)
+		{
+			if (house is RigidBody2D body)
+			{
+				Vector2 dampingForce = -body.LinearVelocity * Damping;
+				body.ApplyCentralForce(dampingForce);
 			}
 		}
 	}
