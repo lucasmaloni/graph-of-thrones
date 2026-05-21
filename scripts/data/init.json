@@ -146,6 +146,7 @@
         { "from": "Baratheon (Robert)", "to": "Martell", "ConnectionTypes": ["eVassaloDe"] },
         { "from": "Baratheon (Robert)", "to": "Tully", "ConnectionTypes": ["eVassaloDe"] },
         { "from": "Stark", "to": "Lannister", "ConnectionTypes": ["naoConfiaem"] },
-        { "from": "Martell", "to": "Lannister", "ConnectionTypes": ["guardaRancorDe"] }
+        { "from": "Martell", "to": "Lannister", "ConnectionTypes": ["guardaRancorDe"] },
+        { "from": "Stark", "to": "Greyjoy", "ConnectionTypes": ["eInimigoDe", "guardaRancorDe"] }
     ]
 }

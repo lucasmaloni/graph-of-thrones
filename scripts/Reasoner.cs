@@ -6,7 +6,6 @@ using System.Text.RegularExpressions;
 public partial class Reasoner
 {
 	private Dictionary<string, double> ConnectionLookup { get; set; }
-	private Dictionary<string, Tuple<double, bool>> ActionLookup { get; set; }
 	private GraphController GraphController { get; set; }
 
 	public Reasoner (GraphController graphController)
@@ -18,13 +17,14 @@ public partial class Reasoner
 	{
 		return new Dictionary<string, double>
 		{
+			// Instâncias semanticas de Tipos de Conexões
 			{ "eVassaloDe", 0.5 },
 			{ "eCasadoCom", 1.0 },
 			{ "aliadoHistoricoDe", 0.75 },
 			{ "eAliadoEstrategicoDe", 0.25 },
 			{ "eFamiliaDe", 0.5 },
-			{ "naoConfiaem", -0.5 }, // Stark e Lannister
-			{ "guardaRancorDe", -0.75 } // Martell e Lannister
+			{ "naoConfiaEm", -0.5 },
+			{ "guardaRancorDe", -0.75 }
 		};
 	}
 
