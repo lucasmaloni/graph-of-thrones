@@ -101,8 +101,14 @@
             ]
         },
         "Stormlands": {
-            "VassalOf": "Baratheon (Renly)",
-            "Names": []
+            "VassalOf": "Baratheon (Stanis)",
+            "Names": 
+            [
+                "Buckler", "Cafferen", "Caron", "Dondarrion", "Errol", 
+                "Estermont", "Fell", "Grandison", "Mertyns", "Morrigen", 
+                "Peasebury", "Penrose", "Selmy", "Staedmon", "Swann", 
+                "Tarth", "Wylde"
+            ]
         },
         "Westerlands": {
             "VassalOf": "Lannister",
