@@ -1,34 +1,29 @@
 # Graph of Thrones
 
 ## Visao geral
-Graph of Thrones e um projeto em Godot 4 com C# que representa as Casas de Westeros como um grafo interativo.
-Cada casa e um no fisico na cena, e as relacoes politicas sao arestas com intensidade variavel.
+Graph of Thrones e um projeto em Godot 4 com C# que modela as Casas de Westeros como um grafo interativo em uma cena 2D.
+Cada casa e um no físico (GreatHouse ou LordlyHouse) e cada relação política e uma aresta com intensidade no intervalo [-1, 1].
+As intensidades influenciam a cor das conexoes e a simulação de forças, mantendo o grafo dinâmico e observável.
 
-## Status do projeto
-Projeto em desenvolvimento ativo.
+## Organização geral
+- scenes: cenas Godot da simulação (MainScene, InitialWesteros, GreatHouse)
+- scripts: logica C# do grafo e das regras (GraphController, Reasoner, Controller, DataManager, Edge, Triplets)
+- scripts/data: dados em JSON usados para iniciar casas e conexoes (init.json, raw_data.json)
+- assets/icons: sigils das casas para exibição visual
 
-O sistema ja possui uma base funcional para:
-- carregar casas e relacoes a partir de JSON
-- desenhar conexoes entre casas com espessura e cor por intensidade
-- aplicar simulacao fisica de atracao e repulsao entre nos
-- exibir sigilos das casas dinamicamente
+## Fluxo de montagem do grafo
+1. GraphController carrega GreatHouses e LordlyHouses da cena e aplica metadados de scripts/data/init.json.
+2. DataManager le scripts/data/raw_data.json e cria conexoes brutas com intensidade fixa.
+3. Reasoner produz conexoes implicitas de vassalagem para completar o grafo com arestas iniciais.
+4. O grafo e renderizado e simulado a cada frame, com repulsao global e atracao por intensidade.
 
-Ainda faltam partes importantes para chegar na visao final, incluindo refinamentos de gameplay, regras de simulacao semantica e camada de interacao mais rica.
-
-## Objetivo final
-O objetivo final e entregar um simulador visual de dinamicas politicas em Westeros, no qual:
-- as Casas Grandes e vassalas sejam modeladas como uma rede viva
-- lealdade, influencia, conflitos e aliancas evoluam ao longo do tempo
-- eventos alterem o estado do grafo de forma rastreavel
-- o usuario consiga observar e explorar mudancas de poder em tempo real
-
-Em resumo: transformar a estrutura narrativa de Game of Thrones em um grafo dinamico, explicavel e interativo.
-
-## Arquitetura atual (resumo)
-- GraphController: monta o grafo, cria conexoes, desenha arestas e aplica forcas
-- WesterosHouse: base das casas, configuracao fisica e carregamento de sigilos
-- GreatHouse e LordlyHouse: especializacoes do dominio
-- DataManager: leitura de dados em scripts/data/init.json e scripts/data/database.json
+## Integração de análise semântica para construção de um grafo dinâmico
+A integracao semantica é baseada em regras de dominio que traduzem tipos de relacao em pesos numericos.
+- Reasoner possui um ConnectionLookup que mapeia tipos semanticos (eVassaloDe, eCasadoCom, eInimigoDe) para intensidades.
+- InferGreatHousesConnections transforma ConnectionTypes do init.json em pesos e atualiza as arestas entre Casas Grandes.
+- InferKingdomRules gera Triplets (sujeito, predicado, objeto) a partir de LordlyHouse.VassalOf, criando inferencias de vassalagem.
+- GraphController aplica as inferencias com CreateOrUpdateConnection, mudando intensidade, cor e comportamento fisico do grafo.
+- Controller aciona essas inferencias quando o usuario solicita (botao RunReasoner).
 
 ## Como executar
 Pre-requisitos:
@@ -40,16 +35,4 @@ Passos:
 2. Executar a cena principal definida no projeto.
 
 Opcional para validar compilacao C#:
-- rodar: dotnet build
-
-## Estrutura principal
-- scenes: cenas da simulacao
-- scripts: logica C# da simulacao
-- scripts/data: dados iniciais e conexoes em JSON
-- assets/icons: sigilos das casas
-
-## Proximos passos
-- completar cobertura de casas e consistencia entre cena e dados JSON
-- introduzir sistema de eventos narrativos e mudancas de lealdade
-- melhorar UX de exploracao do grafo (filtros, destaque, painel de detalhes)
-- adicionar testes para carregamento de dados e regras de relacao
+- rodar: ```dotnet build```
