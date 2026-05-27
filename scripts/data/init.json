@@ -135,7 +135,13 @@
         },
         "Iron Islands": {
             "VassalOf": "Greyjoy",
-            "Names": []
+            "Names":
+            [
+                "Blacktyde", "Botley", "Drumm", "Farwynd", "Goodbrother", 
+                "Harlaw of Harlaw", "Kenning of Harlaw", 
+                "Myre", "Orkwood", "Saltcliffe", "Sparr", "Stonehouse", 
+                "Stonetree", "Sunderly", "Volmark", "Wynch"
+            ]
         },
         "Dorne": {
             "VassalOf": "Martell",
