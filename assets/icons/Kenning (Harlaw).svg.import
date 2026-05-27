@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk7af0e4nxuwp"
-path="res://.godot/imported/Kenning.svg-48463946fa2d4b34ef397a03eaa775e2.ctex"
+uid="uid://ce7c7oo28073w"
+path="res://.godot/imported/Kenning (Harlaw).svg-0a315e35293beb920960fb00a06e1b07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/Kenning.svg"
-dest_files=["res://.godot/imported/Kenning.svg-48463946fa2d4b34ef397a03eaa775e2.ctex"]
+source_file="res://assets/icons/Kenning (Harlaw).svg"
+dest_files=["res://.godot/imported/Kenning (Harlaw).svg-0a315e35293beb920960fb00a06e1b07.ctex"]
 
 [params]
 
