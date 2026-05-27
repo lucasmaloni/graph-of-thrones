@@ -9,54 +9,54 @@ script = ExtResource("1_fkpsj")
 
 [node name="Stark" parent="." unique_id=1421553946 instance=ExtResource("2_c5yk2")]
 texture_filter = 1
-position = Vector2(560, 123)
+position = Vector2(586, 52)
 
 [node name="Bolton" parent="." unique_id=207447263 instance=ExtResource("2_c5yk2")]
-position = Vector2(811, 57)
+position = Vector2(838, 123)
 script = ExtResource("3_c5yk2")
 
 [node name="Karstark" parent="." unique_id=1345552832 instance=ExtResource("2_c5yk2")]
-position = Vector2(863, 191)
+position = Vector2(771, 312)
 script = ExtResource("3_c5yk2")
 
 [node name="Umber" parent="." unique_id=2146702295 instance=ExtResource("2_c5yk2")]
-position = Vector2(875, 19)
+position = Vector2(313, 226)
 script = ExtResource("3_c5yk2")
 
 [node name="Mormont" parent="." unique_id=660186164 instance=ExtResource("2_c5yk2")]
-position = Vector2(486, -205)
+position = Vector2(313, -67)
 script = ExtResource("3_c5yk2")
 
 [node name="Glover" parent="." unique_id=2093759645 instance=ExtResource("2_c5yk2")]
-position = Vector2(619, -208)
+position = Vector2(619, -225)
 script = ExtResource("3_c5yk2")
 
 [node name="Ryswell" parent="." unique_id=660944853 instance=ExtResource("2_c5yk2")]
-position = Vector2(733, -171)
+position = Vector2(805, -128)
 script = ExtResource("3_c5yk2")
 
 [node name="Burley" parent="." unique_id=333840083 instance=ExtResource("2_c5yk2")]
-position = Vector2(296, -60)
+position = Vector2(392, 312)
 script = ExtResource("3_c5yk2")
 
 [node name="Cerwyn" parent="." unique_id=524189108 instance=ExtResource("2_c5yk2")]
-position = Vector2(713, -81)
+position = Vector2(771, -196)
 script = ExtResource("3_c5yk2")
 
 [node name="Dustin" parent="." unique_id=6270216 instance=ExtResource("2_c5yk2")]
-position = Vector2(646, -113)
+position = Vector2(701, -225)
 script = ExtResource("3_c5yk2")
 
 [node name="Harclay" parent="." unique_id=692332443 instance=ExtResource("2_c5yk2")]
-position = Vector2(797, 130)
+position = Vector2(683, 381)
 script = ExtResource("3_c5yk2")
 
 [node name="Hornwood" parent="." unique_id=895611096 instance=ExtResource("2_c5yk2")]
-position = Vector2(838, -61)
+position = Vector2(838, 52)
 script = ExtResource("3_c5yk2")
 
 [node name="Knott" parent="." unique_id=1755734810 instance=ExtResource("2_c5yk2")]
-position = Vector2(763, -30)
+position = Vector2(838, -67)
 script = ExtResource("3_c5yk2")
 
 [node name="Liddle" parent="." unique_id=46886079 instance=ExtResource("2_c5yk2")]
@@ -64,666 +64,666 @@ position = Vector2(313, 52)
 script = ExtResource("3_c5yk2")
 
 [node name="Locke" parent="." unique_id=1837434784 instance=ExtResource("2_c5yk2")]
-position = Vector2(541, -135)
+position = Vector2(541, -225)
 script = ExtResource("3_c5yk2")
 
 [node name="Manderly" parent="." unique_id=36060783 instance=ExtResource("2_c5yk2")]
-position = Vector2(219, 111)
+position = Vector2(586, 381)
 script = ExtResource("3_c5yk2")
 
 [node name="Norrey" parent="." unique_id=1372351159 instance=ExtResource("2_c5yk2")]
-position = Vector2(870, 117)
+position = Vector2(838, 226)
 script = ExtResource("3_c5yk2")
 
 [node name="Reed" parent="." unique_id=967524657 instance=ExtResource("2_c5yk2")]
-position = Vector2(392, -38)
+position = Vector2(392, -128)
 script = ExtResource("3_c5yk2")
 
 [node name="Slate" parent="." unique_id=448808785 instance=ExtResource("2_c5yk2")]
-position = Vector2(217, 21)
+position = Vector2(296, 130)
 script = ExtResource("3_c5yk2")
 
 [node name="Stout" parent="." unique_id=123103385 instance=ExtResource("2_c5yk2")]
-position = Vector2(367, -164)
+position = Vector2(486, 381)
 script = ExtResource("3_c5yk2")
 
 [node name="Wull" parent="." unique_id=18971194 instance=ExtResource("2_c5yk2")]
-position = Vector2(448, -106)
+position = Vector2(448, -196)
 script = ExtResource("3_c5yk2")
 
 [node name="Lannister" parent="." unique_id=1765368564 instance=ExtResource("2_c5yk2")]
-position = Vector2(-300, 1745)
+position = Vector2(-713, 1884)
 
 [node name="Banefort" parent="." unique_id=488234367 instance=ExtResource("2_c5yk2")]
-position = Vector2(-385, 1907)
+position = Vector2(-652, 1617)
 script = ExtResource("3_c5yk2")
 
 [node name="Brax" parent="." unique_id=1110434312 instance=ExtResource("2_c5yk2")]
-position = Vector2(-611, 1846)
+position = Vector2(-424, 2014)
 script = ExtResource("3_c5yk2")
 
 [node name="Crakehall" parent="." unique_id=630985246 instance=ExtResource("2_c5yk2")]
-position = Vector2(-352, 2095)
+position = Vector2(-713, 2133)
 script = ExtResource("3_c5yk2")
 
 [node name="Estren" parent="." unique_id=1368319239 instance=ExtResource("2_c5yk2")]
-position = Vector2(-535, 1815)
+position = Vector2(-859, 1614)
 script = ExtResource("3_c5yk2")
 
 [node name="Falwell" parent="." unique_id=1185108714 instance=ExtResource("2_c5yk2")]
-position = Vector2(-586, 1757)
+position = Vector2(-952, 1662)
 script = ExtResource("3_c5yk2")
 
 [node name="Farman" parent="." unique_id=2030737253 instance=ExtResource("2_c5yk2")]
-position = Vector2(-445, 1859)
+position = Vector2(-754, 1617)
 script = ExtResource("3_c5yk2")
 
 [node name="Jast" parent="." unique_id=1285721747 instance=ExtResource("2_c5yk2")]
-position = Vector2(-591, 1976)
+position = Vector2(-952, 2014)
 script = ExtResource("3_c5yk2")
 
 [node name="Kenning" parent="." unique_id=2078155521 instance=ExtResource("2_c5yk2")]
-position = Vector2(-441, 1964)
+position = Vector2(-382, 1884)
 script = ExtResource("3_c5yk2")
 
 [node name="Lefford" parent="." unique_id=852107007 instance=ExtResource("2_c5yk2")]
-position = Vector2(-237, 2055)
+position = Vector2(-401, 1783)
 script = ExtResource("3_c5yk2")
 
 [node name="Lydden" parent="." unique_id=1924558213 instance=ExtResource("2_c5yk2")]
-position = Vector2(-673, 1813)
+position = Vector2(-1034, 1851)
 script = ExtResource("3_c5yk2")
 
 [node name="Marbrand" parent="." unique_id=1099205107 instance=ExtResource("2_c5yk2")]
-position = Vector2(-498, 2028)
+position = Vector2(-859, 2066)
 script = ExtResource("3_c5yk2")
 
 [node name="Moreland" parent="." unique_id=726021411 instance=ExtResource("2_c5yk2")]
-position = Vector2(-655, 1707)
+position = Vector2(-1016, 1745)
 script = ExtResource("3_c5yk2")
 
 [node name="Plumm" parent="." unique_id=1355396081 instance=ExtResource("2_c5yk2")]
-position = Vector2(-524, 1905)
+position = Vector2(-512, 2066)
 script = ExtResource("3_c5yk2")
 
 [node name="Prester" parent="." unique_id=613614428 instance=ExtResource("2_c5yk2")]
-position = Vector2(-675, 1903)
+position = Vector2(-1036, 1941)
 script = ExtResource("3_c5yk2")
 
 [node name="Serrett" parent="." unique_id=1307181003 instance=ExtResource("2_c5yk2")]
-position = Vector2(-393, 2027)
+position = Vector2(-634, 2091)
 script = ExtResource("3_c5yk2")
 
 [node name="Spicer" parent="." unique_id=1837501923 instance=ExtResource("2_c5yk2")]
-position = Vector2(-329, 1953)
+position = Vector2(-534, 1617)
 script = ExtResource("3_c5yk2")
 
 [node name="Stackspear" parent="." unique_id=341120028 instance=ExtResource("2_c5yk2")]
-position = Vector2(-291, 2017)
+position = Vector2(-447, 1707)
 script = ExtResource("3_c5yk2")
 
 [node name="Westerling" parent="." unique_id=659273361 instance=ExtResource("2_c5yk2")]
-position = Vector2(-436, 2091)
+position = Vector2(-797, 2129)
 script = ExtResource("3_c5yk2")
 
 [node name="Arryn" parent="." unique_id=568523910 instance=ExtResource("2_c5yk2")]
-position = Vector2(1054, 1317)
+position = Vector2(1866, 1485)
 
 [node name="Baelish" parent="." unique_id=1372568875 instance=ExtResource("2_c5yk2")]
-position = Vector2(1206, 1173)
+position = Vector2(1764, 1155)
 script = ExtResource("3_c5yk2")
 
 [node name="Belmore" parent="." unique_id=1036337261 instance=ExtResource("2_c5yk2")]
-position = Vector2(1327, 1140)
+position = Vector2(2139, 1349)
 script = ExtResource("3_c5yk2")
 
 [node name="Borrell" parent="." unique_id=1111169760 instance=ExtResource("2_c5yk2")]
-position = Vector2(1255, 1344)
+position = Vector2(1764, 1815)
 script = ExtResource("3_c5yk2")
 
 [node name="Coldwater" parent="." unique_id=2135144116 instance=ExtResource("2_c5yk2")]
-position = Vector2(1327, 1446)
+position = Vector2(2139, 1614)
 script = ExtResource("3_c5yk2")
 
 [node name="Corbray" parent="." unique_id=686172109 instance=ExtResource("2_c5yk2")]
-position = Vector2(1301, 1580)
+position = Vector2(2113, 1748)
 script = ExtResource("3_c5yk2")
 
 [node name="Elesham" parent="." unique_id=588057364 instance=ExtResource("2_c5yk2")]
-position = Vector2(1327, 1375)
+position = Vector2(1603, 1614)
 script = ExtResource("3_c5yk2")
 
 [node name="Grafton" parent="." unique_id=455627489 instance=ExtResource("2_c5yk2")]
-position = Vector2(1327, 1502)
+position = Vector2(1603, 1441)
 script = ExtResource("3_c5yk2")
 
 [node name="Hunter" parent="." unique_id=1305933977 instance=ExtResource("2_c5yk2")]
-position = Vector2(1327, 1295)
+position = Vector2(1664, 1245)
 script = ExtResource("3_c5yk2")
 
 [node name="Lynderly" parent="." unique_id=1357434643 instance=ExtResource("2_c5yk2")]
-position = Vector2(1206, 1502)
+position = Vector2(1991, 1846)
 script = ExtResource("3_c5yk2")
 
 [node name="Pryor" parent="." unique_id=63697594 instance=ExtResource("2_c5yk2")]
-position = Vector2(1229, 1253)
+position = Vector2(1866, 1155)
 script = ExtResource("3_c5yk2")
 
 [node name="Redfort" parent="." unique_id=999373927 instance=ExtResource("2_c5yk2")]
-position = Vector2(1327, 1216)
+position = Vector2(2139, 1485)
 script = ExtResource("3_c5yk2")
 
 [node name="Royce" parent="." unique_id=313394761 instance=ExtResource("2_c5yk2")]
-position = Vector2(1308, 1077)
+position = Vector2(2120, 1245)
 script = ExtResource("3_c5yk2")
 
 [node name="Ruthermont" parent="." unique_id=1888015867 instance=ExtResource("2_c5yk2")]
-position = Vector2(1249, 1024)
+position = Vector2(2061, 1192)
 script = ExtResource("3_c5yk2")
 
 [node name="Sunderland" parent="." unique_id=1449986354 instance=ExtResource("2_c5yk2")]
-position = Vector2(1249, 1410)
+position = Vector2(1866, 1859)
 script = ExtResource("3_c5yk2")
 
 [node name="Tollett" parent="." unique_id=834808654 instance=ExtResource("2_c5yk2")]
-position = Vector2(1249, 1617)
+position = Vector2(1664, 1707)
 script = ExtResource("3_c5yk2")
 
 [node name="Waynwood" parent="." unique_id=2065202097 instance=ExtResource("2_c5yk2")]
-position = Vector2(1179, 1077)
+position = Vector2(1991, 1155)
 script = ExtResource("3_c5yk2")
 
 [node name="Tully" parent="." unique_id=1061746715 instance=ExtResource("2_c5yk2")]
-position = Vector2(1052, 748)
+position = Vector2(1179, 633)
 
 [node name="Frey" parent="." unique_id=274243001 instance=ExtResource("2_c5yk2")]
-position = Vector2(1032, 584)
+position = Vector2(930, 633)
 script = ExtResource("3_c5yk2")
 
 [node name="Blackwood" parent="." unique_id=1938954152 instance=ExtResource("2_c5yk2")]
-position = Vector2(956, 585.00006)
+position = Vector2(978, 468)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Bracken" parent="." unique_id=210996303 instance=ExtResource("2_c5yk2")]
-position = Vector2(1247, 647.00006)
+position = Vector2(1429, 803)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Butterwell" parent="." unique_id=1843774939 instance=ExtResource("2_c5yk2")]
-position = Vector2(1236, 739)
+position = Vector2(1391.0001, 866)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Charlton" parent="." unique_id=1296775603 instance=ExtResource("2_c5yk2")]
-position = Vector2(1137, 492)
+position = Vector2(1144, 389.00003)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Darry" parent="." unique_id=1767387250 instance=ExtResource("2_c5yk2")]
-position = Vector2(1155.0001, 563)
+position = Vector2(1472.0001, 710.00006)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Goodbrook" parent="." unique_id=980842592 instance=ExtResource("2_c5yk2")]
-position = Vector2(1193, 491)
+position = Vector2(1249, 389)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Lychester" parent="." unique_id=1624870207 instance=ExtResource("2_c5yk2")]
-position = Vector2(1252.0001, 555)
+position = Vector2(1321, 423.00006)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Mallister" parent="." unique_id=1293299952 instance=ExtResource("2_c5yk2")]
-position = Vector2(1214, 833)
+position = Vector2(1144, 926)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Mooton" parent="." unique_id=1884652180 instance=ExtResource("2_c5yk2")]
-position = Vector2(1317, 596)
+position = Vector2(1391, 468)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Piper" parent="." unique_id=606858761 instance=ExtResource("2_c5yk2")]
-position = Vector2(1356.0001, 669)
+position = Vector2(1458, 525.00006)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Roote" parent="." unique_id=1048469850 instance=ExtResource("2_c5yk2")]
-position = Vector2(958, 670)
+position = Vector2(930, 550)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Shawney" parent="." unique_id=1144525924 instance=ExtResource("2_c5yk2")]
-position = Vector2(1077, 893.00006)
+position = Vector2(930.0001, 745.00006)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Smallwood" parent="." unique_id=1762413120 instance=ExtResource("2_c5yk2")]
-position = Vector2(1121.0001, 843.99994)
+position = Vector2(978.0001, 836)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Vance (Atranta)" parent="." unique_id=1394516876 instance=ExtResource("2_c5yk2")]
-position = Vector2(1295, 701.00006)
+position = Vector2(1458.0001, 601.0001)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Vance (Wayfarer)" parent="." unique_id=330848385 instance=ExtResource("2_c5yk2")]
-position = Vector2(1296.0001, 849)
+position = Vector2(1231.0001, 929.00006)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Vypren" parent="." unique_id=709921668 instance=ExtResource("2_c5yk2")]
-position = Vector2(1161, 901)
+position = Vector2(1054, 906)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Wayn" parent="." unique_id=1276465027 instance=ExtResource("2_c5yk2")]
-position = Vector2(1288, 779)
+position = Vector2(1301, 909)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Whent" parent="." unique_id=94404155 instance=ExtResource("2_c5yk2")]
-position = Vector2(1063, 520)
+position = Vector2(1054, 418.00003)
 rotation = -0.05083979
 script = ExtResource("3_c5yk2")
 
 [node name="Greyjoy" parent="." unique_id=221054856 instance=ExtResource("2_c5yk2")]
-position = Vector2(-98, 561)
+position = Vector2(-283, 414)
 
 [node name="Blacktyde" parent="." unique_id=1486339582 instance=ExtResource("2_c5yk2")]
-position = Vector2(-348, 373)
+position = Vector2(-495, 296)
 script = ExtResource("3_c5yk2")
 
 [node name="Botley" parent="." unique_id=234611353 instance=ExtResource("2_c5yk2")]
-position = Vector2(-487, 329)
+position = Vector2(-283, 191)
 script = ExtResource("3_c5yk2")
 
 [node name="Drumm" parent="." unique_id=926343894 instance=ExtResource("2_c5yk2")]
-position = Vector2(-439, 389)
+position = Vector2(-424, 617)
 script = ExtResource("3_c5yk2")
 
 [node name="Farwynd" parent="." unique_id=340485333 instance=ExtResource("2_c5yk2")]
-position = Vector2(-401, 303)
+position = Vector2(-382, 213)
 script = ExtResource("3_c5yk2")
 
 [node name="Goodbrother" parent="." unique_id=455628818 instance=ExtResource("2_c5yk2")]
-position = Vector2(-315, 303)
+position = Vector2(-447, 226)
 script = ExtResource("3_c5yk2")
 
 [node name="Harlaw" parent="." unique_id=763680212 instance=ExtResource("2_c5yk2")]
-position = Vector2(-389, 468)
+position = Vector2(-535, 391)
 script = ExtResource("3_c5yk2")
 
 [node name="Kenning (Harlaw)" parent="." unique_id=618793569 instance=ExtResource("2_c5yk2")]
-position = Vector2(-559, 347)
+position = Vector2(-32, 381)
 script = ExtResource("3_c5yk2")
 
 [node name="Myre" parent="." unique_id=1170314385 instance=ExtResource("2_c5yk2")]
-position = Vector2(-560, 458)
+position = Vector2(-32, 448)
 script = ExtResource("3_c5yk2")
 
 [node name="Orkwood" parent="." unique_id=1880400917 instance=ExtResource("2_c5yk2")]
-position = Vector2(-543, 525)
+position = Vector2(-70, 524)
 script = ExtResource("3_c5yk2")
 
 [node name="Saltcliffe" parent="." unique_id=2134010895 instance=ExtResource("2_c5yk2")]
-position = Vector2(-504, 605)
+position = Vector2(-200, 617)
 script = ExtResource("3_c5yk2")
 
 [node name="Sparr" parent="." unique_id=1096645118 instance=ExtResource("2_c5yk2")]
-position = Vector2(-429, 614)
+position = Vector2(-302, 633)
 script = ExtResource("3_c5yk2")
 
 [node name="Stonehouse" parent="." unique_id=292503972 instance=ExtResource("2_c5yk2")]
-position = Vector2(-355, 633)
+position = Vector2(-512, 556)
 script = ExtResource("3_c5yk2")
 
 [node name="Stonetree" parent="." unique_id=1031496523 instance=ExtResource("2_c5yk2")]
-position = Vector2(-389, 550)
+position = Vector2(-534, 473)
 script = ExtResource("3_c5yk2")
 
 [node name="Sunderly" parent="." unique_id=1877627259 instance=ExtResource("2_c5yk2")]
-position = Vector2(-466, 542)
+position = Vector2(-200, 213)
 script = ExtResource("3_c5yk2")
 
 [node name="Volmark" parent="." unique_id=807956900 instance=ExtResource("2_c5yk2")]
-position = Vector2(-465, 476)
+position = Vector2(-105, 253)
 script = ExtResource("3_c5yk2")
 
 [node name="Wynch" parent="." unique_id=794756898 instance=ExtResource("2_c5yk2")]
-position = Vector2(-517, 407)
+position = Vector2(-52, 312)
 script = ExtResource("3_c5yk2")
 
 [node name="Tyrell" parent="." unique_id=112041017 instance=ExtResource("2_c5yk2")]
-position = Vector2(113, 2244)
+position = Vector2(-329, 2751)
 
 [node name="Baratheon (Robert)" parent="." unique_id=733497175 instance=ExtResource("2_c5yk2")]
-position = Vector2(206, 1217)
+position = Vector2(628, 1642)
 
 [node name="Emmon" parent="." unique_id=1683783298 instance=ExtResource("2_c5yk2")]
-position = Vector2(-315, 1154)
+position = Vector2(465, 1349)
 script = ExtResource("3_c5yk2")
 
 [node name="Buckwell" parent="." unique_id=565978221 instance=ExtResource("2_c5yk2")]
-position = Vector2(-299, 1063)
+position = Vector2(784, 1349)
 script = ExtResource("3_c5yk2")
 
 [node name="Byrch" parent="." unique_id=192784153 instance=ExtResource("2_c5yk2")]
-position = Vector2(-358, 1028)
+position = Vector2(906, 1508)
 script = ExtResource("3_c5yk2")
 
 [node name="Bywater" parent="." unique_id=1218700213 instance=ExtResource("2_c5yk2")]
-position = Vector2(-440, 994)
+position = Vector2(925, 1706)
 script = ExtResource("3_c5yk2")
 
 [node name="Celtigar" parent="." unique_id=1171372733 instance=ExtResource("2_c5yk2")]
-position = Vector2(-241, 1203)
+position = Vector2(841, 1413)
 script = ExtResource("3_c5yk2")
 
 [node name="Chelsted" parent="." unique_id=1414735422 instance=ExtResource("2_c5yk2")]
-position = Vector2(-368, 1098)
+position = Vector2(925, 1605)
 script = ExtResource("3_c5yk2")
 
 [node name="Chyttering" parent="." unique_id=1848235575 instance=ExtResource("2_c5yk2")]
-position = Vector2(-469, 1333)
+position = Vector2(480, 1891)
 script = ExtResource("3_c5yk2")
 
 [node name="Cressey" parent="." unique_id=133263697 instance=ExtResource("2_c5yk2")]
-position = Vector2(-519, 1276)
+position = Vector2(354, 1733)
 script = ExtResource("3_c5yk2")
 
 [node name="Follard" parent="." unique_id=701686969 instance=ExtResource("2_c5yk2")]
-position = Vector2(-541, 1119)
+position = Vector2(706, 1891)
 script = ExtResource("3_c5yk2")
 
 [node name="Harte" parent="." unique_id=124124387 instance=ExtResource("2_c5yk2")]
-position = Vector2(-243, 1119)
+position = Vector2(545, 1349)
 script = ExtResource("3_c5yk2")
 
 [node name="Mallery" parent="." unique_id=1494305878 instance=ExtResource("2_c5yk2")]
-position = Vector2(-516, 1188)
+position = Vector2(321, 1642)
 script = ExtResource("3_c5yk2")
 
 [node name="Hayford" parent="." unique_id=803169813 instance=ExtResource("2_c5yk2")]
-position = Vector2(-449, 1254)
+position = Vector2(394, 1835)
 script = ExtResource("3_c5yk2")
 
 [node name="Massey" parent="." unique_id=2016519818 instance=ExtResource("2_c5yk2")]
-position = Vector2(-384, 1298)
+position = Vector2(313, 1562)
 script = ExtResource("3_c5yk2")
 
 [node name="Staunton" parent="." unique_id=1968137453 instance=ExtResource("2_c5yk2")]
-position = Vector2(-509, 947)
+position = Vector2(784, 1835)
 script = ExtResource("3_c5yk2")
 
 [node name="Velaryon" parent="." unique_id=190108505 instance=ExtResource("2_c5yk2")]
-position = Vector2(-450, 1085)
+position = Vector2(857, 1799)
 script = ExtResource("3_c5yk2")
 
 [node name="Sunglass" parent="." unique_id=159703058 instance=ExtResource("2_c5yk2")]
-position = Vector2(-440, 1163)
+position = Vector2(628, 1349)
 script = ExtResource("3_c5yk2")
 
 [node name="Stokeworth" parent="." unique_id=1977752122 instance=ExtResource("2_c5yk2")]
-position = Vector2(-518, 1037)
+position = Vector2(706, 1349)
 script = ExtResource("3_c5yk2")
 
 [node name="Rykker" parent="." unique_id=2080683612 instance=ExtResource("2_c5yk2")]
-position = Vector2(-377, 1223)
+position = Vector2(321, 1466)
 script = ExtResource("3_c5yk2")
 
 [node name="Rosby" parent="." unique_id=1966119485 instance=ExtResource("2_c5yk2")]
-position = Vector2(-419, 1371)
+position = Vector2(587, 1891)
 script = ExtResource("3_c5yk2")
 
 [node name="Rollingford" parent="." unique_id=180059676 instance=ExtResource("2_c5yk2")]
-position = Vector2(-312, 1251)
+position = Vector2(377, 1383)
 script = ExtResource("3_c5yk2")
 
 [node name="Baratheon (Stanis)" parent="." unique_id=1793092399 instance=ExtResource("2_c5yk2")]
-position = Vector2(688, 2283)
+position = Vector2(771, 2665)
 
 [node name="Baratheon (Renly)" parent="." unique_id=1924905621 instance=ExtResource("2_c5yk2")]
-position = Vector2(366, 1805)
+position = Vector2(-535, 1116)
 
 [node name="Martell" parent="." unique_id=652849799 instance=ExtResource("2_c5yk2")]
-position = Vector2(1197, 1998)
+position = Vector2(1664, 2277)
 
 [node name="Allyrion" parent="." unique_id=1520880593 instance=ExtResource("2_c5yk2")]
-position = Vector2(1144, 2215)
+position = Vector2(1555, 2494)
 script = ExtResource("3_c5yk2")
 
 [node name="Blackmont" parent="." unique_id=703239183 instance=ExtResource("2_c5yk2")]
-position = Vector2(1231, 2222)
+position = Vector2(1664, 2501)
 script = ExtResource("3_c5yk2")
 
 [node name="Dayne" parent="." unique_id=157371834 instance=ExtResource("2_c5yk2")]
-position = Vector2(1458, 2149)
+position = Vector2(1869, 2428)
 script = ExtResource("3_c5yk2")
 
 [node name="Fowler" parent="." unique_id=488597658 instance=ExtResource("2_c5yk2")]
-position = Vector2(1398, 2168)
+position = Vector2(1809, 2447)
 script = ExtResource("3_c5yk2")
 
 [node name="Gargalen" parent="." unique_id=1719723911 instance=ExtResource("2_c5yk2")]
-position = Vector2(1391, 2249)
+position = Vector2(1764, 2091)
 script = ExtResource("3_c5yk2")
 
 [node name="Jordayne" parent="." unique_id=627402386 instance=ExtResource("2_c5yk2")]
-position = Vector2(1328, 2275)
+position = Vector2(1472, 2155)
 script = ExtResource("3_c5yk2")
 
 [node name="Manwoody" parent="." unique_id=1099366789 instance=ExtResource("2_c5yk2")]
-position = Vector2(1183, 2291)
+position = Vector2(1947, 2319)
 script = ExtResource("3_c5yk2")
 
 [node name="Qorgyle" parent="." unique_id=2118274017 instance=ExtResource("2_c5yk2")]
-position = Vector2(1536, 2183)
+position = Vector2(1947, 2244)
 script = ExtResource("3_c5yk2")
 
 [node name="Toland" parent="." unique_id=110220588 instance=ExtResource("2_c5yk2")]
-position = Vector2(1107, 2291)
+position = Vector2(1472, 2277)
 script = ExtResource("3_c5yk2")
 
 [node name="Uller" parent="." unique_id=503739435 instance=ExtResource("2_c5yk2")]
-position = Vector2(1472, 2225)
+position = Vector2(1869, 2155)
 script = ExtResource("3_c5yk2")
 
 [node name="Vaith" parent="." unique_id=2112180719 instance=ExtResource("2_c5yk2")]
-position = Vector2(1269, 2291)
+position = Vector2(1642, 2055)
 script = ExtResource("3_c5yk2")
 
 [node name="Yronwood" parent="." unique_id=253460704 instance=ExtResource("2_c5yk2")]
-position = Vector2(1321, 2206)
+position = Vector2(1555, 2091)
 script = ExtResource("3_c5yk2")
 
 [node name="Buckler" parent="." unique_id=810656054 instance=ExtResource("2_c5yk2")]
-position = Vector2(930, 2680)
+position = Vector2(963, 2928)
 script = ExtResource("3_c5yk2")
 
 [node name="Cafferen" parent="." unique_id=799620592 instance=ExtResource("2_c5yk2")]
-position = Vector2(848, 2686)
+position = Vector2(881, 2934)
 script = ExtResource("3_c5yk2")
 
 [node name="Caron" parent="." unique_id=1167576959 instance=ExtResource("2_c5yk2")]
-position = Vector2(619, 2598)
+position = Vector2(721, 2319)
 script = ExtResource("3_c5yk2")
 
 [node name="Dondarrion" parent="." unique_id=1495832134 instance=ExtResource("2_c5yk2")]
-position = Vector2(471, 2661)
+position = Vector2(486, 2588)
 script = ExtResource("3_c5yk2")
 
 [node name="Errol" parent="." unique_id=278439288 instance=ExtResource("2_c5yk2")]
-position = Vector2(701, 2605)
+position = Vector2(838, 2319)
 script = ExtResource("3_c5yk2")
 
 [node name="Estermont" parent="." unique_id=1720660892 instance=ExtResource("2_c5yk2")]
-position = Vector2(805, 2608)
+position = Vector2(930, 2376)
 script = ExtResource("3_c5yk2")
 
 [node name="Fell" parent="." unique_id=2011671722 instance=ExtResource("2_c5yk2")]
-position = Vector2(504, 2602)
+position = Vector2(486, 2712)
 script = ExtResource("3_c5yk2")
 
 [node name="Grandison" parent="." unique_id=696565898 instance=ExtResource("2_c5yk2")]
-position = Vector2(586, 2680)
+position = Vector2(541, 2834)
 script = ExtResource("3_c5yk2")
 
 [node name="Mertyns" parent="." unique_id=1559816549 instance=ExtResource("2_c5yk2")]
-position = Vector2(893, 2593)
+position = Vector2(1011, 2428)
 script = ExtResource("3_c5yk2")
 
 [node name="Morrigen" parent="." unique_id=1570824103 instance=ExtResource("2_c5yk2")]
-position = Vector2(771, 2678)
+position = Vector2(804, 2926)
 script = ExtResource("3_c5yk2")
 
 [node name="Peasebury" parent="." unique_id=1491972106 instance=ExtResource("2_c5yk2")]
-position = Vector2(683, 2690)
+position = Vector2(649, 2909)
 script = ExtResource("3_c5yk2")
 
 [node name="Penrose" parent="." unique_id=2072607137 instance=ExtResource("2_c5yk2")]
-position = Vector2(978, 2586)
+position = Vector2(1011, 2834)
 script = ExtResource("3_c5yk2")
 
 [node name="Selmy" parent="." unique_id=133294111 instance=ExtResource("2_c5yk2")]
-position = Vector2(1028, 2668)
+position = Vector2(1061, 2501)
 script = ExtResource("3_c5yk2")
 
 [node name="Staedmon" parent="." unique_id=72050535 instance=ExtResource("2_c5yk2")]
-position = Vector2(516, 2743)
+position = Vector2(1061, 2751)
 script = ExtResource("3_c5yk2")
 
 [node name="Swann" parent="." unique_id=1280664269 instance=ExtResource("2_c5yk2")]
-position = Vector2(632, 2762)
+position = Vector2(486, 2465)
 script = ExtResource("3_c5yk2")
 
 [node name="Tarth" parent="." unique_id=1088051177 instance=ExtResource("2_c5yk2")]
-position = Vector2(751, 2753)
+position = Vector2(586, 2376)
 script = ExtResource("3_c5yk2")
 
 [node name="Wylde" parent="." unique_id=1748366591 instance=ExtResource("2_c5yk2")]
-position = Vector2(845, 2759)
+position = Vector2(1061, 2618)
 script = ExtResource("3_c5yk2")
 
 [node name="Ambrose" parent="." unique_id=216806071 instance=ExtResource("2_c5yk2")]
-position = Vector2(40, 2482)
+position = Vector2(-131, 2588)
 script = ExtResource("3_c5yk2")
 
 [node name="Ashford" parent="." unique_id=2084706334 instance=ExtResource("2_c5yk2")]
-position = Vector2(135, 2509)
+position = Vector2(-70, 2665)
 script = ExtResource("3_c5yk2")
 
 [node name="Beesbury" parent="." unique_id=2117767117 instance=ExtResource("2_c5yk2")]
-position = Vector2(-20, 2638)
+position = Vector2(-302, 3047)
 script = ExtResource("3_c5yk2")
 
 [node name="Blackbar" parent="." unique_id=1268680998 instance=ExtResource("2_c5yk2")]
-position = Vector2(-165, 2524)
+position = Vector2(-495, 3028)
 script = ExtResource("3_c5yk2")
 
 [node name="Bulwer" parent="." unique_id=1731305631 instance=ExtResource("2_c5yk2")]
-position = Vector2(-214, 2478)
+position = Vector2(-675, 2588)
 script = ExtResource("3_c5yk2")
 
 [node name="Caswell" parent="." unique_id=1854445199 instance=ExtResource("2_c5yk2")]
-position = Vector2(-119, 2277)
+position = Vector2(-362, 2494)
 script = ExtResource("3_c5yk2")
 
 [node name="Chester" parent="." unique_id=72337165 instance=ExtResource("2_c5yk2")]
-position = Vector2(-237, 2387)
+position = Vector2(-634, 2712)
 script = ExtResource("3_c5yk2")
 
 [node name="Cockshaw" parent="." unique_id=1816014098 instance=ExtResource("2_c5yk2")]
-position = Vector2(-78, 2600)
+position = Vector2(-401, 3047)
 script = ExtResource("3_c5yk2")
 
 [node name="Costayne" parent="." unique_id=1560845559 instance=ExtResource("2_c5yk2")]
-position = Vector2(37, 2581)
+position = Vector2(-105, 2926)
 script = ExtResource("3_c5yk2")
 
 [node name="Cuy" parent="." unique_id=83700530 instance=ExtResource("2_c5yk2")]
-position = Vector2(-40, 2531)
+position = Vector2(-586, 3001)
 script = ExtResource("3_c5yk2")
 
 [node name="Florent" parent="." unique_id=1846214506 instance=ExtResource("2_c5yk2")]
-position = Vector2(-100, 2478)
+position = Vector2(-611, 2909)
 script = ExtResource("3_c5yk2")
 
 [node name="Footly" parent="." unique_id=1142854699 instance=ExtResource("2_c5yk2")]
-position = Vector2(-157, 2410)
+position = Vector2(-634, 2804)
 script = ExtResource("3_c5yk2")
 
 [node name="Graceford" parent="." unique_id=903192877 instance=ExtResource("2_c5yk2")]
-position = Vector2(-173, 2319)
+position = Vector2(-447, 2494)
 script = ExtResource("3_c5yk2")
 
 [node name="Grimm" parent="." unique_id=912421402 instance=ExtResource("2_c5yk2")]
-position = Vector2(131, 2592)
+position = Vector2(-70, 2841)
 script = ExtResource("3_c5yk2")
 
 [node name="Hewett" parent="." unique_id=1436054369 instance=ExtResource("2_c5yk2")]
-position = Vector2(-89, 2349)
+position = Vector2(-528, 2563)
 script = ExtResource("3_c5yk2")
 
 [node name="Hightower" parent="." unique_id=376880805 instance=ExtResource("2_c5yk2")]
-position = Vector2(-32, 2410)
+position = Vector2(-200, 2501)
 script = ExtResource("3_c5yk2")
 
 [node name="Meadows" parent="." unique_id=1599826568 instance=ExtResource("2_c5yk2")]
-position = Vector2(-32, 2410)
+position = Vector2(-283, 2501)
 script = ExtResource("3_c5yk2")
 
 [node name="Merryweather" parent="." unique_id=283975024 instance=ExtResource("2_c5yk2")]
-position = Vector2(78, 2767)
+position = Vector2(-237, 3130)
 script = ExtResource("3_c5yk2")
 
 [node name="Mullendore" parent="." unique_id=1711008451 instance=ExtResource("2_c5yk2")]
-position = Vector2(-351, 2387)
+position = Vector2(-675, 2982)
 script = ExtResource("3_c5yk2")
 
 [node name="Oakheart" parent="." unique_id=580845814 instance=ExtResource("2_c5yk2")]
-position = Vector2(-294, 2459)
+position = Vector2(-722, 2751)
 script = ExtResource("3_c5yk2")
 
 [node name="Peake" parent="." unique_id=73752963 instance=ExtResource("2_c5yk2")]
-position = Vector2(-290, 2554)
+position = Vector2(-528, 2465)
 script = ExtResource("3_c5yk2")
 
 [node name="Redwyne" parent="." unique_id=1904760997 instance=ExtResource("2_c5yk2")]
-position = Vector2(-226, 2626)
+position = Vector2(-352, 2428)
 script = ExtResource("3_c5yk2")
 
 [node name="Risley" parent="." unique_id=1445315594 instance=ExtResource("2_c5yk2")]
-position = Vector2(-17, 2733)
+position = Vector2(0, 2934)
 script = ExtResource("3_c5yk2")
 
 [node name="Rowan" parent="." unique_id=1376786874 instance=ExtResource("2_c5yk2")]
-position = Vector2(-81, 2710)
+position = Vector2(-495, 3130)
 script = ExtResource("3_c5yk2")
 
 [node name="Serry" parent="." unique_id=182697118 instance=ExtResource("2_c5yk2")]
-position = Vector2(-142, 2672)
+position = Vector2(0, 2665)
 script = ExtResource("3_c5yk2")
 
 [node name="Tarly" parent="." unique_id=865729757 instance=ExtResource("2_c5yk2")]
-position = Vector2(-161, 2588)
+position = Vector2(-131, 2501)
 script = ExtResource("3_c5yk2")
 
 [node name="Varner" parent="." unique_id=1534688110 instance=ExtResource("2_c5yk2")]
-position = Vector2(200, 2569)
+position = Vector2(-63, 2751)
 script = ExtResource("3_c5yk2")
 
 [node name="Vyrwel" parent="." unique_id=780114658 instance=ExtResource("2_c5yk2")]
-position = Vector2(-264, 2323)
+position = Vector2(-591, 2618)
 script = ExtResource("3_c5yk2")
 
 [node name="Webber" parent="." unique_id=2080089780 instance=ExtResource("2_c5yk2")]
-position = Vector2(135, 2680)
+position = Vector2(-147, 2982)
 script = ExtResource("3_c5yk2")
 
 [node name="Willum" parent="." unique_id=1900516128 instance=ExtResource("2_c5yk2")]
-position = Vector2(44, 2687)
+position = Vector2(-204, 3047)
 script = ExtResource("3_c5yk2")
