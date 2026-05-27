@@ -101,8 +101,6 @@ public partial class GraphController : Node2D
 			Graph.Add(greatHouseNode, new Dictionary<WesterosHouse, Edge>());
 
 		}
-
-		GD.Print("Great Houses iniciadas com sucesso");
 	}
 
 	private void SetupInitialLordlyHouses()
@@ -130,8 +128,6 @@ public partial class GraphController : Node2D
 				
 			}
 		}
-
-		GD.Print("LordlyHouses adicionadas ao grafo");
 	}
 
 	private void SetupHousesLookup()
@@ -224,28 +220,28 @@ public partial class GraphController : Node2D
 	}
 
 	private Color GetConnectionColor(double intensity)
-{   
-    // Clamp para garantir que o valor não fuja do intervalo [-1.0, 1.0]
-    float val = Mathf.Clamp((float)intensity, -1.0f, 1.0f);
+	{   
+		// Clamp para garantir que o valor não fuja do intervalo [-1.0, 1.0]
+		float val = Mathf.Clamp((float)intensity, -1.0f, 1.0f);
 
-    // Definição das cores base
-    Color colorRed   = new Color(1.0f, 0.1f, 0.1f, 1.0f); // -1.0: Hostilidade (Vermelho)
-    Color colorWhite = new Color(1.0f, 1.0f, 1.0f, 1.0f); //  0.0: Neutralidade (Branco)
-    Color colorBlue  = new Color(0.1f, 0.1f, 1.0f, 1.0f); //  1.0: Aliança (Azul)
+		// Definição das cores base
+		Color colorRed   = new Color(1.0f, 0.1f, 0.1f, 1.0f); // -1.0: Hostilidade (Vermelho)
+		Color colorWhite = new Color(1.0f, 1.0f, 1.0f, 1.0f); //  0.0: Neutralidade (Branco)
+		Color colorBlue  = new Color(0.1f, 0.1f, 1.0f, 1.0f); //  1.0: Aliança (Azul)
 
-    if (val < 0.0f)
-    {
-		// Interpolação de Vermelho para Branco (-1.0 até 0.0)
-        float t = val + 1.0f; 
-        return colorRed.Lerp(colorWhite, t);
-    }
-    else
-    {
-        // Interpolação de Branco para Azul (0.0 até 1.0)
-        float t = val;
-        return colorWhite.Lerp(colorBlue, t);
-    }
-}
+		if (val < 0.0f)
+		{
+			// Interpolação de Vermelho para Branco (-1.0 até 0.0)
+			float t = val + 1.0f; 
+			return colorRed.Lerp(colorWhite, t);
+		}
+		else
+		{
+			// Interpolação de Branco para Azul (0.0 até 1.0)
+			float t = val;
+			return colorWhite.Lerp(colorBlue, t);
+		}
+	}
 
 	private void CreateOrUpdateConnection(string fromHouseName, string toHouseName, double intensity, bool updateScale)
 	{
